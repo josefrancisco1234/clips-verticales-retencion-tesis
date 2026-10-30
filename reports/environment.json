@@ -1,0 +1,10 @@
+{
+ "python": "3.11.9",
+ "platform": "Windows-10-10.0.26200-SP0",
+ "torch": "2.14.0+cpu",
+ "lightgbm": "4.7.0",
+ "sklearn": "1.9.1",
+ "ctranslate2": "4.8.2",
+ "ffmpeg": "C:\\Users\\chupe\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1.2-full_build\\bin\\ffmpeg.EXE",
+ "seed": 42
+}

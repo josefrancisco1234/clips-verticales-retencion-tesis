@@ -1,0 +1,1065 @@
+{
+ "refs": {
+  "whisper": {
+   "doi": "https://doi.org/10.48550/arXiv.2212.04356",
+   "titulo": "Robust speech recognition via large-scale weak supervision",
+   "autores": [
+    "Radford"
+   ],
+   "anio": 2022,
+   "venue": "arXiv"
+  },
+  "panns": {
+   "doi": "https://doi.org/10.1109/taslp.2020.3030497",
+   "titulo": "PANNs: Large-Scale Pretrained Audio Neural Networks for Audio Pattern Recognition",
+   "autores": [
+    "Kong",
+    "Cao",
+    "Iqbal"
+   ],
+   "anio": 2020,
+   "venue": "IEEE/ACM Transactions on Audio, Speech, and Language Processing"
+  },
+  "audioset": {
+   "doi": "https://doi.org/10.1109/icassp.2017.7952261",
+   "titulo": "Audio Set: An ontology and human-labeled dataset for audio events",
+   "autores": [
+    "Gemmeke",
+    "Ellis",
+    "Freedman"
+   ],
+   "anio": 2017,
+   "venue": "2017 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)"
+  },
+  "tfidf": {
+   "doi": "https://doi.org/10.1108/eb026526",
+   "titulo": "A STATISTICAL INTERPRETATION OF TERM SPECIFICITY AND ITS APPLICATION IN RETRIEVAL",
+   "autores": [
+    "SPARCK JONES"
+   ],
+   "anio": 1972,
+   "venue": "Journal of Documentation"
+  },
+  "salton": {
+   "doi": "https://doi.org/10.1016/0306-4573(88)90021-0",
+   "titulo": "Term-weighting approaches in automatic text retrieval",
+   "autores": [
+    "Salton",
+    "Buckley"
+   ],
+   "anio": 1988,
+   "venue": "Information Processing &amp; Management"
+  },
+  "sbert": {
+   "doi": "https://doi.org/10.18653/v1/d19-1410",
+   "titulo": "Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks",
+   "autores": [
+    "Reimers",
+    "Gurevych"
+   ],
+   "anio": 2019,
+   "venue": "Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natural Language Processing (EMNLP-IJCNLP)"
+  },
+  "mmr": {
+   "doi": "https://doi.org/10.1145/290941.291025",
+   "titulo": "The use of MMR, diversity-based reranking for reordering documents and producing summaries",
+   "autores": [
+    "Carbonell",
+    "Goldstein"
+   ],
+   "anio": 1998,
+   "venue": "Proceedings of the 21st annual international ACM SIGIR conference on Research and development in information retrieval"
+  },
+  "distilbert": {
+   "doi": "https://doi.org/10.48550/arXiv.1910.01108",
+   "titulo": "DistilBERT, a distilled version of BERT: smaller, faster, cheaper and lighter",
+   "autores": [
+    "Sanh"
+   ],
+   "anio": 2019,
+   "venue": "arXiv"
+  },
+  "russell": {
+   "doi": "https://doi.org/10.1037/h0077714",
+   "titulo": "A circumplex model of affect.",
+   "autores": [
+    "Russell"
+   ],
+   "anio": 1980,
+   "venue": "Journal of Personality and Social Psychology"
+  },
+  "berger": {
+   "doi": "https://doi.org/10.1509/jmr.10.0353",
+   "titulo": "What makes online content viral?",
+   "autores": [
+    "Berger",
+    "Milkman"
+   ],
+   "anio": 2012,
+   "venue": "Journal of Marketing Research"
+  },
+  "loewenstein": {
+   "doi": "https://doi.org/10.1037/0033-2909.116.1.75",
+   "titulo": "The psychology of curiosity: A review and reinterpretation.",
+   "autores": [
+    "Loewenstein"
+   ],
+   "anio": 1994,
+   "venue": "Psychological Bulletin"
+  },
+  "blom": {
+   "doi": "https://doi.org/10.1016/j.pragma.2014.11.010",
+   "titulo": "Click bait: Forward-reference as lure in online news headlines",
+   "autores": [
+    "Blom",
+    "Hansen"
+   ],
+   "anio": 2015,
+   "venue": "Journal of Pragmatics"
+  },
+  "liwc": {
+   "doi": "https://doi.org/10.1177/0261927x09351676",
+   "titulo": "The Psychological Meaning of Words: LIWC and Computerized Text Analysis Methods",
+   "autores": [
+    "Tausczik",
+    "Pennebaker"
+   ],
+   "anio": 2009,
+   "venue": "Journal of Language and Social Psychology"
+  },
+  "cruz": {
+   "doi": "https://doi.org/10.1016/j.intmar.2017.05.001",
+   "titulo": "Second Person Pronouns Enhance Consumer Involvement and Brand Attitude",
+   "autores": [
+    "Cruz",
+    "Leonhardt",
+    "Pezzuti"
+   ],
+   "anio": 2017,
+   "venue": "Journal of Interactive Marketing"
+  },
+  "tagliamonte": {
+   "doi": "https://doi.org/10.1215/00031283-2008-001",
+   "titulo": "LINGUISTIC RUIN? LOL! INSTANT MESSAGING AND TEEN LANGUAGE",
+   "autores": [
+    "Tagliamonte",
+    "Denis"
+   ],
+   "anio": 2008,
+   "venue": "American Speech"
+  },
+  "librosa": {
+   "doi": "https://doi.org/10.25080/majora-7b98e3ed-003",
+   "titulo": "librosa: Audio and Music Signal Analysis in Python",
+   "autores": [
+    "McFee",
+    "Raffel",
+    "Liang"
+   ],
+   "anio": 2015,
+   "venue": "Proceedings of the Python in Science Conference"
+  },
+  "pyin": {
+   "doi": "https://doi.org/10.1109/icassp.2014.6853678",
+   "titulo": "PYIN: A fundamental frequency estimator using probabilistic threshold distributions",
+   "autores": [
+    "Mauch",
+    "Dixon"
+   ],
+   "anio": 2014,
+   "venue": "2014 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)"
+  },
+  "kendall": {
+   "doi": "https://doi.org/10.1057/9781137291448",
+   "titulo": "Speech Rate, Pause and Sociolinguistic Variation",
+   "autores": [
+    "Kendall"
+   ],
+   "anio": 2013,
+   "venue": "Palgrave Macmillan"
+  },
+  "campione": {
+   "doi": "https://doi.org/10.21437/speechprosody.2002-35",
+   "titulo": "A large-scale multilingual study of silent pause duration",
+   "autores": [
+    "Campione",
+    "Véronis"
+   ],
+   "anio": 2002,
+   "venue": "Speech Prosody 2002"
+  },
+  "banzina": {
+   "doi": "https://doi.org/10.2478/9788366675728-014",
+   "titulo": "How to pause in charismatic speeches: A case study of Barack Obama",
+   "autores": [
+    "Banzina",
+    "Niebuhr"
+   ],
+   "anio": 2023,
+   "venue": "Proceedings of the 13th International Conference of Nordic Prosody"
+  },
+  "kahng": {
+   "doi": "https://doi.org/10.1017/s0142716417000534",
+   "titulo": "The effect of pause location on perceived fluency",
+   "autores": [
+    "KAHNG"
+   ],
+   "anio": 2017,
+   "venue": "Applied Psycholinguistics"
+  },
+  "rosenberg": {
+   "doi": "https://doi.org/10.1016/j.specom.2008.11.001",
+   "titulo": "Charisma perception from text and speech",
+   "autores": [
+    "Rosenberg",
+    "Hirschberg"
+   ],
+   "anio": 2009,
+   "venue": "Speech Communication"
+  },
+  "strangert": {
+   "doi": "https://doi.org/10.21437/interspeech.2008-368",
+   "titulo": "What makes a good speaker? subject ratings, acoustic measurements and perceptual evaluations",
+   "autores": [
+    "Strangert",
+    "Gustafson"
+   ],
+   "anio": 2008,
+   "venue": "Interspeech 2008"
+  },
+  "suen": {
+   "doi": "https://doi.org/10.1109/tcss.2026.3675249",
+   "titulo": "Dual-Model Prediction of Affective Engagement and Vocal Attractiveness From Speaker Expressiveness in Video Learning",
+   "autores": [
+    "Suen",
+    "Hung",
+    "Tseng"
+   ],
+   "anio": 2026,
+   "venue": "IEEE Transactions on Computational Social Systems"
+  },
+  "rui": {
+   "doi": "https://doi.org/10.1145/354384.354443",
+   "titulo": "Automatically extracting highlights for TV Baseball programs",
+   "autores": [
+    "Rui",
+    "Gupta",
+    "Acero"
+   ],
+   "anio": 2000,
+   "venue": "Proceedings of the eighth ACM international conference on Multimedia"
+  },
+  "xiong": {
+   "doi": "https://doi.org/10.1109/icme.2003.1221333",
+   "titulo": "Audio events detection based highlights extraction from baseball, golf and soccer games in a unified framework",
+   "autores": [
+    "Ziyou Xiong",
+    "Radhakrishnan",
+    "Divakaran"
+   ],
+   "anio": 2003,
+   "venue": "2003 International Conference on Multimedia and Expo. ICME '03. Proceedings (Cat. No.03TH8698)"
+  },
+  "hanjalic": {
+   "doi": "https://doi.org/10.1109/tmm.2005.858397",
+   "titulo": "Adaptive extraction of highlights from a sport video based on excitement modeling",
+   "autores": [
+    "Hanjalic"
+   ],
+   "anio": 2005,
+   "venue": "IEEE Transactions on Multimedia"
+  },
+  "guo": {
+   "doi": "https://doi.org/10.1145/2556325.2566239",
+   "titulo": "How video production affects student engagement",
+   "autores": [
+    "Guo",
+    "Kim",
+    "Rubin"
+   ],
+   "anio": 2014,
+   "venue": "L@S 2014"
+  },
+  "kim": {
+   "doi": "https://doi.org/10.1145/2556325.2566237",
+   "titulo": "Understanding in-video dropouts and interaction peaks inonline lecture videos",
+   "autores": [
+    "Kim",
+    "Guo",
+    "Seaton"
+   ],
+   "anio": 2014,
+   "venue": "Proceedings of the first ACM conference on Learning @ scale conference"
+  },
+  "foltz": {
+   "doi": "https://doi.org/10.1080/01638539809545029",
+   "titulo": "The measurement of textual coherence with latent semantic analysis",
+   "autores": [
+    "Foltz",
+    "Kintsch",
+    "Landauer"
+   ],
+   "anio": 1998,
+   "venue": "Discourse Processes"
+  },
+  "hearst": {
+   "doi": "https://aclanthology.org/J97-1003/",
+   "titulo": "TextTiling: Segmenting text into multi-paragraph subtopic passages",
+   "autores": [
+    "Hearst"
+   ],
+   "anio": 1997,
+   "venue": "Computational Linguistics 23(1)"
+  },
+  "clark": {
+   "doi": "https://doi.org/10.1016/s0010-0277(02)00017-3",
+   "titulo": "Using uh and um in spontaneous speaking",
+   "autores": [
+    "Clark"
+   ],
+   "anio": 2002,
+   "venue": "Cognition"
+  },
+  "jiang": {
+   "doi": "https://doi.org/10.1016/j.specom.2004.12.004",
+   "titulo": "Confidence measures for speech recognition: A survey",
+   "autores": [
+    "Jiang"
+   ],
+   "anio": 2005,
+   "venue": "Speech Communication"
+  },
+  "shannon": {
+   "doi": "https://doi.org/10.1002/j.1538-7305.1948.tb01338.x",
+   "titulo": "A mathematical theory of communication",
+   "autores": [
+    "Shannon"
+   ],
+   "anio": 1948,
+   "venue": "Bell System Technical Journal"
+  },
+  "mccarthy": {
+   "doi": "https://doi.org/10.3758/brm.42.2.381",
+   "titulo": "MTLD, vocd-D, and HD-D: A validation study of sophisticated approaches to lexical diversity assessment",
+   "autores": [
+    "McCarthy",
+    "Jarvis"
+   ],
+   "anio": 2010,
+   "venue": "Behavior Research Methods"
+  },
+  "flesch": {
+   "doi": "https://doi.org/10.1037/h0057532",
+   "titulo": "A new readability yardstick.",
+   "autores": [
+    "Flesch"
+   ],
+   "anio": 1948,
+   "venue": "Journal of Applied Psychology"
+  },
+  "provine": {
+   "doi": "https://doi.org/10.1111/j.1439-0310.1993.tb00478.x",
+   "titulo": "Laughter Punctuates Speech: Linguistic, Social and Gender Contexts of Laughter",
+   "autores": [
+    "Provine"
+   ],
+   "anio": 1993,
+   "venue": "Ethology"
+  },
+  "hay": {
+   "doi": "https://doi.org/10.1016/s0378-2166(99)00069-7",
+   "titulo": "Functions of humor in the conversations of men and women",
+   "autores": [
+    "Hay"
+   ],
+   "anio": 2000,
+   "venue": "Journal of Pragmatics"
+  },
+  "reimers": {
+   "doi": "https://doi.org/10.18653/v1/d19-1410",
+   "titulo": "Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks",
+   "autores": [
+    "Reimers",
+    "Gurevych"
+   ],
+   "anio": 2019,
+   "venue": "Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natural Language Processing (EMNLP-IJCNLP)"
+  },
+  "keybert": {
+   "doi": "https://doi.org/10.5281/zenodo.4461265",
+   "titulo": "KeyBERT: Minimal keyword extraction with BERT",
+   "autores": [
+    "Grootendorst"
+   ],
+   "anio": 2020,
+   "venue": "Zenodo"
+  },
+  "sul": {
+   "doi": "https://doi.org/10.52202/075280-1764",
+   "titulo": "Mr. HiSum: A Large-scale Dataset for Video Highlight Detection and Summarization",
+   "autores": [
+    "Sul",
+    "Han",
+    "Lee"
+   ],
+   "anio": 2023,
+   "venue": "Advances in Neural Information Processing Systems 36"
+  }
+ },
+ "variables": {
+  "k_kvsum_mean": {
+   "grupo": "K Palabras clave",
+   "definicion": [
+    "tfidf",
+    "salton"
+   ],
+   "relacion": [
+    "sul"
+   ]
+  },
+  "k_kvsum_max": {
+   "grupo": "K Palabras clave",
+   "definicion": [
+    "tfidf",
+    "salton"
+   ],
+   "relacion": [
+    "sul"
+   ]
+  },
+  "k_kvsum_local": {
+   "grupo": "K Palabras clave",
+   "definicion": [
+    "tfidf",
+    "salton"
+   ],
+   "relacion": [
+    "sul"
+   ]
+  },
+  "k_top_terms_pm": {
+   "grupo": "K Palabras clave",
+   "definicion": [
+    "keybert",
+    "salton"
+   ],
+   "relacion": [
+    "sul"
+   ]
+  },
+  "k_keyphrase_pm": {
+   "grupo": "K Palabras clave",
+   "definicion": [
+    "keybert",
+    "salton"
+   ],
+   "relacion": [
+    "sul"
+   ]
+  },
+  "k_content_ratio": {
+   "grupo": "K Palabras clave",
+   "definicion": [
+    "liwc"
+   ],
+   "relacion": []
+  },
+  "k_novelty": {
+   "grupo": "K Palabras clave",
+   "definicion": [
+    "mmr"
+   ],
+   "relacion": [
+    "kim"
+   ]
+  },
+  "k_keybert_sim": {
+   "grupo": "K Palabras clave",
+   "definicion": [
+    "sbert",
+    "foltz"
+   ],
+   "relacion": [
+    "guo"
+   ]
+  },
+  "h_first_keybert": {
+   "grupo": "H Gancho",
+   "definicion": [
+    "sbert",
+    "foltz"
+   ],
+   "relacion": [
+    "guo"
+   ]
+  },
+  "f_coherence_mean": {
+   "grupo": "F Flujo",
+   "definicion": [
+    "sbert",
+    "foltz"
+   ],
+   "relacion": [
+    "guo"
+   ]
+  },
+  "f_coherence_min": {
+   "grupo": "F Flujo",
+   "definicion": [
+    "sbert",
+    "foltz"
+   ],
+   "relacion": [
+    "guo"
+   ]
+  },
+  "k_noun_chunks_ps": {
+   "grupo": "K Palabras clave",
+   "definicion": [
+    "liwc"
+   ],
+   "relacion": []
+  },
+  "s_pos_mean": {
+   "grupo": "S Sentimiento",
+   "definicion": [
+    "distilbert"
+   ],
+   "relacion": [
+    "berger"
+   ]
+  },
+  "s_neg_mean": {
+   "grupo": "S Sentimiento",
+   "definicion": [
+    "distilbert"
+   ],
+   "relacion": [
+    "berger"
+   ]
+  },
+  "s_polarity_mean": {
+   "grupo": "S Sentimiento",
+   "definicion": [
+    "distilbert"
+   ],
+   "relacion": [
+    "berger"
+   ]
+  },
+  "s_polarity_std": {
+   "grupo": "S Sentimiento",
+   "definicion": [
+    "distilbert"
+   ],
+   "relacion": [
+    "berger"
+   ]
+  },
+  "s_intensity_mean": {
+   "grupo": "S Sentimiento",
+   "definicion": [
+    "distilbert",
+    "russell"
+   ],
+   "relacion": [
+    "berger"
+   ]
+  },
+  "s_intensity_max": {
+   "grupo": "S Sentimiento",
+   "definicion": [
+    "distilbert",
+    "russell"
+   ],
+   "relacion": [
+    "berger"
+   ]
+  },
+  "h_first_intensity": {
+   "grupo": "H Gancho",
+   "definicion": [
+    "distilbert",
+    "russell"
+   ],
+   "relacion": [
+    "berger"
+   ]
+  },
+  "s_questions_pm": {
+   "grupo": "S Sentimiento",
+   "definicion": [
+    "loewenstein"
+   ],
+   "relacion": []
+  },
+  "h_question": {
+   "grupo": "H Gancho",
+   "definicion": [
+    "loewenstein"
+   ],
+   "relacion": []
+  },
+  "s_exclaim_pm": {
+   "grupo": "S Sentimiento",
+   "definicion": [
+    "liwc"
+   ],
+   "relacion": [
+    "berger"
+   ]
+  },
+  "s_second_person": {
+   "grupo": "S Sentimiento",
+   "definicion": [
+    "liwc"
+   ],
+   "relacion": [
+    "cruz"
+   ]
+  },
+  "h_second_person": {
+   "grupo": "H Gancho",
+   "definicion": [
+    "liwc"
+   ],
+   "relacion": [
+    "cruz"
+   ]
+  },
+  "l_pron_12_vs_3": {
+   "grupo": "L Linguistica",
+   "definicion": [
+    "liwc"
+   ],
+   "relacion": [
+    "cruz"
+   ]
+  },
+  "s_first_person": {
+   "grupo": "S Sentimiento",
+   "definicion": [
+    "liwc"
+   ],
+   "relacion": []
+  },
+  "s_numbers": {
+   "grupo": "S Sentimiento",
+   "definicion": [
+    "liwc"
+   ],
+   "relacion": []
+  },
+  "h_number": {
+   "grupo": "H Gancho",
+   "definicion": [
+    "liwc"
+   ],
+   "relacion": []
+  },
+  "s_intensifiers": {
+   "grupo": "S Sentimiento",
+   "definicion": [
+    "liwc"
+   ],
+   "relacion": []
+  },
+  "s_hook_words": {
+   "grupo": "S Sentimiento",
+   "definicion": [
+    "loewenstein",
+    "blom"
+   ],
+   "relacion": [
+    "kim"
+   ]
+  },
+  "h_hook_word": {
+   "grupo": "H Gancho",
+   "definicion": [
+    "loewenstein",
+    "blom"
+   ],
+   "relacion": [
+    "kim"
+   ]
+  },
+  "h_contrast": {
+   "grupo": "H Gancho",
+   "definicion": [
+    "loewenstein",
+    "blom"
+   ],
+   "relacion": [
+    "kim"
+   ]
+  },
+  "s_laughs": {
+   "grupo": "S Sentimiento",
+   "definicion": [
+    "tagliamonte"
+   ],
+   "relacion": []
+  },
+  "a_rms_mean": {
+   "grupo": "A Audio",
+   "definicion": [
+    "librosa"
+   ],
+   "relacion": [
+    "rosenberg",
+    "suen"
+   ]
+  },
+  "a_rms_p95": {
+   "grupo": "A Audio",
+   "definicion": [
+    "librosa"
+   ],
+   "relacion": [
+    "rosenberg",
+    "suen"
+   ]
+  },
+  "a_rms_std": {
+   "grupo": "A Audio",
+   "definicion": [
+    "librosa"
+   ],
+   "relacion": [
+    "rosenberg",
+    "suen"
+   ]
+  },
+  "a_pitch_std": {
+   "grupo": "A Audio",
+   "definicion": [
+    "pyin"
+   ],
+   "relacion": [
+    "rosenberg",
+    "strangert",
+    "suen"
+   ]
+  },
+  "a_pitch_range": {
+   "grupo": "A Audio",
+   "definicion": [
+    "pyin"
+   ],
+   "relacion": [
+    "rosenberg",
+    "strangert",
+    "suen"
+   ]
+  },
+  "a_voiced_ratio": {
+   "grupo": "A Audio",
+   "definicion": [
+    "pyin"
+   ],
+   "relacion": [
+    "rosenberg",
+    "strangert",
+    "suen"
+   ]
+  },
+  "a_energy_delta": {
+   "grupo": "A Audio",
+   "definicion": [
+    "librosa"
+   ],
+   "relacion": [
+    "hanjalic",
+    "rui"
+   ]
+  },
+  "a_speech_rate": {
+   "grupo": "A Audio",
+   "definicion": [
+    "kendall"
+   ],
+   "relacion": [
+    "guo"
+   ]
+  },
+  "a_pause_ratio": {
+   "grupo": "A Audio",
+   "definicion": [
+    "campione",
+    "kendall"
+   ],
+   "relacion": [
+    "banzina",
+    "kahng"
+   ]
+  },
+  "a_long_pauses_pm": {
+   "grupo": "A Audio",
+   "definicion": [
+    "campione",
+    "kendall"
+   ],
+   "relacion": [
+    "banzina",
+    "kahng"
+   ]
+  },
+  "l_silence": {
+   "grupo": "L Linguistica",
+   "definicion": [
+    "campione",
+    "kendall"
+   ],
+   "relacion": [
+    "banzina",
+    "kahng"
+   ]
+  },
+  "h_rms_onset": {
+   "grupo": "H Gancho",
+   "definicion": [
+    "librosa"
+   ],
+   "relacion": [
+    "kim"
+   ]
+  },
+  "h_first_sentence_s": {
+   "grupo": "H Gancho",
+   "definicion": [
+    "hearst"
+   ],
+   "relacion": [
+    "kim"
+   ]
+  },
+  "f_starts_dangling": {
+   "grupo": "F Flujo",
+   "definicion": [
+    "hearst"
+   ],
+   "relacion": []
+  },
+  "f_ends_complete": {
+   "grupo": "F Flujo",
+   "definicion": [
+    "hearst"
+   ],
+   "relacion": []
+  },
+  "f_topic_drift": {
+   "grupo": "F Flujo",
+   "definicion": [
+    "hearst",
+    "foltz"
+   ],
+   "relacion": []
+  },
+  "f_n_sentences": {
+   "grupo": "F Flujo",
+   "definicion": [
+    "hearst"
+   ],
+   "relacion": []
+  },
+  "f_duration": {
+   "grupo": "F Flujo",
+   "definicion": [
+    "guo"
+   ],
+   "relacion": [
+    "guo"
+   ]
+  },
+  "f_filler_rate": {
+   "grupo": "F Flujo",
+   "definicion": [
+    "clark"
+   ],
+   "relacion": []
+  },
+  "l_fillers": {
+   "grupo": "L Linguistica",
+   "definicion": [
+    "clark"
+   ],
+   "relacion": []
+  },
+  "f_word_conf": {
+   "grupo": "F Flujo",
+   "definicion": [
+    "whisper",
+    "jiang"
+   ],
+   "relacion": []
+  },
+  "l_entropy": {
+   "grupo": "L Linguistica",
+   "definicion": [
+    "shannon"
+   ],
+   "relacion": []
+  },
+  "l_type_token": {
+   "grupo": "L Linguistica",
+   "definicion": [
+    "mccarthy"
+   ],
+   "relacion": []
+  },
+  "l_word_len": {
+   "grupo": "L Linguistica",
+   "definicion": [
+    "flesch"
+   ],
+   "relacion": []
+  },
+  "e_laugh_max": {
+   "grupo": "E Eventos de audio",
+   "definicion": [
+    "panns",
+    "audioset"
+   ],
+   "relacion": [
+    "provine"
+   ]
+  },
+  "e_laugh_mean": {
+   "grupo": "E Eventos de audio",
+   "definicion": [
+    "panns",
+    "audioset"
+   ],
+   "relacion": [
+    "provine"
+   ]
+  },
+  "e_laugh_frac": {
+   "grupo": "E Eventos de audio",
+   "definicion": [
+    "panns",
+    "audioset"
+   ],
+   "relacion": [
+    "provine"
+   ]
+  },
+  "e_laugh_tail": {
+   "grupo": "E Eventos de audio",
+   "definicion": [
+    "panns",
+    "audioset"
+   ],
+   "relacion": [
+    "provine",
+    "hay"
+   ]
+  },
+  "e_laugh_after": {
+   "grupo": "E Eventos de audio",
+   "definicion": [
+    "panns",
+    "audioset"
+   ],
+   "relacion": [
+    "provine",
+    "hay"
+   ]
+  },
+  "e_applause_max": {
+   "grupo": "E Eventos de audio",
+   "definicion": [
+    "panns",
+    "audioset"
+   ],
+   "relacion": [
+    "xiong"
+   ]
+  },
+  "e_applause_mean": {
+   "grupo": "E Eventos de audio",
+   "definicion": [
+    "panns",
+    "audioset"
+   ],
+   "relacion": [
+    "xiong"
+   ]
+  },
+  "e_applause_after": {
+   "grupo": "E Eventos de audio",
+   "definicion": [
+    "panns",
+    "audioset"
+   ],
+   "relacion": [
+    "xiong"
+   ]
+  },
+  "e_cheering_max": {
+   "grupo": "E Eventos de audio",
+   "definicion": [
+    "panns",
+    "audioset"
+   ],
+   "relacion": [
+    "xiong"
+   ]
+  },
+  "e_cheering_mean": {
+   "grupo": "E Eventos de audio",
+   "definicion": [
+    "panns",
+    "audioset"
+   ],
+   "relacion": [
+    "xiong"
+   ]
+  },
+  "e_music_max": {
+   "grupo": "E Eventos de audio",
+   "definicion": [
+    "panns",
+    "audioset"
+   ],
+   "relacion": [
+    "xiong",
+    "rui"
+   ]
+  },
+  "e_music_mean": {
+   "grupo": "E Eventos de audio",
+   "definicion": [
+    "panns",
+    "audioset"
+   ],
+   "relacion": [
+    "xiong",
+    "rui"
+   ]
+  },
+  "e_speech_max": {
+   "grupo": "E Eventos de audio",
+   "definicion": [
+    "panns",
+    "audioset"
+   ],
+   "relacion": [
+    "xiong",
+    "rui"
+   ]
+  },
+  "e_speech_mean": {
+   "grupo": "E Eventos de audio",
+   "definicion": [
+    "panns",
+    "audioset"
+   ],
+   "relacion": [
+    "xiong",
+    "rui"
+   ]
+  }
+ }
+}

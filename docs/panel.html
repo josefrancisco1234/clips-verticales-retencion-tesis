@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Panel de la tesis</title>
+<style>
+  :root { --bg:#fbfbfd; --fg:#1b1b1f; --muted:#5c5f6b; --card:#fff; --line:#e4e4ec; --acc:#3b6ea5;
+           --ok:#1f7a45; --no:#a6452c; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg:#14151a; --fg:#e9e9ee; --muted:#a2a5b2;
+           --card:#1c1e24; --line:#2b2e37; --acc:#7fb2e5; --ok:#5fc389; --no:#e0876b; } }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--fg); padding:24px 16px 60px;
+         font:15px/1.55 -apple-system,Segoe UI,Roboto,sans-serif; }
+  .wrap { max-width:1180px; margin:0 auto; }
+  header { display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap; gap:8px; margin-bottom:20px; }
+  h1 { font-size:1.45rem; margin:0; }
+  h2 { font-size:1.05rem; margin:26px 0 10px; }
+  h3 { font-size:.95rem; margin:0 0 8px; }
+  h4 { font-size:.92rem; margin:14px 0 6px; }
+  .meta { color:var(--muted); font-size:.82rem; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(215px,1fr)); gap:12px; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:14px 16px; }
+  .kpi { font-size:1.9rem; font-weight:700; line-height:1.1; }
+  .kpi small { font-size:.8rem; font-weight:400; color:var(--muted); display:block; margin-top:2px; }
+  table { width:100%; border-collapse:collapse; font-size:.86rem; }
+  th, td { text-align:left; padding:6px 8px; border-bottom:1px solid var(--line); }
+  th { color:var(--muted); font-weight:600; }
+  td:not(:first-child) { text-align:right; font-variant-numeric:tabular-nums; }
+  tr.destacado td { font-weight:700; }
+  tr.azar td { color:var(--muted); }
+  .sd { color:var(--muted); font-size:.75em; margin-left:3px; }
+  .sig { color:var(--ok); font-weight:600; } .nosig { color:var(--muted); }
+  .grande { font-size:1.5rem; font-weight:700; margin:2px 0; }
+  .ok { color:var(--ok); } .no { color:var(--no); }
+  .vacio { color:var(--muted); font-style:italic; }
+  ul.bars { list-style:none; padding:0; margin:0; }
+  ul.bars li { display:grid; grid-template-columns:150px 1fr; gap:8px; align-items:center; margin-bottom:5px; font-size:.8rem; }
+  ul.bars i { display:block; height:9px; background:var(--acc); border-radius:5px; }
+  ul.jobs { list-style:none; padding:0; margin:0; }
+  ul.jobs li { padding:7px 0; border-bottom:1px solid var(--line); font-size:.86rem; }
+  .pill { font-size:.7rem; padding:1px 7px; border-radius:20px; margin-left:6px; }
+  .pill.activo { background:#1f7a4522; color:var(--ok); }
+  .pill.detenido { background:#8883; color:var(--muted); }
+  .pill.en { background:#3b6ea522; color:var(--acc); }
+  .sc { font-weight:700; color:var(--acc); }
+  .kw { color:var(--muted); }
+  a { color:var(--acc); }
+  .links a { margin-right:14px; font-size:.85rem; }
+</style></head><body><div class="wrap">
+<header>
+  <h1>Panel · generación de clips con score</h1>
+  <span class="meta">actualizado 25/09/2026 10:27 · <code>python scripts/build_dashboard.py</code></span>
+</header>
+
+<div class="grid">
+  <div class="card"><div class="kpi">124<small>videos válidos</small></div></div>
+  <div class="card"><div class="kpi">99.8 h<small>de audio etiquetado</small></div></div>
+  <div class="card"><div class="kpi">103<small>canales distintos</small></div></div>
+  <div class="card"><div class="kpi">33<small>con clips humanos</small></div></div>
+</div>
+
+<h2>Dataset</h2>
+<div class="card">
+  <p class="meta">Idiomas: EN 62 · ES 62 · con features calculadas: 122</p>
+  <table><thead><tr><th>Fuente</th><th>En manifest</th><th>Válidos</th></tr></thead><tbody><tr><td>youtube_mr</td><td>152</td><td>92</td></tr><tr><td>youtube_mr_repurpose</td><td>80</td><td>32</td></tr></tbody></table>
+</div>
+
+<h2>Modelo</h2>
+<div class="card"><p class='meta'>Modelo desplegado: <b>A+E</b> · 24 features · entrenado con 80 videos · 2026-09-24 21:54</p><table><thead><tr><th>Modelo</th><th>P@5</th><th>MRR</th><th>NDCG@10</th><th>F1 temporal</th><th>F1 bins</th></tr></thead><tbody><tr class='destacado'><td>Propuesto (selección por fold)</td><td>0.088<span class='sd'>±0.037</span></td><td>0.231<span class='sd'>±0.058</span></td><td>0.625<span class='sd'>±0.056</span></td><td>0.084<span class='sd'>±0.033</span></td><td>0.082<span class='sd'>±0.024</span></td></tr><tr><td>Sólo audio</td><td>0.124<span class='sd'>±0.039</span></td><td>0.225<span class='sd'>±0.018</span></td><td>0.582<span class='sd'>±0.046</span></td><td>0.102<span class='sd'>±0.011</span></td><td>0.080<span class='sd'>±0.018</span></td></tr><tr><td>Todos los grupos</td><td>0.089<span class='sd'>±0.026</span></td><td>0.179<span class='sd'>±0.034</span></td><td>0.573<span class='sd'>±0.046</span></td><td>0.073<span class='sd'>±0.028</span></td><td>0.074<span class='sd'>±0.022</span></td></tr><tr><td>MLP RankNet</td><td>0.095<span class='sd'>±0.044</span></td><td>0.179<span class='sd'>±0.063</span></td><td>0.615<span class='sd'>±0.023</span></td><td>0.097<span class='sd'>±0.024</span></td><td>0.102<span class='sd'>±0.014</span></td></tr><tr><td>Heurística tipo Opus</td><td>0.083<span class='sd'>±0.035</span></td><td>0.176<span class='sd'>±0.069</span></td><td>0.507<span class='sd'>±0.040</span></td><td>0.078<span class='sd'>±0.017</span></td><td>0.066<span class='sd'>±0.022</span></td></tr><tr><td>Sólo KeyBERT</td><td>0.051<span class='sd'>±0.013</span></td><td>0.147<span class='sd'>±0.036</span></td><td>0.559<span class='sd'>±0.031</span></td><td>0.085<span class='sd'>±0.012</span></td><td>0.059<span class='sd'>±0.006</span></td></tr><tr><td>Sólo TF-IDF</td><td>0.061<span class='sd'>±0.013</span></td><td>0.152<span class='sd'>±0.031</span></td><td>0.506<span class='sd'>±0.022</span></td><td>0.046<span class='sd'>±0.018</span></td><td>0.067<span class='sd'>±0.006</span></td></tr><tr><td>Sólo energía RMS</td><td>0.065<span class='sd'>±0.047</span></td><td>0.117<span class='sd'>±0.036</span></td><td>0.466<span class='sd'>±0.051</span></td><td>0.046<span class='sd'>±0.015</span></td><td>0.035<span class='sd'>±0.009</span></td></tr><tr><td>Prior de posición</td><td>0.074<span class='sd'>±0.015</span></td><td>0.119<span class='sd'>±0.027</span></td><td>0.581<span class='sd'>±0.054</span></td><td>0.053<span class='sd'>±0.010</span></td><td>0.056<span class='sd'>±0.008</span></td></tr><tr class='azar'><td>Aleatorio</td><td>0.056<span class='sd'>±0.024</span></td><td>0.146<span class='sd'>±0.026</span></td><td>0.477<span class='sd'>±0.019</span></td><td>0.060<span class='sd'>±0.012</span></td><td>0.059<span class='sd'>±0.025</span></td></tr></tbody></table></div>
+
+<div class="grid" style="margin-top:12px">
+  <div class="card"><h3>Significancia frente al azar</h3><table><thead><tr><th>Métrica</th><th>Modelo</th><th>Azar</th><th>Diferencia</th><th>p</th></tr></thead><tbody><tr><td>P@5</td><td>0.103</td><td>0.056</td><td>+0.046</td><td class='sig'>0.0147</td></tr><tr><td>NDCG@10</td><td>0.622</td><td>0.477</td><td>+0.145</td><td class='sig'>0.0000</td></tr><tr><td>tF1@5</td><td>0.081</td><td>0.060</td><td>+0.021</td><td class='nosig'>0.0503</td></tr><tr><td>bin_f1@5</td><td>0.095</td><td>0.059</td><td>+0.035</td><td class='sig'>0.0299</td></tr></tbody></table></div>
+  <div class='card'><h3>Hipótesis preregistrada (D-022)</h3><p class='grande no'>NO CONFIRMADA</p><p class='meta'>NDCG@10: 0.566 → 0.606 · p = 0.140 · 39 videos de confirmación</p></div>
+  <div class='card'><h3>Most Replayed vs curación humana</h3><p class='grande no'>ρ = -0.039</p><p class='meta'>Correlación media entre ambas etiquetas en 11 videos. F1 temporal entre ellas: 0.067</p></div>
+</div>
+
+<h2>Features más importantes</h2>
+<div class="card"><ul class='bars'><li><span>a_pause_ratio</span><i style='width:100%'></i></li><li><span>a_speech_rate</span><i style='width:62%'></i></li><li><span>a_rms_std</span><i style='width:56%'></i></li><li><span>e_music_max</span><i style='width:50%'></i></li><li><span>a_energy_delta</span><i style='width:43%'></i></li><li><span>e_laugh_max</span><i style='width:36%'></i></li><li><span>a_rms_p95</span><i style='width:35%'></i></li><li><span>a_long_pauses_pm</span><i style='width:31%'></i></li></ul></div>
+
+<h2>Últimos clips generados</h2>
+<div class="card"><p class='vacio'>Todavía no se generaron clips.</p></div>
+
+<h2>Trabajos en curso</h2>
+<div class="card"><p class='vacio'>Sin trabajos registrados.</p></div>
+
+<h2>Documentos</h2>
+<div class="card links">
+  <a href="diagramas/index.html">Diagramas</a>
+  <a href="02_auditoria_modelo.md">Auditoría del modelo</a>
+  <a href="01_diseno_metodologico.md">Diseño metodológico</a>
+  <a href="DECISIONES.md">Decisiones</a>
+  <a href="SETUP_GPU.md">Migración a GPU</a>
+  <a href="Documentacion_Tecnica_Tesis.docx">Documento Word</a>
+</div>
+</div></body></html>

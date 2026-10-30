@@ -1,0 +1,12 @@
+{
+ "modelo": "GRU128_mse_d3",
+ "videos": 444,
+ "pliegues": 10,
+ "epocas": 40,
+ "entrenamiento_final": 0.8922450807363468,
+ "validacion_final": 0.9396449074149131,
+ "validacion_minima": 0.9336280822753906,
+ "epoca_minima": 16,
+ "correlacion_validacion_final": 0.19856197535991668,
+ "correlacion_entrenamiento_final": 0.2671507090330124
+}

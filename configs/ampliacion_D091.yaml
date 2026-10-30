@@ -1,0 +1,61 @@
+# Cohorte fresca 3 (D-091): videos NUEVOS para confirmar la ecuacion aprendida por el explorador (D-086/D-087). Hereda de default.yaml.
+extends: configs/default.yaml
+transcribe:
+  device: cuda
+  compute_type: auto
+  model_dataset: base
+  model_inference: medium
+  compute_type_inference: int8_float32
+  cpu_threads: 8
+  beam_size: 1
+  vad_filter: true
+  language: null
+features:
+  device: cuda
+  speech_embed:
+    enabled: false
+  groups:
+  - K
+  - S
+  - A
+  - H
+  - F
+  - E
+  - L
+  sentiment_model: lxyuan/distilbert-base-multilingual-cased-sentiments-student
+  sentiment_batch: 64
+  audio_hop: 512
+  hook_window_s: 3.0
+  hook_words: 15
+dataset_youtube:
+  per_query: 40
+  target_videos:
+    es: 487
+    en: 457
+  queries:
+    es:
+    - podcast de historia episodio completo
+    - podcast de tecnologia e inteligencia artificial
+    - podcast de psicologia clinica entrevista
+    - podcast de emprendimiento en latinoamerica
+    - podcast de filosofia conversacion larga
+    - podcast de crimen real en espanol
+    - entrevista a cientifico divulgacion episodio completo
+    - podcast de nutricion y entrenamiento fisico
+    - podcast de finanzas personales e inversion
+    - podcast de comedia y humor episodio completo
+    - podcast de educacion y docentes
+    - podcast de produccion musical y artistas
+    en:
+    - history podcast full episode
+    - technology and AI podcast interview
+    - psychology podcast long conversation
+    - true crime podcast full episode
+    - philosophy podcast conversation
+    - science podcast long interview
+    - nutrition and fitness podcast full episode
+    - personal finance podcast full episode
+    - comedy podcast full episode
+    - education and teachers podcast
+    - politics debate podcast long
+    - parenting podcast full episode

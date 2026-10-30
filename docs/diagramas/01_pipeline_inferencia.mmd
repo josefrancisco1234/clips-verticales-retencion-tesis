@@ -1,0 +1,57 @@
+%% Pipeline de inferencia: video largo → clips 9:16 con score 0–99
+%% Cada caja indica el módulo de src/ y la técnica/paper que la sustenta.
+flowchart LR
+    V[/"Video largo<br/>archivo o URL<br/>15 min – 3 h"/]
+
+    subgraph ING["1 · ingest"]
+        FF["ffmpeg<br/>audio 16 kHz mono"]
+    end
+
+    subgraph TR["2 · transcribe"]
+        W["faster-whisper small (int8)<br/>timestamps por palabra<br/>+ idioma"]
+    end
+
+    subgraph SEG["3 · segment"]
+        S1["Oraciones<br/>(P2 PodReels)"]
+        S2["Candidatos 15–90 s<br/>3 duraciones objetivo<br/>(P8 SVHighlights)"]
+        S3["Ventanas fijas 20 s<br/>línea base (P4)"]
+    end
+
+    subgraph FEAT["4 · features por candidato"]
+        K["K · keywords<br/>TF-IDF KVSUM + KeyBERT<br/>(téc. 5-6, P6)"]
+        SS["S · sentimiento<br/>XLM-R multilingüe (téc. 7, P9)"]
+        A["A · audio librosa<br/>RMS, pitch, pausas (téc. 8, P7)"]
+        HF["H/F · hook y flow<br/>(Opus Clip, P2)"]
+        E["E · eventos de audio<br/>PANNs: risa, aplausos"]
+        L["L · lingüísticas<br/>entropía, pronombres"]
+    end
+
+    subgraph RANK["5 · ranking"]
+        LG["LightGBM LambdaRank<br/>grupo = video"]
+        CAL["Calibración 0–99<br/>percentil vs top-10 de validación"]
+        SHAP["Desglose SHAP<br/>Hook / Flow / Value"]
+        NMS["NMS temporal<br/>solapamiento ≤ 30 %"]
+    end
+
+    subgraph CTX["6 · context (solo top-15)"]
+        LLM["LLM configurable<br/>o plantillas<br/>(P1 Lotus, P2)"]
+        Q{"¿Se entiende<br/>sin el resto?"}
+    end
+
+    subgraph REN["7 · render"]
+        SC["PySceneDetect<br/>ajuste a corte natural (téc. 9)"]
+        RF["Reencuadre 9:16<br/>MediaPipe + hablante activo<br/>(téc. 10, P10)"]
+        CAP["Subtítulos ASS<br/>keywords resaltadas"]
+    end
+
+    OUT[/"Clips MP4 1080×1920<br/>+ clips.json + report.md"/]
+
+    V --> FF --> W --> S1 --> S2 --> FEAT
+    S1 -.-> S3 -.-> FEAT
+    K & SS & A & HF & E & L --> LG --> CAL --> NMS --> LLM --> Q
+    LG --> SHAP --> CAL
+    Q -- "sí" --> SC
+    Q -- "no: −10 puntos" --> SC
+    SC --> RF --> CAP --> OUT
+    W -. "palabras con tiempo" .-> CAP
+    K -. "términos de mayor peso" .-> CAP

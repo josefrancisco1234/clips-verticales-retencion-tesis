@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Generador de clips</title>
+<style>
+:root{--bg:#0f1115;--card:#171a21;--line:#262b36;--tx:#e8ebf0;--mut:#8b93a3;--ok:#22c55e;--acc:#7c5cff;--hot:#ef4444}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font:14px/1.45 "Segoe UI",system-ui,sans-serif}
+header{display:flex;align-items:center;gap:12px;padding:14px 24px;border-bottom:1px solid var(--line)}
+.logo{width:30px;height:30px;border-radius:8px;background:linear-gradient(135deg,#7c5cff,#22c55e)}
+header b{font-size:16px}header span{color:var(--mut)}
+.wrap{max-width:1280px;margin:0 auto;padding:20px 24px}
+.src{display:flex;gap:10px;margin-bottom:18px}
+.src .in{flex:1;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:11px 14px;color:var(--mut);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.btn{background:var(--acc);color:#fff;border:0;border-radius:10px;padding:0 20px;font-weight:600}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin-bottom:18px}
+.panel h2{margin:0 0 4px;font-size:15px}.sub{color:var(--mut);font-size:12.5px;margin-bottom:10px}
+.legend{display:flex;gap:16px;font-size:12px;color:var(--mut);margin-top:6px;flex-wrap:wrap}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:5px;vertical-align:-1px}
+.verdict{margin-top:10px;padding:10px 12px;border-radius:10px;background:#0f2a1a;border:1px solid #1f6b3a;color:#b9f3cd}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px}
+.clip{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+.clip video{width:100%;aspect-ratio:9/16;background:#000;display:block;object-fit:cover}
+.pad{padding:12px 14px}
+.row{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.rank{font-size:12px;color:var(--mut)}
+.score{width:50px;height:50px;border-radius:50%;display:grid;place-items:center;font-weight:700;font-size:17px}
+h3{margin:2px 0 4px;font-size:14.5px}
+.t{color:var(--mut);font-size:12px;max-height:3.9em;overflow:hidden}
+.bars{margin-top:8px;display:grid;gap:5px}
+.bar{display:grid;grid-template-columns:44px 1fr 26px;gap:6px;align-items:center;font-size:11.5px;color:var(--mut)}
+.bar div{height:6px;background:#262b36;border-radius:4px;overflow:hidden}.bar div i{display:block;height:100%;background:var(--acc)}
+.chip{display:inline-block;margin-top:8px;padding:3px 9px;border-radius:99px;font-size:11.5px;font-weight:600}
+.yes{background:#10341f;color:#7ff0a8}.no{background:#2a2a30;color:#aab}
+small{color:var(--mut)}
+.note{color:var(--mut);font-size:12px;margin-top:14px}
+</style>
+</head>
+<body>
+<header><div class="logo"></div><b>Generador de clips 9:16</b><span>· puntaje de potencial de retención 0–99 · Tesis Núñez del Prado, Universidad de Lima</span></header>
+<div class="wrap">
+  <div class="src"><div class="in" id="url"></div><button class="btn">Generar clips</button></div>
+
+  <div class="panel">
+    <h2 id="vtitle"></h2>
+    <div class="sub" id="vmeta"></div>
+    <canvas id="cv" height="190" style="width:100%;display:block"></canvas>
+    <div class="legend">
+      <span><i style="background:#555"></i>Calor real de YouTube (Most Replayed)</span>
+      <span><i style="background:#22c55e"></i>Clips elegidos por el sistema</span>
+      <span><i style="background:#ef4444"></i>Pico de retención (&gt; 0.5)</span>
+    </div>
+    <div class="verdict" id="verdict"></div>
+  </div>
+
+  <div class="grid" id="grid"></div>
+  <p class="note">Ejemplo con un video fijo (el de la presentación). Modo usado: <b>auto con curva</b> — el sistema valida con el mapa de calor de YouTube, ordena por score y recorta a 9:16 con subtítulos. Sin la curva, el sistema usa solo el contenido y acierta en ~47–55 % de los videos (azar ~27–32 %).</p>
+</div>
+<script>
+const D=/*DATA*/null;
+const fmt=s=>{s=Math.round(s);const h=Math.floor(s/3600),m=Math.floor(s%3600/60),x=s%60;return (h?h+":":"")+String(m).padStart(h?2:1,"0")+":"+String(x).padStart(2,"0")};
+document.getElementById("url").textContent="https://www.youtube.com/watch?v="+D.vid;
+document.getElementById("vtitle").textContent=D.title;
+document.getElementById("vmeta").textContent=D.channel+" · "+fmt(D.dur)+" · "+D.clips.length+" clips generados";
+const col=s=>s>=85?"#22c55e":s>=60?"#eab308":"#9ca3af";
+const g=document.getElementById("grid");
+D.clips.forEach(c=>{
+  const e=document.createElement("div");e.className="clip";
+  e.innerHTML=`<video src="${c.file}" controls preload="metadata"></video>
+  <div class="pad"><div class="row"><div><div class="rank">Clip #${c.rank} · ${fmt(c.start)}–${fmt(c.end)} · ${Math.round(c.end-c.start)} s</div>
+  <h3>${c.title}</h3></div><div class="score" style="border:3px solid ${col(c.score)};color:${col(c.score)}">${c.score}</div></div>
+  <div class="t">“${c.hookText}”</div>
+  <div class="bars">
+    <div class="bar">Hook<div><i style="width:${c.hook}%"></i></div>${c.hook}</div>
+    <div class="bar">Flow<div><i style="width:${c.flow}%"></i></div>${c.flow}</div>
+    <div class="bar">Value<div><i style="width:${c.value}%"></i></div>${c.value}</div>
+  </div>
+  <span class="chip ${c.hot?"yes":"no"}">${c.hot?"✓ cae en el pico de YouTube":"fuera del pico"} · calor ${c.heat.toFixed(2)}</span></div>`;
+  g.appendChild(e);
+});
+const hot=D.clips.filter(c=>c.hot).length, best=D.clips.find(c=>c.hot);
+document.getElementById("verdict").innerHTML=`<b>Validación con el mapa de calor:</b> ${hot} de ${D.clips.length} clips caen sobre un pico real de retención`+
+  (best?`; el clip <b>#${best.rank}</b> (score ${best.score}) está en <b>${fmt(best.start)}–${fmt(best.end)}</b>, justo donde YouTube marca el máximo (calor ${best.heat.toFixed(2)}).`:".");
+function draw(){
+  const cv=document.getElementById("cv"),dpr=window.devicePixelRatio||1,W=cv.clientWidth,H=190;
+  cv.width=W*dpr;cv.height=H*dpr;const x=cv.getContext("2d");x.scale(dpr,dpr);x.clearRect(0,0,W,H);
+  const px=t=>40+(W-50)*t/D.dur, py=v=>H-24-(H-44)*v;
+  x.strokeStyle="#262b36";x.fillStyle="#8b93a3";x.font="11px Segoe UI";
+  [0,.5,1].forEach(v=>{x.beginPath();x.moveTo(40,py(v));x.lineTo(W-10,py(v));x.setLineDash(v==.5?[3,3]:[]);x.stroke();x.fillText(v.toFixed(1),8,py(v)+4)});x.setLineDash([]);
+  for(let m=0;m<=D.dur/60;m+=10){x.fillText(m+" min",px(m*60)-12,H-6)}
+  D.clips.forEach(c=>{x.fillStyle="rgba(34,197,94,.35)";x.fillRect(px(c.start),10,Math.max(px(c.end)-px(c.start),4),H-34);
+    x.fillStyle="#22c55e";x.font="bold 11px Segoe UI";x.fillText("#"+c.rank,px(c.start)-4,9)});
+  x.beginPath();D.heat.forEach((p,i)=>{i?x.lineTo(px(p.t),py(p.v)):x.moveTo(px(p.t),py(p.v))});
+  x.lineTo(px(D.heat[D.heat.length-1].t),py(0));x.lineTo(px(D.heat[0].t),py(0));x.closePath();x.fillStyle="rgba(180,185,196,.35)";x.fill();
+  x.beginPath();D.heat.forEach((p,i)=>{i?x.lineTo(px(p.t),py(p.v)):x.moveTo(px(p.t),py(p.v))});x.strokeStyle="#9aa1ae";x.lineWidth=1.3;x.stroke();
+  D.heat.filter(p=>p.v>0.5).forEach(p=>{x.fillStyle="#ef4444";x.beginPath();x.arc(px(p.t),py(p.v),3.5,0,7);x.fill()});
+}
+draw();addEventListener("resize",draw);
+</script>
+</body>
+</html>

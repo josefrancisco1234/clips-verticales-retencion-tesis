@@ -1,0 +1,2756 @@
+{
+ "k_kvsum_mean": {
+  "grupo": "K Palabras clave",
+  "n_coincidencias": 13,
+  "candidatos": [
+   {
+    "doi": "https://doi.org/10.36548/jitdw.2024.1.008",
+    "title": "TF-IDF Vectorization and Clustering for Extractive Text Summarization",
+    "year": 2024,
+    "cites": 8,
+    "tipo": "journal-article",
+    "venue": "Journal of Information Technology and Digital World",
+    "snippet": "TF-IDF Vectorization and Clustering for Extractive Text Summarization.",
+    "con_resumen": true,
+    "score": 3.04
+   },
+   {
+    "doi": "https://doi.org/10.22214/ijraset.2022.40775",
+    "title": "Extractive Text and Video Summarization using TF-IDF Algorithm",
+    "year": 2022,
+    "cites": 4,
+    "tipo": "journal-article",
+    "venue": "International Journal for Research in Applied Science and Engineering Technology",
+    "snippet": "Extractive Text and Video Summarization using TF-IDF Algorithm.",
+    "con_resumen": true,
+    "score": 3.02
+   },
+   {
+    "doi": "https://doi.org/10.58466/aicoms.v4i2.1814",
+    "title": "Keyword Extraction Abstrak Jurnal Ilmiah Menggunakan Metode TF-IDF dan KeyBERT",
+    "year": 2025,
+    "cites": 0,
+    "tipo": "journal-article",
+    "venue": "Applied Information Technology and Computer Science (AICOMS)",
+    "snippet": "Keyword extraction is a significant technique in natural language processing (NLP) that serves to summarize the essence of a document, such as a scientific journal summary.",
+    "con_resumen": true,
+    "score": 3.0
+   },
+   {
+    "doi": "https://doi.org/10.26798/jiss.v4i2.2313",
+    "title": "Designing a Digital Marketing Strategy Through Keyword Weighting  on Ten Main Competitors of PT Oemah Solution Indonesia with the  TF-IDF Approach",
+    "year": 2025,
+    "cites": 0,
+    "tipo": "journal-article",
+    "venue": "Journal of Intelligent Software Systems",
+    "snippet": "TF-IDF analysis must be translated into content that is engaging and meaningful to the target audience.",
+    "con_resumen": true,
+    "score": 3.0
+   }
+  ]
+ },
+ "k_kvsum_max": {
+  "grupo": "K Palabras clave",
+  "n_coincidencias": 13,
+  "candidatos": [
+   {
+    "doi": "https://doi.org/10.36548/jitdw.2024.1.008",
+    "title": "TF-IDF Vectorization and Clustering for Extractive Text Summarization",
+    "year": 2024,
+    "cites": 8,
+    "tipo": "journal-article",
+    "venue": "Journal of Information Technology and Digital World",
+    "snippet": "TF-IDF Vectorization and Clustering for Extractive Text Summarization.",
+    "con_resumen": true,
+    "score": 3.04
+   },
+   {
+    "doi": "https://doi.org/10.22214/ijraset.2022.40775",
+    "title": "Extractive Text and Video Summarization using TF-IDF Algorithm",
+    "year": 2022,
+    "cites": 4,
+    "tipo": "journal-article",
+    "venue": "International Journal for Research in Applied Science and Engineering Technology",
+    "snippet": "Extractive Text and Video Summarization using TF-IDF Algorithm.",
+    "con_resumen": true,
+    "score": 3.02
+   },
+   {
+    "doi": "https://doi.org/10.58466/aicoms.v4i2.1814",
+    "title": "Keyword Extraction Abstrak Jurnal Ilmiah Menggunakan Metode TF-IDF dan KeyBERT",
+    "year": 2025,
+    "cites": 0,
+    "tipo": "journal-article",
+    "venue": "Applied Information Technology and Computer Science (AICOMS)",
+    "snippet": "Keyword extraction is a significant technique in natural language processing (NLP) that serves to summarize the essence of a document, such as a scientific journal summary.",
+    "con_resumen": true,
+    "score": 3.0
+   },
+   {
+    "doi": "https://doi.org/10.26798/jiss.v4i2.2313",
+    "title": "Designing a Digital Marketing Strategy Through Keyword Weighting  on Ten Main Competitors of PT Oemah Solution Indonesia with the  TF-IDF Approach",
+    "year": 2025,
+    "cites": 0,
+    "tipo": "journal-article",
+    "venue": "Journal of Intelligent Software Systems",
+    "snippet": "TF-IDF analysis must be translated into content that is engaging and meaningful to the target audience.",
+    "con_resumen": true,
+    "score": 3.0
+   }
+  ]
+ },
+ "k_kvsum_local": {
+  "grupo": "K Palabras clave",
+  "n_coincidencias": 2,
+  "candidatos": [
+   {
+    "doi": "https://doi.org/10.2139/ssrn.4758981",
+    "title": "Automatic Text Summarization on Aviation Traffic Accident Report Synopsis Using Term Frequency- Inverse Document Frequency (TF-IDF) Algorithm",
+    "year": 2024,
+    "cites": 0,
+    "tipo": "posted-content",
+    "venue": "",
+    "snippet": "Automatic Text Summarization on Aviation Traffic Accident Report Synopsis Using Term Frequency- Inverse Document Frequency (TF-IDF) Algorithm.",
+    "con_resumen": true,
+    "score": 3.0
+   },
+   {
+    "doi": "https://doi.org/10.54097/633gjj39",
+    "title": "Recommendation System Building based on CNN and TF-IDF Approaches",
+    "year": 2024,
+    "cites": 4,
+    "tipo": "journal-article",
+    "venue": "Highlights in Science, Engineering and Technology",
+    "snippet": "",
+    "con_resumen": true,
+    "score": 1.02
+   }
+  ]
+ },
+ "k_top_terms_pm": {
+  "grupo": "K Palabras clave",
+  "n_coincidencias": 6,
+  "candidatos": [
+   {
+    "doi": "https://doi.org/10.1515/9781785331473-010",
+    "title": "AFTERWORD Multiple Mobilities and the Ethnographic Engagement of Keywords",
+    "year": 2022,
+    "cites": 0,
+    "tipo": "book-chapter",
+    "venue": "Keywords of Mobility",
+    "snippet": "AFTERWORD Multiple Mobilities and the Ethnographic Engagement of Keywords.",
+    "con_resumen": false,
+    "score": 2.0
+   },
+   {
+    "doi": "https://doi.org/10.7554/elife.89703.1.sa1",
+    "title": "Reviewer #1 (Public Review): Get the gist of the story: Neural map of topic keywords in multi-speaker environment",
+    "year": 2023,
+    "cites": 0,
+    "tipo": "peer-review",
+    "venue": "",
+    "snippet": "Reviewer #1 (Public Review): Get the gist of the story: Neural map of topic keywords in multi-speaker environment.",
+    "con_resumen": false,
+    "score": 2.0
+   },
+   {
+    "doi": "https://doi.org/10.7554/elife.89703.1.sa0",
+    "title": "Reviewer #2 (Public Review): Get the gist of the story: Neural map of topic keywords in multi-speaker environment",
+    "year": 2023,
+    "cites": 0,
+    "tipo": "peer-review",
+    "venue": "",
+    "snippet": "Reviewer #2 (Public Review): Get the gist of the story: Neural map of topic keywords in multi-speaker environment.",
+    "con_resumen": false,
+    "score": 2.0
+   },
+   {
+    "doi": "https://doi.org/10.1101/2022.05.05.490770",
+    "title": "Get the gist of the story: Neural map of topic keywords in multi-speaker environment",
+    "year": 2022,
+    "cites": 2,
+    "tipo": "posted-content",
+    "venue": "",
+    "snippet": "",
+    "con_resumen": true,
+    "score": 1.01
+   }
+  ]
+ },
+ "k_content_ratio": {
+  "grupo": "K Palabras clave",
+  "n_coincidencias": 2,
+  "candidatos": [
+   {
+    "doi": "https://doi.org/10.23887/mi.v28i3.68448",
+    "title": "Lexical Density and Readibility of Joe Biden’s Victory Speech",
+    "year": 2023,
+    "cites": 0,
+    "tipo": "journal-article",
+    "venue": "Mimbar Ilmu",
+    "snippet": "The influence of his speech on lexical density and readability shows that he used words that listeners easily understood because they expressed a lot of gratitude and happiness.",
+    "con_resumen": true,
+    "score": 3.0
+   },
+   {
+    "doi": "https://doi.org/10.29303/jeef.v6i2.982",
+    "title": "Lexical Density and Frequency of the Lexical Words in A Children’s Storybook: Alice In Wonderland (Simplified Version Published in 2024 by Mind to Mind)",
+    "year": 2026,
+    "cites": 0,
+    "tipo": "journal-article",
+    "venue": "Journal of English Education Forum (JEEF)",
+    "snippet": "",
+    "con_resumen": true,
+    "score": 1.0
+   }
+  ]
+ },
+ "k_novelty": {
+  "grupo": "K Palabras clave",
+  "n_coincidencias": 7,
+  "candidatos": [
+   {
+    "doi": "https://doi.org/10.4000/163h4",
+    "title": "Novelty, Engagement, and Renascence: Some Aesthetic Concepts in Architecture",
+    "year": 2025,
+    "cites": 1,
+    "tipo": "journal-article",
+    "venue": "Rivista di estetica",
+    "snippet": "Novelty, Engagement, and Renascence: Some Aesthetic Concepts in Architecture.",
+    "con_resumen": true,
+    "score": 3.0
+   },
+   {
+    "doi": "https://doi.org/10.31219/osf.io/s258f",
+    "title": "The power of something new: The novelty effect on decreased engagement with artworks",
+    "year": 2024,
+    "cites": 1,
+    "tipo": "posted-content",
+    "venue": "",
+    "snippet": "The power of something new: The novelty effect on decreased engagement with artworks.",
+    "con_resumen": true,
+    "score": 3.0
+   },
+   {
+    "doi": "https://doi.org/10.31234/osf.io/gvpm3_v1",
+    "title": "Psychological Richness in Everyday Life: Personality, Novelty, and Emotional Engagement",
+    "year": 2026,
+    "cites": 0,
+    "tipo": "posted-content",
+    "venue": "",
+    "snippet": "Psychological Richness in Everyday Life: Personality, Novelty, and Emotional Engagement.",
+    "con_resumen": true,
+    "score": 3.0
+   },
+   {
+    "doi": "https://doi.org/10.1101/2023.08.23.554392",
+    "title": "SQANTI-SIM: a simulator of controlled transcript novelty for lrRNA-seq benchmark",
+    "year": 2023,
+    "cites": 0,
+    "tipo": "posted-content",
+    "venue": "",
+    "snippet": "Here, we present SQANTI-SIM, a versatile utility that wraps around popular long-read simulators to allow precise management of transcript novelty based on the structural categories defined by SQANTI3.",
+    "con_resumen": true,
+    "score": 3.0
+   }
+  ]
+ },
+ "k_keybert_sim": {
+  "grupo": "K Palabras clave",
+  "n_coincidencias": 13,
+  "candidatos": [
+   {
+    "doi": "https://doi.org/10.58225/mpmma.2026.213",
+    "title": "A FRAMEWORK FOR SEMANTIC DOCUMENT SIMILARITY DETECTION BASED ON AUTOMATIC TEXT SUMMARIZATION AND TRANSFORMER EMBEDDINGS",
+    "year": 2026,
+    "cites": 0,
+    "tipo": "journal-article",
+    "venue": "Scientific works/Elmi eserler",
+    "snippet": "A FRAMEWORK FOR SEMANTIC DOCUMENT SIMILARITY DETECTION BASED ON AUTOMATIC TEXT SUMMARIZATION AND TRANSFORMER EMBEDDINGS.",
+    "con_resumen": true,
+    "score": 3.0
+   },
+   {
+    "doi": "https://doi.org/10.2139/ssrn.7543541",
+    "title": "Automated Text Analysis and Similarity-based Grading Using Semantic Embeddings and GraphRAG",
+    "year": 2026,
+    "cites": 0,
+    "tipo": "posted-content",
+    "venue": "",
+    "snippet": "Traditional scoring methods, including those based on advanced semantic embeddings (e.g., Sentence-BERT), often fail to capture the structural integrity of conceptual knowledge-the logical links and causal chains that define deep comprehension.",
+    "con_resumen": true,
+    "score": 3.0
+   },
+   {
+    "doi": "https://doi.org/10.48550/arXiv.2502.14620",
+    "title": "Exploring RWKV for Sentence Embeddings: Layer-wise Analysis and Baseline Comparison for Semantic Similarity",
+    "year": 2025,
+    "cites": null,
+    "tipo": "preprint",
+    "venue": "arXiv",
+    "snippet": "This paper investigates the efficacy of RWKV, a novel language model architecture known for its linear attention mechanism, for generating sentence embeddings in a zero-shot setting.",
+    "con_resumen": true,
+    "score": 3.0
+   },
+   {
+    "doi": "https://doi.org/10.33022/ijcs.v14i5.4999",
+    "title": "Enhancing Arabic Extractive Summarization with TF-IDF-Weighted AraBERT Sentence Embeddings and Semantic Clustering",
+    "year": 2025,
+    "cites": 0,
+    "tipo": "journal-article",
+    "venue": "The Indonesian Journal of Computer Science",
+    "snippet": "Enhancing Arabic Extractive Summarization with TF-IDF-Weighted AraBERT Sentence Embeddings and Semantic Clustering.",
+    "con_resumen": true,
+    "score": 3.0
+   }
+  ]
+ },
+ "k_keyphrase_pm": {
+  "grupo": "K Palabras clave",
+  "n_coincidencias": 5,
+  "candidatos": [
+   {
+    "doi": "https://doi.org/10.48550/arXiv.2209.03791",
+    "title": "Applying Transformer-based Text Summarization for Keyphrase Generation",
+    "year": 2022,
+    "cites": null,
+    "tipo": "preprint",
+    "venue": "arXiv",
+    "snippet": "Applying Transformer-based Text Summarization for Keyphrase Generation.",
+    "con_resumen": true,
+    "score": 3.0
+   },
+   {
+    "doi": "https://doi.org/10.1016/j.eswa.2022.118110",
+    "title": "KEST: A graph-based keyphrase extraction technique for tweets summarization using Markov Decision Process",
+    "year": 2022,
+    "cites": 9,
+    "tipo": "journal-article",
+    "venue": "Expert Systems with Applications",
+    "snippet": "KEST: A graph-based keyphrase extraction technique for tweets summarization using Markov Decision Process.",
+    "con_resumen": false,
+    "score": 2.04
+   },
+   {
+    "doi": "https://doi.org/10.18653/v1/2021.sdp-1.6",
+    "title": "Keyphrase Extraction from Scientific Articles via Extractive Summarization",
+    "year": 2021,
+    "cites": 4,
+    "tipo": "proceedings-article",
+    "venue": "Proceedings of the Second Workshop on Scholarly Document Processing",
+    "snippet": "Keyphrase Extraction from Scientific Articles via Extractive Summarization.",
+    "con_resumen": false,
+    "score": 2.02
+   },
+   {
+    "doi": "https://doi.org/10.1145/3582768.3582792",
+    "title": "Dependency Graphs for Summarization and Keyphrase Extraction",
+    "year": 2022,
+    "cites": 2,
+    "tipo": "proceedings-article",
+    "venue": "Proceedings of the 2022 6th International Conference on Natural Language Processing and Information Retrieval",
+    "snippet": "Dependency Graphs for Summarization and Keyphrase Extraction.",
+    "con_resumen": false,
+    "score": 2.01
+   }
+  ]
+ },
+ "k_noun_chunks_ps": {
+  "grupo": "K Palabras clave",
+  "n_coincidencias": 0,
+  "candidatos": []
+ },
+ "s_pos_mean": {
+  "grupo": "S Sentimiento",
+  "n_coincidencias": 9,
+  "candidatos": [
+   {
+    "doi": "https://doi.org/10.21203/rs.3.rs-6211448/v1",
+    "title": "Deep Learning-based Facial Expression Analysis for Video Emotion Recognition and Sentiment Prediction",
+    "year": 2025,
+    "cites": 0,
+    "tipo": "posted-content",
+    "venue": "",
+    "snippet": "This research introduces a novel trimodal deep learning framework for real-time emotion prediction and sentiment analysis from video data, advancing beyond traditional unimodal approaches through three key innovations: (1) a hierarchical attention-based fusion mechanism that dynamically weights visual, audio, and textual features based on their reliability and coherence, (2) a temporal context int",
+    "con_resumen": true,
+    "score": 3.0
+   },
+   {
+    "doi": "https://doi.org/10.47191/etj/v10i10.08",
+    "title": "From Sentiment to Strategy: Emotional Classification of Customer Engagement in Corporate Cosmetic Video Marketing",
+    "year": 2025,
+    "cites": 0,
+    "tipo": "journal-article",
+    "venue": "Engineering and Technology Journal",
+    "snippet": "From Sentiment to Strategy: Emotional Classification of Customer Engagement in Corporate Cosmetic Video Marketing.",
+    "con_resumen": true,
+    "score": 3.0
+   },
+   {
+    "doi": "https://doi.org/10.48550/arXiv.2605.17463",
+    "title": "Teachers' Vocal Expressions and Student Engagement in Asynchronous Video Learning",
+    "year": 2026,
+    "cites": null,
+    "tipo": "preprint",
+    "venue": "arXiv",
+    "snippet": "Results revealed that teachers' verbal emotive expressions, even with positive valence and high arousal, did not significantly impact engagement.",
+    "con_resumen": true,
+    "score": 3.0
+   },
+   {
+    "doi": "https://doi.org/10.1038/s41598-026-68069-6",
+    "title": "Computational analysis of the Pusa Samachar YouTube channel using audience engagement and sentiment analysis",
+    "year": 2026,
+    "cites": 0,
+    "tipo": "journal-article",
+    "venue": "Scientific Reports",
+    "snippet": "Computational analysis of the Pusa Samachar YouTube channel using audience engagement and sentiment analysis.",
+    "con_resumen": true,
+    "score": 3.0
+   }
+  ]
+ },
+ "s_neg_mean": {
+  "grupo": "S Sentimiento",
+  "n_coincidencias": 8,
+  "candidatos": [
+   {
+    "doi": "https://doi.org/10.31234/osf.io/jvxen_v1",
+    "title": "Negative, group-oriented, and dominance-oriented sentiment are the primary content determinants of engagement with reliable news",
+    "year": 2025,
+    "cites": 1,
+    "tipo": "posted-content",
+    "venue": "",
+    "snippet": "Negative, group-oriented, and dominance-oriented sentiment are the primary content determinants of engagement with reliable news.",
+    "con_resumen": true,
+    "score": 3.0
+   },
+   {
+    "doi": "https://doi.org/10.47191/etj/v10i10.08",
+    "title": "From Sentiment to Strategy: Emotional Classification of Customer Engagement in Corporate Cosmetic Video Marketing",
+    "year": 2025,
+    "cites": 0,
+    "tipo": "journal-article",
+    "venue": "Engineering and Technology Journal",
+    "snippet": "The findings reveal that, in addition to positive and negative comments, various emotions such as Anger, Anticipation, Disgust, Fear, Joy, Sadness, Surprise, Trust, Positive, and Negative were identified.",
+    "con_resumen": true,
+    "score": 3.0
+   },
+   {
+    "doi": "https://doi.org/10.48550/arXiv.2605.17463",
+    "title": "Teachers' Vocal Expressions and Student Engagement in Asynchronous Video Learning",
+    "year": 2026,
+    "cites": null,
+    "tipo": "preprint",
+    "venue": "arXiv",
+    "snippet": "Conversely, vocal expressions with positive valence and high arousal, such as happiness and surprise, enhanced engagement, while negative high-arousal emotions, such as anger, reduced it.",
+    "con_resumen": true,
+    "score": 3.0
+   },
+   {
+    "doi": "https://doi.org/10.1080/17524032.2024.2372579",
+    "title": "Go Negative for Clicks: Negative Sentiment in Environmental Advocacy Emails Is Associated with Increased Public Engagement",
+    "year": 2024,
+    "cites": 3,
+    "tipo": "journal-article",
+    "venue": "Environmental Communication",
+    "snippet": "Go Negative for Clicks: Negative Sentiment in Environmental Advocacy Emails Is Associated with Increased Public Engagement.",
+    "con_resumen": false,
+    "score": 2.02
+   }
+  ]
+ },
+ "s_polarity_mean": {
+  "grupo": "S Sentimiento",
+  "n_coincidencias": 10,
+  "candidatos": [
+   {
+    "doi": "https://doi.org/10.3390/bs13010034",
+    "title": "Gender Differences in Emotional Valence and Social Media Content Engagement Behaviors in Pandemic Diaries: An Analysis Based on Microblog Texts",
+    "year": 2022,
+    "cites": 8,
+    "tipo": "journal-article",
+    "venue": "Behavioral Sciences",
+    "snippet": "Gender Differences in Emotional Valence and Social Media Content Engagement Behaviors in Pandemic Diaries: An Analysis Based on Microblog Texts.",
+    "con_resumen": true,
+    "score": 3.04
+   },
+   {
+    "doi": "https://doi.org/10.1093/hcr/hqad023",
+    "title": "Theme and sentiment of posts in a weight loss subreddit predict popularity, engagement, and users’ weight loss: a computational approach",
+    "year": 2023,
+    "cites": 2,
+    "tipo": "journal-article",
+    "venue": "Human Communication Research",
+    "snippet": "Theme and sentiment of posts in a weight loss subreddit predict popularity, engagement, and users’ weight loss: a computational approach.",
+    "con_resumen": true,
+    "score": 3.01
+   },
+   {
+    "doi": "https://doi.org/10.47191/etj/v10i10.08",
+    "title": "From Sentiment to Strategy: Emotional Classification of Customer Engagement in Corporate Cosmetic Video Marketing",
+    "year": 2025,
+    "cites": 0,
+    "tipo": "journal-article",
+    "venue": "Engineering and Technology Journal",
+    "snippet": "From Sentiment to Strategy: Emotional Classification of Customer Engagement in Corporate Cosmetic Video Marketing.",
+    "con_resumen": true,
+    "score": 3.0
+   },
+   {
+    "doi": "https://doi.org/10.30871/jaic.v9i2.8978",
+    "title": "Implementation of SVM Algorithm to Predict Song Popularity based on Sentiment Analysis of Lyrics",
+    "year": 2025,
+    "cites": 0,
+    "tipo": "journal-article",
+    "venue": "Journal of Applied Informatics and Computing",
+    "snippet": "Implementation of SVM Algorithm to Predict Song Popularity based on Sentiment Analysis of Lyrics.",
+    "con_resumen": true,
+    "score": 3.0
+   }
+  ]
+ },
+ "s_polarity_std": {
+  "grupo": "S Sentimiento",
+  "n_coincidencias": 1,
+  "candidatos": [
+   {
+    "doi": "https://doi.org/10.1038/s42003-021-02926-0",
+    "title": "Aesthetic appraisals of literary style and emotional intensity in narrative engagement are neurally dissociable",
+    "year": 2021,
+    "cites": 10,
+    "tipo": "journal-article",
+    "venue": "Communications Biology",
+    "snippet": "In this study, we explored two aspects of aesthetic experiences during narrative engagement - literariness and narrative fluctuations in appraised emotional intensity.",
+    "con_resumen": true,
+    "score": 3.05
+   }
+  ]
+ },
+ "s_intensity_mean": {
+  "grupo": "S Sentimiento",
+  "n_coincidencias": 16,
+  "candidatos": [
+   {
+    "doi": "https://doi.org/10.3390/jtaer20020069",
+    "title": "Harmonizing Sight and Sound: The Impact of Auditory Emotional Arousal, Visual Variation, and Their Congruence on Consumer Engagement in Short Video Marketing",
+    "year": 2025,
+    "cites": 31,
+    "tipo": "journal-article",
+    "venue": "Journal of Theoretical and Applied Electronic Commerce Research",
+    "snippet": "Harmonizing Sight and Sound: The Impact of Auditory Emotional Arousal, Visual Variation, and Their Congruence on Consumer Engagement in Short Video Marketing.",
+    "con_resumen": true,
+    "score": 3.15
+   },
+   {
+    "doi": "https://doi.org/10.3389/fpsyt.2025.1593548",
+    "title": "Modulating effect of emotional arousal intensity on selective attention in schizophrenia",
+    "year": 2025,
+    "cites": 2,
+    "tipo": "journal-article",
+    "venue": "Frontiers in Psychiatry",
+    "snippet": "Modulating effect of emotional arousal intensity on selective attention in schizophrenia.",
+    "con_resumen": true,
+    "score": 3.01
+   },
+   {
+    "doi": "https://doi.org/10.21203/rs.3.rs-10017945/v1",
+    "title": "How AI-Generated Prompts Shape Emotional Expression in Digital Drawing: Effects on Visual Complexity, Creative Engagement, and Arousal",
+    "year": 2026,
+    "cites": 0,
+    "tipo": "posted-content",
+    "venue": "",
+    "snippet": "How AI-Generated Prompts Shape Emotional Expression in Digital Drawing: Effects on Visual Complexity, Creative Engagement, and Arousal.",
+    "con_resumen": true,
+    "score": 3.0
+   },
+   {
+    "doi": "https://doi.org/10.1108/jsm-12-2025-0887",
+    "title": "Biophilic leisure engagement in shopping mall: the roles of emotional pleasure, arousal and place dependence",
+    "year": 2026,
+    "cites": 0,
+    "tipo": "journal-article",
+    "venue": "Journal of Services Marketing",
+    "snippet": "Biophilic leisure engagement in shopping mall: the roles of emotional pleasure, arousal and place dependence.",
+    "con_resumen": true,
+    "score": 3.0
+   }
+  ]
+ },
+ "s_intensity_max": {
+  "grupo": "S Sentimiento",
+  "n_coincidencias": 2,
+  "candidatos": [
+   {
+    "doi": "https://doi.org/10.1038/s41597-026-06870-8",
+    "title": "NEVi: Negative Emotional Video dataset – categorizing stimulus intensity ratings based on valence and arousal",
+    "year": 2026,
+    "cites": 0,
+    "tipo": "journal-article",
+    "venue": "Scientific Data",
+    "snippet": "",
+    "con_resumen": true,
+    "score": 1.0
+   },
+   {
+    "doi": "https://doi.org/10.48550/arXiv.2605.16794",
+    "title": "Modeling Coincident Peak Pricing in Electricity Markets: Challenges and Peak Shaving Effectiveness",
+    "year": 2026,
+    "cites": null,
+    "tipo": "preprint",
+    "venue": "arXiv",
+    "snippet": "",
+    "con_resumen": true,
+    "score": 1.0
+   }
+  ]
+ },
+ "s_questions_pm": {
+  "grupo": "S Sentimiento",
+  "n_coincidencias": 7,
+  "candidatos": [
+   {
+    "doi": "https://doi.org/10.15640/rah.v12p4",
+    "title": "A Rhetorical Analysis of Dr. Kwame Nkrumah's Use of Rhetorical Questions in His Speech at the First OAU Summit in 1963",
+    "year": 2024,
+    "cites": 0,
+    "tipo": "journal-article",
+    "venue": "Review of Arts and Humanities",
+    "snippet": "Kwame Nkrumah attempts to use language to achieve persuasion by analyzing his use of rhetorical questions in his speech at the first OAU summit in 1963.",
+    "con_resumen": true,
+    "score": 3.0
+   },
+   {
+    "doi": "https://doi.org/10.1080/21624887.2022.2097440",
+    "title": "The accountability solution: understanding the audience in securitisation theory by asking a different question",
+    "year": 2022,
+    "cites": 8,
+    "tipo": "journal-article",
+    "venue": "Critical Studies on Security",
+    "snippet": "The accountability solution: understanding the audience in securitisation theory by asking a different question.",
+    "con_resumen": false,
+    "score": 2.04
+   },
+   {
+    "doi": "https://doi.org/10.4324/9780429322921-6",
+    "title": "Corpus-based contrastive analysis of question function as a shared rhetorical feature of reader engagement in English, French, and Spanish",
+    "year": 2021,
+    "cites": 0,
+    "tipo": "book-chapter",
+    "venue": "Academic Writing and Reader Engagement",
+    "snippet": "Corpus-based contrastive analysis of question function as a shared rhetorical feature of reader engagement in English, French, and Spanish.",
+    "con_resumen": false,
+    "score": 2.0
+   },
+   {
+    "doi": "https://doi.org/10.4324/9780429322921-5",
+    "title": "Corpus-based contrastive analysis of question use as a shared rhetorical feature of reader engagement in English, French, and Spanish",
+    "year": 2021,
+    "cites": 0,
+    "tipo": "book-chapter",
+    "venue": "Academic Writing and Reader Engagement",
+    "snippet": "Corpus-based contrastive analysis of question use as a shared rhetorical feature of reader engagement in English, French, and Spanish.",
+    "con_resumen": false,
+    "score": 2.0
+   }
+  ]
+ },
+ "s_exclaim_pm": {
+  "grupo": "S Sentimiento",
+  "n_coincidencias": 2,
+  "candidatos": [
+   {
+    "doi": "https://doi.org/10.5617/dhnbpub.11243",
+    "title": "Emotional Imprints",
+    "year": 2021,
+    "cites": 0,
+    "tipo": "journal-article",
+    "venue": "Digital Humanities in the Nordic and Baltic Countries Publications",
+    "snippet": "Grundtvig data, this paper targets a trait of an overall romanticist, emotionalizing trend in a corpus of 19th century literature: It proposes to analyze the use of exclamation marks as a deposition of heightened attention to emotional experience and intention in printed matter and typesetting in the writings of the Danish poet, priest and politician N.F.S.",
+    "con_resumen": true,
+    "score": 3.0
+   },
+   {
+    "doi": "https://doi.org/10.17296/korbil.2023..94.29",
+    "title": "A Contrastive Study of Periods (.), Question Marks (?), and Exclamation Marks (!) in Modern Mongolian and Korean.",
+    "year": 2023,
+    "cites": 0,
+    "tipo": "journal-article",
+    "venue": "The Korean Society of Bilingualism",
+    "snippet": "",
+    "con_resumen": true,
+    "score": 1.0
+   }
+  ]
+ },
+ "s_second_person": {
+  "grupo": "S Sentimiento",
+  "n_coincidencias": 1,
+  "candidatos": [
+   {
+    "doi": "https://doi.org/10.1017/9781108966757",
+    "title": "The Stylistics of ‘You'",
+    "year": 2021,
+    "cites": 36,
+    "tipo": "monograph",
+    "venue": "",
+    "snippet": "When 'you' takes on its more traditional deictic function of address, the author-reader channel can be opened in different ways, which is explored in examples taken from Fielding, Brontë, Orwell, Kincaid, Grimsley, Royle, Adichie, Bartlett, Auster, and even Spacey's 'creepy' 2018 YouTube video, ultimately foregrounding continuities and contrasts in the positioning of the audience.",
+    "con_resumen": true,
+    "score": 3.18
+   }
+  ]
+ },
+ "s_first_person": {
+  "grupo": "S Sentimiento",
+  "n_coincidencias": 8,
+  "candidatos": [
+   {
+    "doi": "https://doi.org/10.2139/ssrn.4914086",
+    "title": "Dynamic Effects of First-Person Pronouns on Content Engagement",
+    "year": 2024,
+    "cites": 0,
+    "tipo": "posted-content",
+    "venue": "",
+    "snippet": "Dynamic Effects of First-Person Pronouns on Content Engagement.",
+    "con_resumen": true,
+    "score": 3.0
+   },
+   {
+    "doi": "https://doi.org/10.1108/apjml-12-2025-2667",
+    "title": "The pet-centric turn: how self-disclosure and anthropomorphism shape audience engagement in pet influencer marketing",
+    "year": 2026,
+    "cites": 0,
+    "tipo": "journal-article",
+    "venue": "Asia Pacific Journal of Marketing and Logistics",
+    "snippet": "The pet-centric turn: how self-disclosure and anthropomorphism shape audience engagement in pet influencer marketing.",
+    "con_resumen": true,
+    "score": 3.0
+   },
+   {
+    "doi": "https://doi.org/10.2139/ssrn.7569918",
+    "title": "Personal Values and Online Self-disclosure",
+    "year": 2026,
+    "cites": 0,
+    "tipo": "posted-content",
+    "venue": "",
+    "snippet": "Interestingly, a small subset of participants with high power values cheated instead of self-disclosing.",
+    "con_resumen": true,
+    "score": 3.0
+   },
+   {
+    "doi": "https://doi.org/10.48550/arXiv.2502.10701",
+    "title": "Unpacking the Layers: Exploring Self-Disclosure Norms, Engagement Dynamics, and Privacy Implications",
+    "year": 2025,
+    "cites": null,
+    "tipo": "preprint",
+    "venue": "arXiv",
+    "snippet": "Unpacking the Layers: Exploring Self-Disclosure Norms, Engagement Dynamics, and Privacy Implications.",
+    "con_resumen": true,
+    "score": 3.0
+   }
+  ]
+ },
+ "s_numbers": {
+  "grupo": "S Sentimiento",
+  "n_coincidencias": 5,
+  "candidatos": [
+   {
+    "doi": "https://doi.org/10.3126/njdrs.v22i1.99390",
+    "title": "Sensational Headlines, Engagement, and Credibility in Nepal’s Online News",
+    "year": 2025,
+    "cites": 0,
+    "tipo": "journal-article",
+    "venue": "Nepalese Journal of Development and Rural Studies",
+    "snippet": "For Nepali newsrooms, sustainable digital journalism requires balancing headline visibility with accuracy, transparency, and audience trust.",
+    "con_resumen": true,
+    "score": 3.0
+   },
+   {
+    "doi": "https://doi.org/10.48550/arXiv.2605.20205",
+    "title": "Challenges in Working Towards Patient Engagement in Developing Technology Prototypes",
+    "year": 2026,
+    "cites": null,
+    "tipo": "preprint",
+    "venue": "arXiv",
+    "snippet": "In this paper, we report engagement lessons from implementing MyCareCompass, a patient-facing digital health intervention (DHI) intended to support day-to-day self-management for people living with multiple chronic conditions.",
+    "con_resumen": true,
+    "score": 3.0
+   },
+   {
+    "doi": "https://doi.org/10.31235/osf.io/ygtce_v1",
+    "title": "Understanding TV Audiences in the Multiplatform Era: How Televisual Viewing Modes Shape Content Popularity",
+    "year": 2025,
+    "cites": 1,
+    "tipo": "posted-content",
+    "venue": "",
+    "snippet": "The processes of convergence and digitization of television have significantly reshaped audience behaviours and viewing practices.",
+    "con_resumen": true,
+    "score": 3.0
+   },
+   {
+    "doi": "https://doi.org/10.48550/arXiv.2208.09517",
+    "title": "Exploring Popularity Bias in Music Recommendation Models and Commercial Steaming Services",
+    "year": 2022,
+    "cites": null,
+    "tipo": "preprint",
+    "venue": "arXiv",
+    "snippet": "As such, they may contribute to a winner-take-all marketplace in which a small number of artists receive nearly all of the attention, while similarly meritorious artists are unlikely to be discovered.",
+    "con_resumen": true,
+    "score": 3.0
+   }
+  ]
+ },
+ "s_intensifiers": {
+  "grupo": "S Sentimiento",
+  "n_coincidencias": 0,
+  "candidatos": []
+ },
+ "s_hook_words": {
+  "grupo": "S Sentimiento",
+  "n_coincidencias": 10,
+  "candidatos": [
+   {
+    "doi": "https://doi.org/10.1038/s41598-024-81575-9",
+    "title": "When curiosity gaps backfire: effects of headline concreteness on information selection decisions",
+    "year": 2025,
+    "cites": 5,
+    "tipo": "journal-article",
+    "venue": "Scientific Reports",
+    "snippet": "Publishers attempt to attract readers with “curiosity gap” headlines that offer vague descriptions rather than summarize an article.",
+    "con_resumen": true,
+    "score": 3.02
+   },
+   {
+    "doi": "https://doi.org/10.25965/as.8672",
+    "title": "The fiction of identity: veridiction and the contract of attention in the Netflix show Clickbait",
+    "year": 2024,
+    "cites": 2,
+    "tipo": "journal-article",
+    "venue": "Actes Sémiotiques",
+    "snippet": "The fiction of identity: veridiction and the contract of attention in the Netflix show Clickbait.",
+    "con_resumen": true,
+    "score": 3.01
+   },
+   {
+    "doi": "https://doi.org/10.62823/ijira/6.2(ii).9027",
+    "title": "The Impact of Opening Hook Style on Engagement Rate in Short-form Motivational Videos on TikTok",
+    "year": 2026,
+    "cites": 0,
+    "tipo": "journal-article",
+    "venue": "International Journal of Innovations &amp; Research Analysis",
+    "snippet": "The Impact of Opening Hook Style on Engagement Rate in Short-form Motivational Videos on TikTok.",
+    "con_resumen": true,
+    "score": 3.0
+   },
+   {
+    "doi": "https://doi.org/10.20319/mijst.2025.1.",
+    "title": "CURIOSITY-DRIVEN ENGAGEMENT IN CITIZEN SCIENCE: INVESTIGATING GENDER AND MAJOR DIFFERENCES IN INNOVATION AND SELF-EFFICACY",
+    "year": 2025,
+    "cites": 0,
+    "tipo": "proceedings-article",
+    "venue": "CURIOSITY-DRIVEN ENGAGEMENT IN CITIZEN SCIENCE: INVESTIGATING GENDER AND MAJOR DIFFERENCES IN INNOVATION AND SELF-EFFICACY",
+    "snippet": "CURIOSITY-DRIVEN ENGAGEMENT IN CITIZEN SCIENCE: INVESTIGATING GENDER AND MAJOR DIFFERENCES IN INNOVATION AND SELF-EFFICACY.",
+    "con_resumen": true,
+    "score": 3.0
+   }
+  ]
+ },
+ "s_laughs": {
+  "grupo": "S Sentimiento",
+  "n_coincidencias": 8,
+  "candidatos": [
+   {
+    "doi": "https://doi.org/10.7591/cornell/9781501766688.003.0001",
+    "title": "Authoritarian Laughter",
+    "year": 2022,
+    "cites": 0,
+    "tipo": "book-chapter",
+    "venue": "Authoritarian Laughter",
+    "snippet": "It highlights laughter as transformative in the sense that it communicates dissensus and reconfigures authorized common sense, state ideology, and order.",
+    "con_resumen": true,
+    "score": 3.0
+   },
+   {
+    "doi": "https://doi.org/10.7591/cornell/9781501766688.003.0011",
+    "title": "Lost Laughter and Authoritarian Stigma",
+    "year": 2022,
+    "cites": 0,
+    "tipo": "book-chapter",
+    "venue": "Authoritarian Laughter",
+    "snippet": "Moreover, Broom 's political laughter was multidirectional even though editors engaged Communist Party ideology and slogans to speak about their work.",
+    "con_resumen": true,
+    "score": 3.0
+   },
+   {
+    "doi": "https://doi.org/10.7591/cornell/9781501766688.001.0001",
+    "title": "Authoritarian Laughter",
+    "year": 2022,
+    "cites": 1,
+    "tipo": "edited-book",
+    "venue": "",
+    "snippet": "The book investigates official attempts to shape citizens into Soviet subjects and engage them through a culture of popular humor.",
+    "con_resumen": true,
+    "score": 3.0
+   },
+   {
+    "doi": "https://doi.org/10.30890/2567-5273.2025-39-04-017",
+    "title": "THE ROLE OF SEMIOTICS IN HUMOR TRANSMISSION AND AUDIENCE ENGAGEMENT",
+    "year": 2022,
+    "cites": 0,
+    "tipo": "journal-article",
+    "venue": "Modern engineering and innovative technologies",
+    "snippet": "THE ROLE OF SEMIOTICS IN HUMOR TRANSMISSION AND AUDIENCE ENGAGEMENT.",
+    "con_resumen": true,
+    "score": 3.0
+   }
+  ]
+ },
+ "a_rms_mean": {
+  "grupo": "A Audio",
+  "n_coincidencias": 1,
+  "candidatos": [
+   {
+    "doi": "https://doi.org/10.1044/2024_jslhr-24-00366",
+    "title": "The Interaction Between Vowel Quality and Intensity in Loudness Perception of Short Vowels in Mongolian",
+    "year": 2025,
+    "cites": 0,
+    "tipo": "journal-article",
+    "venue": "Journal of Speech, Language, and Hearing Research",
+    "snippet": "Native Mongolian listeners from Inner Mongolia participated in two loudness perception experiments: Experiment 1 examined the effects of presentation order and different intensity conditions on loudness perception using pairs of vowels.",
+    "con_resumen": true,
+    "score": 3.0
+   }
+  ]
+ },
+ "a_rms_p95": {
+  "grupo": "A Audio",
+  "n_coincidencias": 3,
+  "candidatos": [
+   {
+    "doi": "https://doi.org/10.1044/2024_jslhr-24-00366",
+    "title": "The Interaction Between Vowel Quality and Intensity in Loudness Perception of Short Vowels in Mongolian",
+    "year": 2025,
+    "cites": 0,
+    "tipo": "journal-article",
+    "venue": "Journal of Speech, Language, and Hearing Research",
+    "snippet": "Native Mongolian listeners from Inner Mongolia participated in two loudness perception experiments: Experiment 1 examined the effects of presentation order and different intensity conditions on loudness perception using pairs of vowels.",
+    "con_resumen": true,
+    "score": 3.0
+   },
+   {
+    "doi": "https://doi.org/10.1177/03010066261470260",
+    "title": "On cross-modal commutativity in magnitude production for loudness and brightness",
+    "year": 2026,
+    "cites": 0,
+    "tipo": "journal-article",
+    "venue": "Perception",
+    "snippet": "Raum (2021, Attention, Perception, &amp; Psychophysics , 83 , 2955–2967), the present study examined this property using a cross-modal magnitude production task for loudness and brightness.",
+    "con_resumen": true,
+    "score": 3.0
+   },
+   {
+    "doi": "https://doi.org/10.53941/hihep.2025.100024",
+    "title": "Acknowledgment to Reviewers of Highlights in High-Energy Physics in 2025",
+    "year": 2025,
+    "cites": 0,
+    "tipo": "journal-article",
+    "venue": "Highlights in High-Energy Physics",
+    "snippet": "Acknowledgment to Reviewers of Highlights in High-Energy Physics in 2025.",
+    "con_resumen": false,
+    "score": 2.0
+   }
+  ]
+ },
+ "a_rms_std": {
+  "grupo": "A Audio",
+  "n_coincidencias": 3,
+  "candidatos": [
+   {
+    "doi": "https://doi.org/10.48550/arXiv.2603.18758",
+    "title": "Dual-Model Prediction of Affective Engagement and Vocal Attractiveness from Speaker Expressiveness in Video Learning",
+    "year": 2026,
+    "cites": null,
+    "tipo": "preprint",
+    "venue": "arXiv",
+    "snippet": "The regression model predicting affective engagement is developed by assimilating emotional expressions emanating from facial dynamics, oculomotor features, prosody, and cognitive semantics, while incorporating a second regression model to predict vocal attractiveness based exclusively on speaker-side acoustic features.",
+    "con_resumen": true,
+    "score": 3.0
+   },
+   {
+    "doi": "https://doi.org/10.1016/j.jbusres.2025.115345",
+    "title": "Paralanguage and the charismatic spokesperson: The impact of vocal amplitude on charisma, auditory looming, and customer engagement",
+    "year": 2025,
+    "cites": 1,
+    "tipo": "journal-article",
+    "venue": "Journal of Business Research",
+    "snippet": "Paralanguage and the charismatic spokesperson: The impact of vocal amplitude on charisma, auditory looming, and customer engagement.",
+    "con_resumen": false,
+    "score": 2.0
+   },
+   {
+    "doi": "https://doi.org/10.48550/arXiv.2110.06573",
+    "title": "A Parametric and Feasibility Study for Data Sampling of the Dynamic Mode Decomposition--Range, Resolution, and Universal Convergence States",
+    "year": 2021,
+    "cites": null,
+    "tipo": "preprint",
+    "venue": "arXiv",
+    "snippet": "",
+    "con_resumen": true,
+    "score": 1.0
+   }
+  ]
+ },
+ "a_pitch_std": {
+  "grupo": "A Audio",
+  "n_coincidencias": 5,
+  "candidatos": [
+   {
+    "doi": "https://doi.org/10.25189/rabralin.v20i1.1809",
+    "title": "Computer-assisted prosody training: Improving public speakers' vocal charisma with the Web-Pitcher",
+    "year": 2021,
+    "cites": 5,
+    "tipo": "journal-article",
+    "venue": "Revista da ABRALIN",
+    "snippet": "Computer-assisted prosody training: Improving public speakers' vocal charisma with the Web-Pitcher.",
+    "con_resumen": true,
+    "score": 3.02
+   },
+   {
+    "doi": "https://doi.org/10.48550/arXiv.2505.19626",
+    "title": "Decoding Speaker-Normalized Pitch from EEG for Mandarin Perception",
+    "year": 2025,
+    "cites": null,
+    "tipo": "preprint",
+    "venue": "arXiv",
+    "snippet": "The same speech content produced by different speakers exhibits significant differences in pitch contour, yet listeners' semantic perception remains unaffected.",
+    "con_resumen": true,
+    "score": 3.0
+   },
+   {
+    "doi": "https://doi.org/10.48550/arXiv.2604.07467",
+    "title": "Lexical Tone is Hard to Quantize: Probing Discrete Speech Units in Mandarin and Yorùbá",
+    "year": 2026,
+    "cites": null,
+    "tipo": "preprint",
+    "venue": "arXiv",
+    "snippet": "They are a popular representation for a wide variety of spoken language tasks, including those where prosody matters.",
+    "con_resumen": true,
+    "score": 3.0
+   },
+   {
+    "doi": "https://doi.org/10.1109/procomm64814.2025.00030",
+    "title": "The Impact of Prosody and Gestures on Perceived CEO Charisma and Organizational Crisis Communication Outcomes",
+    "year": 2025,
+    "cites": 0,
+    "tipo": "proceedings-article",
+    "venue": "2025 IEEE International Professional Communication Conference (ProComm)",
+    "snippet": "The Impact of Prosody and Gestures on Perceived CEO Charisma and Organizational Crisis Communication Outcomes.",
+    "con_resumen": false,
+    "score": 2.0
+   }
+  ]
+ },
+ "a_pitch_range": {
+  "grupo": "A Audio",
+  "n_coincidencias": 4,
+  "candidatos": [
+   {
+    "doi": "https://doi.org/10.1044/2021_jslhr-20-00747",
+    "title": "Associations Between Speaking Fundamental Frequency, Vowel Formant Frequencies, and Listener Perceptions of Speaker Gender and Vocal Femininity–Masculinity",
+    "year": 2021,
+    "cites": 25,
+    "tipo": "journal-article",
+    "venue": "Journal of Speech, Language, and Hearing Research",
+    "snippet": "Associations Between Speaking Fundamental Frequency, Vowel Formant Frequencies, and Listener Perceptions of Speaker Gender and Vocal Femininity–Masculinity.",
+    "con_resumen": true,
+    "score": 3.12
+   },
+   {
+    "doi": "https://doi.org/10.31219/osf.io/bz6qg",
+    "title": "The effects of the rhetorical charisma signal and voice pitch in female leader selection",
+    "year": 2023,
+    "cites": 0,
+    "tipo": "posted-content",
+    "venue": "",
+    "snippet": "The effects of the rhetorical charisma signal and voice pitch in female leader selection.",
+    "con_resumen": true,
+    "score": 3.0
+   },
+   {
+    "doi": "https://doi.org/10.1016/j.leaqua.2024.101857",
+    "title": "The effects of the charisma signal and voice pitch in female leader selection",
+    "year": 2025,
+    "cites": 1,
+    "tipo": "journal-article",
+    "venue": "The Leadership Quarterly",
+    "snippet": "The effects of the charisma signal and voice pitch in female leader selection.",
+    "con_resumen": false,
+    "score": 2.0
+   },
+   {
+    "doi": "https://doi.org/10.1177/13670069221110389",
+    "title": "Fundamental frequency range in the bilingual repertoire of traditional and new Welsh speakers",
+    "year": 2022,
+    "cites": 4,
+    "tipo": "journal-article",
+    "venue": "International Journal of Bilingualism",
+    "snippet": "",
+    "con_resumen": true,
+    "score": 1.02
+   }
+  ]
+ },
+ "a_voiced_ratio": {
+  "grupo": "A Audio",
+  "n_coincidencias": 1,
+  "candidatos": [
+   {
+    "doi": "https://doi.org/10.1093/oso/9780198869757.003.0003",
+    "title": "Voicing Anger",
+    "year": 2021,
+    "cites": 0,
+    "tipo": "book-chapter",
+    "venue": "Democratic Speech in Divided Times",
+    "snippet": "",
+    "con_resumen": true,
+    "score": 1.0
+   }
+  ]
+ },
+ "a_energy_delta": {
+  "grupo": "A Audio",
+  "n_coincidencias": 5,
+  "candidatos": [
+   {
+    "doi": "https://doi.org/10.54097/hset.v73i.12865",
+    "title": "Advancements in Phase Change Materials: A Path to Sustainable Energy Solutions in China",
+    "year": 2023,
+    "cites": 1,
+    "tipo": "journal-article",
+    "venue": "Highlights in Science, Engineering and Technology",
+    "snippet": "Phase Change Materials (PCMs), also called phase change energy storage materials, have garnered attention as a novel energy-efficient and environmentally friendly material.",
+    "con_resumen": true,
+    "score": 3.0
+   },
+   {
+    "doi": "https://doi.org/10.1016/j.csl.2020.101140",
+    "title": "Detection of replay spoof speech using teager energy feature cues",
+    "year": 2021,
+    "cites": 30,
+    "tipo": "journal-article",
+    "venue": "Computer Speech &amp; Language",
+    "snippet": "Detection of replay spoof speech using teager energy feature cues.",
+    "con_resumen": false,
+    "score": 2.15
+   },
+   {
+    "doi": "https://doi.org/10.1109/iciis69028.2026.11450584",
+    "title": "Multi-Stage Pipeline for Audio Source Separation and Parallel Excitement Analysis in Boxing Highlight Generation",
+    "year": 2026,
+    "cites": 1,
+    "tipo": "proceedings-article",
+    "venue": "2025 IEEE 19th International Conference on Industrial and Information Systems (ICIIS)",
+    "snippet": "Multi-Stage Pipeline for Audio Source Separation and Parallel Excitement Analysis in Boxing Highlight Generation.",
+    "con_resumen": false,
+    "score": 2.0
+   },
+   {
+    "doi": "https://doi.org/10.1109/taslpro.2025.3587454",
+    "title": "$\\beta$-Order Energy-Weighting Modulation on Spectral Bins for Replay Speech Detection",
+    "year": 2025,
+    "cites": 0,
+    "tipo": "journal-article",
+    "venue": "IEEE Transactions on Audio, Speech and Language Processing",
+    "snippet": "$\\beta$-Order Energy-Weighting Modulation on Spectral Bins for Replay Speech Detection.",
+    "con_resumen": false,
+    "score": 2.0
+   }
+  ]
+ },
+ "a_speech_rate": {
+  "grupo": "A Audio",
+  "n_coincidencias": 5,
+  "candidatos": [
+   {
+    "doi": "https://doi.org/10.1177/00238309241252983",
+    "title": "Effects of Speaking Rate Changes on Speech Motor Variability in Adults",
+    "year": 2024,
+    "cites": 3,
+    "tipo": "journal-article",
+    "venue": "Language and Speech",
+    "snippet": "Interestingly, lip aperture variability was significantly lower in the youngest age group (18–30 years) compared with the two older groups during the fast speaking rate condition.",
+    "con_resumen": true,
+    "score": 3.02
+   },
+   {
+    "doi": "https://doi.org/10.31234/osf.io/seybg",
+    "title": "Speaking fast and slow: How speech rate affects contextual facilitation in degraded speech comprehension",
+    "year": 2024,
+    "cites": 1,
+    "tipo": "posted-content",
+    "venue": "",
+    "snippet": "Speaking fast and slow: How speech rate affects contextual facilitation in degraded speech comprehension.",
+    "con_resumen": true,
+    "score": 3.0
+   },
+   {
+    "doi": "https://doi.org/10.31234/osf.io/nm5xw",
+    "title": "Speech development between 30 and 119 months in typical children III: Interaction between speaking rate and intelligibility",
+    "year": 2024,
+    "cites": 0,
+    "tipo": "posted-content",
+    "venue": "",
+    "snippet": "Intelligibility was measured as the number of words correctly transcribed by untrained adult listeners, and speaking rate was calculated in number of syllables per second.",
+    "con_resumen": true,
+    "score": 3.0
+   },
+   {
+    "doi": "https://doi.org/10.1121/10.0019499",
+    "title": "Clear speech promotes speaking rate normalization",
+    "year": 2023,
+    "cites": 3,
+    "tipo": "journal-article",
+    "venue": "JASA Express Letters",
+    "snippet": "",
+    "con_resumen": true,
+    "score": 1.01
+   }
+  ]
+ },
+ "a_pause_ratio": {
+  "grupo": "A Audio",
+  "n_coincidencias": 5,
+  "candidatos": [
+   {
+    "doi": "https://doi.org/10.3366/edinburgh/9781399535854.003.0002",
+    "title": "Silence and Speech",
+    "year": 2024,
+    "cites": 0,
+    "tipo": "book-chapter",
+    "venue": "Joseph Conrad and the Narration of Silence",
+    "snippet": "This chapter considers the silence of the unsayable in the gap between signifier and signified such that the narrator's language cannot completely communicate meaning to the reader or listener and what the consequences are for such slippage.",
+    "con_resumen": true,
+    "score": 3.0
+   },
+   {
+    "doi": "https://doi.org/10.48550/arXiv.2309.11827",
+    "title": "The Impact of Silence on Speech Anti-Spoofing",
+    "year": 2023,
+    "cites": null,
+    "tipo": "preprint",
+    "venue": "arXiv",
+    "snippet": "To demonstrate the reasons for the impact of silence on CMs, the attention distribution of a CM is visualized through class activation mapping (CAM).",
+    "con_resumen": true,
+    "score": 3.0
+   },
+   {
+    "doi": "https://doi.org/10.1109/procomm61427.2024.00032",
+    "title": "Beautiful Noise? The Impact of Filled Pauses on the Perception of Speaker Charisma",
+    "year": 2024,
+    "cites": 2,
+    "tipo": "proceedings-article",
+    "venue": "2024 IEEE International Professional Communication Conference (ProComm)",
+    "snippet": "The Impact of Filled Pauses on the Perception of Speaker Charisma.",
+    "con_resumen": false,
+    "score": 2.01
+   },
+   {
+    "doi": "https://doi.org/10.7551/mitpress/14976.003.0007",
+    "title": "Interference: Silence and the Ideal Listener in Ralph Ellison’s American Novel",
+    "year": 2024,
+    "cites": 0,
+    "tipo": "book-chapter",
+    "venue": "Dissonant Records",
+    "snippet": "Interference: Silence and the Ideal Listener in Ralph Ellison’s American Novel.",
+    "con_resumen": false,
+    "score": 2.0
+   }
+  ]
+ },
+ "a_long_pauses_pm": {
+  "grupo": "A Audio",
+  "n_coincidencias": 4,
+  "candidatos": [
+   {
+    "doi": "https://doi.org/10.37547/ajsshr/volume06issue04-35",
+    "title": "Communicative Functions of Pause and Silence in Speech",
+    "year": 2026,
+    "cites": 0,
+    "tipo": "journal-article",
+    "venue": "American Journal Of Social Sciences And Humanity Research",
+    "snippet": "Special attention is given to how pause and silence organize speech, regulate interaction, and influence interpretation.",
+    "con_resumen": true,
+    "score": 3.0
+   },
+   {
+    "doi": "https://doi.org/10.48550/arXiv.2404.19119",
+    "title": "Effects of Added Emphasis and Pause in Audio Delivery of Health Information",
+    "year": 2024,
+    "cites": null,
+    "tipo": "preprint",
+    "venue": "arXiv",
+    "snippet": "In this study, we evaluate the effect of audio enhancements in the form of information emphasis and pauses with health texts of varying difficulty and we measure health information comprehension and retention.",
+    "con_resumen": true,
+    "score": 3.0
+   },
+   {
+    "doi": "https://doi.org/10.4324/9781003445128-3",
+    "title": "Starting Pauses Focus Attention",
+    "year": 2023,
+    "cites": 0,
+    "tipo": "book-chapter",
+    "venue": "Hitting Pause",
+    "snippet": "Starting Pauses Focus Attention.",
+    "con_resumen": false,
+    "score": 2.0
+   },
+   {
+    "doi": "https://doi.org/10.48550/arXiv.2609.13155",
+    "title": "PAUSE: A Privacy-Preserving Self-Reflection Tool for AI-Associated Cognitive Offloading",
+    "year": 2026,
+    "cites": null,
+    "tipo": "preprint",
+    "venue": "arXiv",
+    "snippet": "",
+    "con_resumen": true,
+    "score": 1.0
+   }
+  ]
+ },
+ "h_rms_onset": {
+  "grupo": "H Gancho",
+  "n_coincidencias": 1,
+  "candidatos": [
+   {
+    "doi": "https://doi.org/10.48550/arXiv.2410.09380",
+    "title": "Prompting Video-Language Foundation Models with Domain-specific Fine-grained Heuristics for Video Question Answering",
+    "year": 2024,
+    "cites": null,
+    "tipo": "preprint",
+    "venue": "arXiv",
+    "snippet": "",
+    "con_resumen": true,
+    "score": 1.0
+   }
+  ]
+ },
+ "h_question": {
+  "grupo": "H Gancho",
+  "n_coincidencias": 15,
+  "candidatos": [
+   {
+    "doi": "https://doi.org/10.48550/arXiv.2410.09380",
+    "title": "Prompting Video-Language Foundation Models with Domain-specific Fine-grained Heuristics for Video Question Answering",
+    "year": 2024,
+    "cites": null,
+    "tipo": "preprint",
+    "venue": "arXiv",
+    "snippet": "Video Question Answering (VideoQA) represents a crucial intersection between video understanding and language processing, requiring both discriminative unimodal comprehension and sophisticated cross-modal interaction for accurate inference.",
+    "con_resumen": true,
+    "score": 3.0
+   },
+   {
+    "doi": "https://doi.org/10.1145/3474085.3475193",
+    "title": "Progressive Graph Attention Network for Video Question Answering",
+    "year": 2021,
+    "cites": 45,
+    "tipo": "proceedings-article",
+    "venue": "Proceedings of the 29th ACM International Conference on Multimedia",
+    "snippet": "Progressive Graph Attention Network for Video Question Answering.",
+    "con_resumen": false,
+    "score": 2.23
+   },
+   {
+    "doi": "https://doi.org/10.1109/tcsvt.2022.3212463",
+    "title": "ERM: Energy-Based Refined-Attention Mechanism for Video Question Answering",
+    "year": 2023,
+    "cites": 22,
+    "tipo": "journal-article",
+    "venue": "IEEE Transactions on Circuits and Systems for Video Technology",
+    "snippet": "ERM: Energy-Based Refined-Attention Mechanism for Video Question Answering.",
+    "con_resumen": false,
+    "score": 2.11
+   },
+   {
+    "doi": "https://doi.org/10.1109/tcsvt.2024.3382684",
+    "title": "Fair Attention Network for Robust Visual Question Answering",
+    "year": 2024,
+    "cites": 22,
+    "tipo": "journal-article",
+    "venue": "IEEE Transactions on Circuits and Systems for Video Technology",
+    "snippet": "Fair Attention Network for Robust Visual Question Answering.",
+    "con_resumen": false,
+    "score": 2.11
+   }
+  ]
+ },
+ "h_number": {
+  "grupo": "H Gancho",
+  "n_coincidencias": 1,
+  "candidatos": [
+   {
+    "doi": "https://doi.org/10.32388/f6k41i",
+    "title": "Behavioural BCI engagement number statistic",
+    "year": 2024,
+    "cites": 0,
+    "tipo": "reference-entry",
+    "venue": "Definitions",
+    "snippet": "Behavioural BCI engagement number statistic.",
+    "con_resumen": false,
+    "score": 2.0
+   }
+  ]
+ },
+ "h_second_person": {
+  "grupo": "H Gancho",
+  "n_coincidencias": 22,
+  "candidatos": [
+   {
+    "doi": "https://doi.org/10.1177/14648849231169886",
+    "title": "Look me in the eyes: How direct address affects viewers’ experience of parasocial interaction and credibility?",
+    "year": 2023,
+    "cites": 11,
+    "tipo": "journal-article",
+    "venue": "Journalism",
+    "snippet": "Look me in the eyes: How direct address affects viewers’ experience of parasocial interaction and credibility?.",
+    "con_resumen": true,
+    "score": 3.06
+   },
+   {
+    "doi": "https://doi.org/10.1051/shsconf/202315503012",
+    "title": "More Attached, Less Stressed: Viewers’ Parasocial Attachment to Virtual Youtubers and Its Influence on the Stress of Viewers During the COVID-19 Pandemic",
+    "year": 2023,
+    "cites": 11,
+    "tipo": "journal-article",
+    "venue": "SHS Web of Conferences",
+    "snippet": "More Attached, Less Stressed: Viewers’ Parasocial Attachment to Virtual Youtubers and Its Influence on the Stress of Viewers During the COVID-19 Pandemic.",
+    "con_resumen": true,
+    "score": 3.06
+   },
+   {
+    "doi": "https://doi.org/10.33423/jmdc.v18i2.7034",
+    "title": "YouTube Influencers Fostering Audience Engagement Through Parasocial Relationships",
+    "year": 2024,
+    "cites": 5,
+    "tipo": "journal-article",
+    "venue": "Journal of Marketing Development and Competitiveness",
+    "snippet": "YouTube Influencers Fostering Audience Engagement Through Parasocial Relationships.",
+    "con_resumen": true,
+    "score": 3.02
+   },
+   {
+    "doi": "https://doi.org/10.2139/ssrn.6628659",
+    "title": "Understanding In-Video Viewer Engagement: Insights from YouTube Engagement Graphs",
+    "year": 2026,
+    "cites": 0,
+    "tipo": "posted-content",
+    "venue": "",
+    "snippet": "Understanding In-Video Viewer Engagement: Insights from YouTube Engagement Graphs.",
+    "con_resumen": true,
+    "score": 3.0
+   }
+  ]
+ },
+ "h_hook_word": {
+  "grupo": "H Gancho",
+  "n_coincidencias": 11,
+  "candidatos": [
+   {
+    "doi": "https://doi.org/10.1108/rbf-03-2021-0047",
+    "title": "Does the attention-grabbing mechanism work on Sundays? Influence of social and religious factors on investors' attention",
+    "year": 2021,
+    "cites": 3,
+    "tipo": "journal-article",
+    "venue": "Review of Behavioral Finance",
+    "snippet": "Does the attention-grabbing mechanism work on Sundays?",
+    "con_resumen": true,
+    "score": 3.02
+   },
+   {
+    "doi": "https://doi.org/10.47191/etj/v10i08.24",
+    "title": "Storyboard Studies as an Attention-Grabbing Element in Advertisements; Beko Example",
+    "year": 2025,
+    "cites": 0,
+    "tipo": "journal-article",
+    "venue": "Engineering and Technology Journal",
+    "snippet": "Storyboard Studies as an Attention-Grabbing Element in Advertisements; Beko Example.",
+    "con_resumen": true,
+    "score": 3.0
+   },
+   {
+    "doi": "https://doi.org/10.5771/2747-5174-2021-2-70",
+    "title": "From Attention-Grabbing to Calm Technology",
+    "year": 2021,
+    "cites": 1,
+    "tipo": "journal-article",
+    "venue": "Morals &amp; Machines",
+    "snippet": "From Attention-Grabbing to Calm Technology.",
+    "con_resumen": true,
+    "score": 3.0
+   },
+   {
+    "doi": "https://doi.org/10.2139/ssrn.4073997",
+    "title": "Cranes Among Chickens: The General-Attention-Grabbing Effect of Daily Price Limits in China’s Stock Market",
+    "year": 2022,
+    "cites": 0,
+    "tipo": "posted-content",
+    "venue": "",
+    "snippet": "Cranes Among Chickens: The General-Attention-Grabbing Effect of Daily Price Limits in China’s Stock Market.",
+    "con_resumen": true,
+    "score": 3.0
+   }
+  ]
+ },
+ "h_contrast": {
+  "grupo": "H Gancho",
+  "n_coincidencias": 6,
+  "candidatos": [
+   {
+    "doi": "https://doi.org/10.48550/arXiv.2307.02434",
+    "title": "The tension in the absolute magnitude of Type Ia supernovae",
+    "year": 2023,
+    "cites": null,
+    "tipo": "preprint",
+    "venue": "arXiv",
+    "snippet": "Conflicting results from independent measurements such as the Planck satellite mission and the SH0ES collaboration have sparked interest in exploring alternative cosmological models.",
+    "con_resumen": true,
+    "score": 3.0
+   },
+   {
+    "doi": "https://doi.org/10.54097/57859409",
+    "title": "Reshaping Suspense Web Dramas: A Study of Nonlinear Narrative Strategies and Audience Feedback in Tencent Video’s 2022 Suspense Series",
+    "year": 2024,
+    "cites": 0,
+    "tipo": "journal-article",
+    "venue": "International Journal of Education and Humanities",
+    "snippet": "Reshaping Suspense Web Dramas: A Study of Nonlinear Narrative Strategies and Audience Feedback in Tencent Video’s 2022 Suspense Series.",
+    "con_resumen": true,
+    "score": 3.0
+   },
+   {
+    "doi": "https://doi.org/10.1017/langcog.2025.10057",
+    "title": "The linguistic basis of narrative suspense: narrative suspense depends on potentially inquiry-terminating questions",
+    "year": 2026,
+    "cites": 0,
+    "tipo": "journal-article",
+    "venue": "Language and Cognition",
+    "snippet": "Abstract Suspense is an important aspect of cognitive-emotional narrative text comprehension.",
+    "con_resumen": true,
+    "score": 3.0
+   },
+   {
+    "doi": "https://doi.org/10.2139/ssrn.6307885",
+    "title": "Designing Addictive but Ethical Media Experiences: A Position on Narrative Tension, Parasocial Intimacy, and Compulsive Engagement in Contemporary Television",
+    "year": 2026,
+    "cites": 0,
+    "tipo": "posted-content",
+    "venue": "",
+    "snippet": "Designing Addictive but Ethical Media Experiences: A Position on Narrative Tension, Parasocial Intimacy, and Compulsive Engagement in Contemporary Television.",
+    "con_resumen": true,
+    "score": 3.0
+   }
+  ]
+ },
+ "h_first_sentence_s": {
+  "grupo": "H Gancho",
+  "n_coincidencias": 8,
+  "candidatos": [
+   {
+    "doi": "https://doi.org/10.48550/arXiv.2508.14448",
+    "title": "Generalizable Engagement Estimation in Conversation via Domain Prompting and Parallel Attention",
+    "year": 2025,
+    "cites": null,
+    "tipo": "preprint",
+    "venue": "arXiv",
+    "snippet": "DAPA introduces a Domain Prompting mechanism by prepending learnable domain-specific vectors to the input, explicitly conditioning the model on the data's origin to facilitate domain-aware adaptation while preserving generalizable engagement representations.",
+    "con_resumen": true,
+    "score": 3.0
+   },
+   {
+    "doi": "https://doi.org/10.3366/edinburgh/9781399543699.003.0001",
+    "title": "Introduction: Shakespeare and His Audience",
+    "year": 2025,
+    "cites": 0,
+    "tipo": "book-chapter",
+    "venue": "Shakespeare High and Low",
+    "snippet": "Introduction: Shakespeare and His Audience.",
+    "con_resumen": true,
+    "score": 3.0
+   },
+   {
+    "doi": "https://doi.org/10.3366/edinburgh/9781474485180.003.0001",
+    "title": "Introduction:: SUPERHERO Blockbusters, Seriality, and the Politics of Audience Engagement",
+    "year": 2022,
+    "cites": 0,
+    "tipo": "book-chapter",
+    "venue": "Superhero Blockbusters",
+    "snippet": "Introduction:: SUPERHERO Blockbusters, Seriality, and the Politics of Audience Engagement.",
+    "con_resumen": true,
+    "score": 3.0
+   },
+   {
+    "doi": "https://doi.org/10.4324/9781003198512",
+    "title": "Opening Doors: Orchestras, Opera Companies and Community Engagement",
+    "year": 2023,
+    "cites": 4,
+    "tipo": "monograph",
+    "venue": "",
+    "snippet": "Opening Doors: Orchestras, Opera Companies and Community Engagement.",
+    "con_resumen": false,
+    "score": 2.02
+   }
+  ]
+ },
+ "h_first_intensity": {
+  "grupo": "H Gancho",
+  "n_coincidencias": 7,
+  "candidatos": [
+   {
+    "doi": "https://doi.org/10.1108/intr-06-2023-0486",
+    "title": "First versus final impression formation: cues from dynamic and continuous emotional expressions in social media profiles",
+    "year": 2025,
+    "cites": 0,
+    "tipo": "journal-article",
+    "venue": "Internet Research",
+    "snippet": "Purpose This study investigated the influence of inconsistent versus consistent emotional expressions (independent variables) in social media profiles on first and final impressions in terms of interpersonal liking and trust (dependent variables).",
+    "con_resumen": true,
+    "score": 3.0
+   },
+   {
+    "doi": "https://doi.org/10.48550/arXiv.2508.02516",
+    "title": "Engagement Prediction of Short Videos with Large Multimodal Models",
+    "year": 2025,
+    "cites": null,
+    "tipo": "preprint",
+    "venue": "arXiv",
+    "snippet": "By ensembling two types of models, our method achieves first place in the ICCV VQualA 2025 EVQA-SnapUGC Challenge on short-form video engagement prediction.",
+    "con_resumen": true,
+    "score": 3.0
+   },
+   {
+    "doi": "https://doi.org/10.48550/arXiv.2508.14448",
+    "title": "Generalizable Engagement Estimation in Conversation via Domain Prompting and Parallel Attention",
+    "year": 2025,
+    "cites": null,
+    "tipo": "preprint",
+    "venue": "arXiv",
+    "snippet": "The superiority of our method was also confirmed by winning the first place in the Multi-Domain Engagement Estimation Challenge at MultiMediate'25.",
+    "con_resumen": true,
+    "score": 3.0
+   },
+   {
+    "doi": "https://doi.org/10.4324/9781003198512",
+    "title": "Opening Doors: Orchestras, Opera Companies and Community Engagement",
+    "year": 2023,
+    "cites": 4,
+    "tipo": "monograph",
+    "venue": "",
+    "snippet": "Opening Doors: Orchestras, Opera Companies and Community Engagement.",
+    "con_resumen": false,
+    "score": 2.02
+   }
+  ]
+ },
+ "h_first_keybert": {
+  "grupo": "H Gancho",
+  "n_coincidencias": 5,
+  "candidatos": [
+   {
+    "doi": "https://doi.org/10.3366/edinburgh/9781399543699.003.0001",
+    "title": "Introduction: Shakespeare and His Audience",
+    "year": 2025,
+    "cites": 0,
+    "tipo": "book-chapter",
+    "venue": "Shakespeare High and Low",
+    "snippet": "Introduction: Shakespeare and His Audience.",
+    "con_resumen": true,
+    "score": 3.0
+   },
+   {
+    "doi": "https://doi.org/10.3366/edinburgh/9781474485180.003.0001",
+    "title": "Introduction:: SUPERHERO Blockbusters, Seriality, and the Politics of Audience Engagement",
+    "year": 2022,
+    "cites": 0,
+    "tipo": "book-chapter",
+    "venue": "Superhero Blockbusters",
+    "snippet": "Introduction:: SUPERHERO Blockbusters, Seriality, and the Politics of Audience Engagement.",
+    "con_resumen": true,
+    "score": 3.0
+   },
+   {
+    "doi": "https://doi.org/10.1515/9781399543712-004",
+    "title": "Introduction: Shakespeare and His Audience",
+    "year": 2025,
+    "cites": 0,
+    "tipo": "book-chapter",
+    "venue": "Shakespeare High and Low",
+    "snippet": "Introduction: Shakespeare and His Audience.",
+    "con_resumen": false,
+    "score": 2.0
+   },
+   {
+    "doi": "https://doi.org/10.4324/9781003142102-1",
+    "title": "Introduction: Arts Marketing, Audience Development and Cultural Policy",
+    "year": 2024,
+    "cites": 0,
+    "tipo": "book-chapter",
+    "venue": "A Reader on Audience Development and Cultural Policy",
+    "snippet": "Introduction: Arts Marketing, Audience Development and Cultural Policy.",
+    "con_resumen": false,
+    "score": 2.0
+   }
+  ]
+ },
+ "f_starts_dangling": {
+  "grupo": "F Flujo",
+  "n_coincidencias": 1,
+  "candidatos": [
+   {
+    "doi": "https://doi.org/10.48550/arXiv.2312.07353",
+    "title": "CLIP in Medical Imaging: A Survey",
+    "year": 2023,
+    "cites": null,
+    "tipo": "preprint",
+    "venue": "arXiv",
+    "snippet": "",
+    "con_resumen": true,
+    "score": 1.0
+   }
+  ]
+ },
+ "f_ends_complete": {
+  "grupo": "F Flujo",
+  "n_coincidencias": 3,
+  "candidatos": [
+   {
+    "doi": "https://doi.org/10.2139/ssrn.7324370",
+    "title": "GeoCorNet: Geometry-Aware Boundary Supervision for Accurate Corneal Segmentation in Anterior Segment OCT",
+    "year": 2026,
+    "cites": 0,
+    "tipo": "posted-content",
+    "venue": "",
+    "snippet": "This motivates supervision that explicitly encodes boundary location and continuous distance-to-boundary as geometric constraints on the learned solution, rather than as auxiliary signals subordinate to region overlap.Methods: We propose GeoCorNet, a geometry-aware, boundary-supervised segmentation network built around an EfficientNet-B4 encoder and a dual-pathway decoder, in which a dedicated bou",
+    "con_resumen": true,
+    "score": 3.0
+   },
+   {
+    "doi": "https://doi.org/10.3837/tiis.2022.01.002",
+    "title": "Boundary-Aware Dual Attention Guided Liver Segment Segmentation Model",
+    "year": 2022,
+    "cites": 3,
+    "tipo": "journal-article",
+    "venue": "KSII Transactions on Internet and Information Systems",
+    "snippet": "Boundary-Aware Dual Attention Guided Liver Segment Segmentation Model.",
+    "con_resumen": false,
+    "score": 2.02
+   },
+   {
+    "doi": "https://doi.org/10.22541/au.173089470.05750142/v1",
+    "title": "Augmenting Efficient Real-time Surgical Instrument Segmentation in Video with Point Tracking and Segment Anything",
+    "year": 2024,
+    "cites": 3,
+    "tipo": "posted-content",
+    "venue": "",
+    "snippet": "",
+    "con_resumen": true,
+    "score": 1.01
+   }
+  ]
+ },
+ "f_coherence_mean": {
+  "grupo": "F Flujo",
+  "n_coincidencias": 2,
+  "candidatos": [
+   {
+    "doi": "https://doi.org/10.31234/osf.io/4tj3p",
+    "title": "Discourse coherence modulates use of predictive processing during sentence comprehension",
+    "year": 2022,
+    "cites": 0,
+    "tipo": "posted-content",
+    "venue": "",
+    "snippet": "Discourse coherence modulates use of predictive processing during sentence comprehension.",
+    "con_resumen": true,
+    "score": 3.0
+   },
+   {
+    "doi": "https://doi.org/10.1016/j.cognition.2023.105637",
+    "title": "Discourse coherence modulates use of predictive processing during sentence comprehension",
+    "year": 2024,
+    "cites": 11,
+    "tipo": "journal-article",
+    "venue": "Cognition",
+    "snippet": "Discourse coherence modulates use of predictive processing during sentence comprehension.",
+    "con_resumen": false,
+    "score": 2.06
+   }
+  ]
+ },
+ "f_coherence_min": {
+  "grupo": "F Flujo",
+  "n_coincidencias": 1,
+  "candidatos": [
+   {
+    "doi": "https://doi.org/10.48550/arXiv.2512.17083",
+    "title": "When F1 Fails: Granularity-Aware Evaluation for Dialogue Topic Segmentation",
+    "year": 2025,
+    "cites": null,
+    "tipo": "preprint",
+    "venue": "arXiv",
+    "snippet": "Dialogue topic segmentation supports summarization, retrieval, memory management, and conversational continuity.",
+    "con_resumen": true,
+    "score": 3.0
+   }
+  ]
+ },
+ "f_topic_drift": {
+  "grupo": "F Flujo",
+  "n_coincidencias": 3,
+  "candidatos": [
+   {
+    "doi": "https://doi.org/10.48550/arXiv.2512.17083",
+    "title": "When F1 Fails: Granularity-Aware Evaluation for Dialogue Topic Segmentation",
+    "year": 2025,
+    "cites": null,
+    "tipo": "preprint",
+    "venue": "arXiv",
+    "snippet": "Dialogue topic segmentation supports summarization, retrieval, memory management, and conversational continuity.",
+    "con_resumen": true,
+    "score": 3.0
+   },
+   {
+    "doi": "https://doi.org/10.48550/arXiv.2106.12978",
+    "title": "Unsupervised Topic Segmentation of Meetings with BERT Embeddings",
+    "year": 2021,
+    "cites": null,
+    "tipo": "preprint",
+    "venue": "arXiv",
+    "snippet": "",
+    "con_resumen": true,
+    "score": 1.0
+   },
+   {
+    "doi": "https://doi.org/10.1155/2023/6044007",
+    "title": "TSHD: Topic Segmentation Based on Headings Detection (Case Study: Resumes)",
+    "year": 2023,
+    "cites": 1,
+    "tipo": "journal-article",
+    "venue": "Advances in Human-Computer Interaction",
+    "snippet": "",
+    "con_resumen": true,
+    "score": 1.0
+   }
+  ]
+ },
+ "f_n_sentences": {
+  "grupo": "F Flujo",
+  "n_coincidencias": 18,
+  "candidatos": [
+   {
+    "doi": "https://doi.org/10.1609/aaai.v35i14.17552",
+    "title": "Flexible Non-Autoregressive Extractive Summarization with Threshold: How to Extract a Non-Fixed Number of Summary Sentences",
+    "year": 2021,
+    "cites": 3,
+    "tipo": "journal-article",
+    "venue": "Proceedings of the AAAI Conference on Artificial Intelligence",
+    "snippet": "Flexible Non-Autoregressive Extractive Summarization with Threshold: How to Extract a Non-Fixed Number of Summary Sentences.",
+    "con_resumen": true,
+    "score": 3.02
+   },
+   {
+    "doi": "https://doi.org/10.48048/tis.2022.1719",
+    "title": "Similitude Based Segment Graph Construction and Segment Ranking for Automatic Summarization of Text Document",
+    "year": 2022,
+    "cites": 2,
+    "tipo": "journal-article",
+    "venue": "Trends in Sciences",
+    "snippet": "HIGHLIGHTS Paper presents the automated single document summarization by constructing similitude graphs from the extracted text segments It utilizes information gain ratio, graph construction, graph score and the sentence segment score computation Results analysis has been performed using ROUGE metrics with 4 popular datasets in the document summarization domain The model acquired top 2 positions ",
+    "con_resumen": true,
+    "score": 3.01
+   },
+   {
+    "doi": "https://doi.org/10.48550/arXiv.2205.14522",
+    "title": "A Character-Level Length-Control Algorithm for Non-Autoregressive Sentence Summarization",
+    "year": 2022,
+    "cites": null,
+    "tipo": "preprint",
+    "venue": "arXiv",
+    "snippet": "A Character-Level Length-Control Algorithm for Non-Autoregressive Sentence Summarization.",
+    "con_resumen": true,
+    "score": 3.0
+   },
+   {
+    "doi": "https://doi.org/10.48550/arXiv.2311.17771",
+    "title": "Supervising the Centroid Baseline for Extractive Multi-Document Summarization",
+    "year": 2023,
+    "cites": null,
+    "tipo": "preprint",
+    "venue": "arXiv",
+    "snippet": "We further refine it by adding a beam search process to the sentence selection and also a centroid estimation attention model that leads to improved results.",
+    "con_resumen": true,
+    "score": 3.0
+   }
+  ]
+ },
+ "f_duration": {
+  "grupo": "F Flujo",
+  "n_coincidencias": 11,
+  "candidatos": [
+   {
+    "doi": "https://doi.org/10.65753/sujbm.v3i1.37",
+    "title": "THE ROLE OF VIDEO MARKETING IN BRAND ENGAGEMENT: QUALITY, STORYTELLING, AND VIDEO LENGTH",
+    "year": 2025,
+    "cites": 0,
+    "tipo": "journal-article",
+    "venue": "Suffa University Journal of Business Management",
+    "snippet": "THE ROLE OF VIDEO MARKETING IN BRAND ENGAGEMENT: QUALITY, STORYTELLING, AND VIDEO LENGTH.",
+    "con_resumen": true,
+    "score": 3.0
+   },
+   {
+    "doi": "https://doi.org/10.2139/ssrn.7496618",
+    "title": "Predicting Audience Time on Screen for In-Feed Video Advertisements from the Video File: Content Adds to Duration and Generalises to Unseen Advertisers",
+    "year": 2026,
+    "cites": 0,
+    "tipo": "posted-content",
+    "venue": "",
+    "snippet": "Predicting Audience Time on Screen for In-Feed Video Advertisements from the Video File: Content Adds to Duration and Generalises to Unseen Advertisers.",
+    "con_resumen": true,
+    "score": 3.0
+   },
+   {
+    "doi": "https://doi.org/10.48550/arXiv.2206.06003",
+    "title": "Deconfounding Duration Bias in Watch-time Prediction for Video Recommendation",
+    "year": 2022,
+    "cites": null,
+    "tipo": "preprint",
+    "venue": "arXiv",
+    "snippet": "Deconfounding Duration Bias in Watch-time Prediction for Video Recommendation.",
+    "con_resumen": true,
+    "score": 3.0
+   },
+   {
+    "doi": "https://doi.org/10.48550/arXiv.2406.07932",
+    "title": "Counteracting Duration Bias in Video Recommendation via Counterfactual Watch Time",
+    "year": 2024,
+    "cites": null,
+    "tipo": "preprint",
+    "venue": "arXiv",
+    "snippet": "Counteracting Duration Bias in Video Recommendation via Counterfactual Watch Time.",
+    "con_resumen": true,
+    "score": 3.0
+   }
+  ]
+ },
+ "f_filler_rate": {
+  "grupo": "F Flujo",
+  "n_coincidencias": 2,
+  "candidatos": [
+   {
+    "doi": "https://doi.org/10.1007/978-3-319-91280-6_102369",
+    "title": "Speaker Versus Listener-Oriented Disfluency",
+    "year": 2021,
+    "cites": 3,
+    "tipo": "book-chapter",
+    "venue": "Encyclopedia of Autism Spectrum Disorders",
+    "snippet": "Speaker Versus Listener-Oriented Disfluency.",
+    "con_resumen": false,
+    "score": 2.02
+   },
+   {
+    "doi": "https://doi.org/10.3390/languages8030155",
+    "title": "Disfluencies Revisited—Are They Speaker-Specific?",
+    "year": 2023,
+    "cites": 4,
+    "tipo": "journal-article",
+    "venue": "Languages",
+    "snippet": "",
+    "con_resumen": true,
+    "score": 1.02
+   }
+  ]
+ },
+ "f_word_conf": {
+  "grupo": "F Flujo",
+  "n_coincidencias": 1,
+  "candidatos": [
+   {
+    "doi": "https://doi.org/10.21437/interspeech.2021-411",
+    "title": "Speech Emotion Recognition Based on Attention Weight Correction Using Word-Level Confidence Measure",
+    "year": 2021,
+    "cites": 19,
+    "tipo": "proceedings-article",
+    "venue": "Interspeech 2021",
+    "snippet": "Speech Emotion Recognition Based on Attention Weight Correction Using Word-Level Confidence Measure.",
+    "con_resumen": false,
+    "score": 2.1
+   }
+  ]
+ },
+ "l_entropy": {
+  "grupo": "L Linguistica",
+  "n_coincidencias": 5,
+  "candidatos": [
+   {
+    "doi": "https://doi.org/10.55593/ej.28109a5",
+    "title": "The Contribution of Vocabulary Knowledge to Summary Writing Quality: Vocabulary Size and Lexical Richness.",
+    "year": 2024,
+    "cites": 3,
+    "tipo": "journal-article",
+    "venue": "Teaching English as a Second or Foreign Language--TESL-EJ",
+    "snippet": "Previous research has examined the relationship between various aspects of vocabulary knowledge and independent writing performance and limited attention has been given to integrated writing such as summary writing.",
+    "con_resumen": true,
+    "score": 3.02
+   },
+   {
+    "doi": "https://doi.org/10.4995/eurocall2023.2023.16997",
+    "title": "Writing with automatic speech recognition: Examining user’s behaviours and text quality (lexical diversity)",
+    "year": 2023,
+    "cites": 0,
+    "tipo": "proceedings-article",
+    "venue": "EuroCALL 2023. CALL for all Languages - Short Papers",
+    "snippet": "This study explores the potential of Automatic Speech Recognition (ASR) as a writing tool by investigating user behaviours (strategies henceforth) and text quality (lexical diversity) when users engage with the technology.",
+    "con_resumen": true,
+    "score": 3.0
+   },
+   {
+    "doi": "https://doi.org/10.47475/9785727119631_236",
+    "title": "THE LEXICAL DIVERSITY RATIO OF A LITERARY TEXT AND ITS TRANSLATION",
+    "year": 2024,
+    "cites": 0,
+    "tipo": "proceedings-article",
+    "venue": "СЛОВО, ВЫСКАЗЫВАНИЕ, ТЕКСТ В КОГНИТИВНОМ, ПРАГМАТИЧЕСКОМ И КУЛЬТУРОЛОГИЧЕСКОМ АСПЕКТАХ",
+    "snippet": "",
+    "con_resumen": true,
+    "score": 1.0
+   },
+   {
+    "doi": "https://doi.org/10.48550/arXiv.2508.00086",
+    "title": "Do LLMs produce texts with \"human-like\" lexical diversity?",
+    "year": 2025,
+    "cites": null,
+    "tipo": "preprint",
+    "venue": "arXiv",
+    "snippet": "",
+    "con_resumen": true,
+    "score": 1.0
+   }
+  ]
+ },
+ "l_type_token": {
+  "grupo": "L Linguistica",
+  "n_coincidencias": 3,
+  "candidatos": [
+   {
+    "doi": "https://doi.org/10.4995/eurocall2023.2023.16997",
+    "title": "Writing with automatic speech recognition: Examining user’s behaviours and text quality (lexical diversity)",
+    "year": 2023,
+    "cites": 0,
+    "tipo": "proceedings-article",
+    "venue": "EuroCALL 2023. CALL for all Languages - Short Papers",
+    "snippet": "This study explores the potential of Automatic Speech Recognition (ASR) as a writing tool by investigating user behaviours (strategies henceforth) and text quality (lexical diversity) when users engage with the technology.",
+    "con_resumen": true,
+    "score": 3.0
+   },
+   {
+    "doi": "https://doi.org/10.47475/9785727119631_236",
+    "title": "THE LEXICAL DIVERSITY RATIO OF A LITERARY TEXT AND ITS TRANSLATION",
+    "year": 2024,
+    "cites": 0,
+    "tipo": "proceedings-article",
+    "venue": "СЛОВО, ВЫСКАЗЫВАНИЕ, ТЕКСТ В КОГНИТИВНОМ, ПРАГМАТИЧЕСКОМ И КУЛЬТУРОЛОГИЧЕСКОМ АСПЕКТАХ",
+    "snippet": "",
+    "con_resumen": true,
+    "score": 1.0
+   },
+   {
+    "doi": "https://doi.org/10.2139/ssrn.7536862",
+    "title": "Beyond Pronunciation: Alcohol, Speech Output, and Lexical Diversity in L1 Vietnamese and L2 English",
+    "year": 2026,
+    "cites": 0,
+    "tipo": "posted-content",
+    "venue": "",
+    "snippet": "",
+    "con_resumen": true,
+    "score": 1.0
+   }
+  ]
+ },
+ "l_pron_12_vs_3": {
+  "grupo": "L Linguistica",
+  "n_coincidencias": 3,
+  "candidatos": [
+   {
+    "doi": "https://doi.org/10.2139/ssrn.4914086",
+    "title": "Dynamic Effects of First-Person Pronouns on Content Engagement",
+    "year": 2024,
+    "cites": 0,
+    "tipo": "posted-content",
+    "venue": "",
+    "snippet": "Dynamic Effects of First-Person Pronouns on Content Engagement.",
+    "con_resumen": true,
+    "score": 3.0
+   },
+   {
+    "doi": "https://doi.org/10.1017/9781108966757",
+    "title": "The Stylistics of ‘You'",
+    "year": 2021,
+    "cites": 36,
+    "tipo": "monograph",
+    "venue": "",
+    "snippet": "",
+    "con_resumen": true,
+    "score": 1.18
+   },
+   {
+    "doi": "https://doi.org/10.1093/9780197814017.003.0002",
+    "title": "The First-Person Pronoun (2): Split Brains",
+    "year": 2026,
+    "cites": 0,
+    "tipo": "book-chapter",
+    "venue": "Selves in Doubt",
+    "snippet": "",
+    "con_resumen": true,
+    "score": 1.0
+   }
+  ]
+ },
+ "l_fillers": {
+  "grupo": "L Linguistica",
+  "n_coincidencias": 3,
+  "candidatos": [
+   {
+    "doi": "https://doi.org/10.1002/jaba.867",
+    "title": "Using brief habit reversal and an interdependent group contingency to reduce<scp>public‐speaking</scp>speech disfluencies",
+    "year": 2021,
+    "cites": 9,
+    "tipo": "journal-article",
+    "venue": "Journal of Applied Behavior Analysis",
+    "snippet": "Reductions in speech disfluencies maintained during follow‐up when participants presented in front of a small audience.",
+    "con_resumen": true,
+    "score": 3.04
+   },
+   {
+    "doi": "https://doi.org/10.1159/000551501",
+    "title": "Attention Networks and Speech Disfluencies among Monolingual Dutch and Bilingual Dutch-Turkish Speaking Children: A Pilot Study",
+    "year": 2026,
+    "cites": 0,
+    "tipo": "journal-article",
+    "venue": "Folia Phoniatrica et Logopaedica",
+    "snippet": "Attention Networks and Speech Disfluencies among Monolingual Dutch and Bilingual Dutch-Turkish Speaking Children: A Pilot Study.",
+    "con_resumen": true,
+    "score": 3.0
+   },
+   {
+    "doi": "https://doi.org/10.1002/jaba.948",
+    "title": "Public speaking disfluencies: A review of habit reversal training and research",
+    "year": 2022,
+    "cites": 10,
+    "tipo": "journal-article",
+    "venue": "Journal of Applied Behavior Analysis",
+    "snippet": "",
+    "con_resumen": true,
+    "score": 1.05
+   }
+  ]
+ },
+ "l_silence": {
+  "grupo": "L Linguistica",
+  "n_coincidencias": 10,
+  "candidatos": [
+   {
+    "doi": "https://doi.org/10.3366/edinburgh/9781399535854.003.0002",
+    "title": "Silence and Speech",
+    "year": 2024,
+    "cites": 0,
+    "tipo": "book-chapter",
+    "venue": "Joseph Conrad and the Narration of Silence",
+    "snippet": "This chapter considers the silence of the unsayable in the gap between signifier and signified such that the narrator's language cannot completely communicate meaning to the reader or listener and what the consequences are for such slippage.",
+    "con_resumen": true,
+    "score": 3.0
+   },
+   {
+    "doi": "https://doi.org/10.37547/ajsshr/volume06issue04-35",
+    "title": "Communicative Functions of Pause and Silence in Speech",
+    "year": 2026,
+    "cites": 0,
+    "tipo": "journal-article",
+    "venue": "American Journal Of Social Sciences And Humanity Research",
+    "snippet": "Special attention is given to how pause and silence organize speech, regulate interaction, and influence interpretation.",
+    "con_resumen": true,
+    "score": 3.0
+   },
+   {
+    "doi": "https://doi.org/10.48550/arXiv.2309.11827",
+    "title": "The Impact of Silence on Speech Anti-Spoofing",
+    "year": 2023,
+    "cites": null,
+    "tipo": "preprint",
+    "venue": "arXiv",
+    "snippet": "To demonstrate the reasons for the impact of silence on CMs, the attention distribution of a CM is visualized through class activation mapping (CAM).",
+    "con_resumen": true,
+    "score": 3.0
+   },
+   {
+    "doi": "https://doi.org/10.31234/osf.io/ez75m",
+    "title": "Speech with pauses sounds deceptive to listeners with and without hearing impairment",
+    "year": 2022,
+    "cites": 0,
+    "tipo": "posted-content",
+    "venue": "",
+    "snippet": "Speech with pauses sounds deceptive to listeners with and without hearing impairment.",
+    "con_resumen": true,
+    "score": 3.0
+   }
+  ]
+ },
+ "l_word_len": {
+  "grupo": "L Linguistica",
+  "n_coincidencias": 4,
+  "candidatos": [
+   {
+    "doi": "https://doi.org/10.54691/bcpssh.v14i.262",
+    "title": "Study on the Correlation between Linguistic Complexity and Audience Recognition in College English Speech Contests",
+    "year": 2021,
+    "cites": 0,
+    "tipo": "journal-article",
+    "venue": "BCP Social Sciences &amp; Humanities",
+    "snippet": "Study on the Correlation between Linguistic Complexity and Audience Recognition in College English Speech Contests.",
+    "con_resumen": true,
+    "score": 3.0
+   },
+   {
+    "doi": "https://doi.org/10.1016/j.jjimei.2022.100067",
+    "title": "How do text characteristics impact user engagement in social media posts: Modeling content readability, length, and hashtags number in Facebook",
+    "year": 2022,
+    "cites": 93,
+    "tipo": "journal-article",
+    "venue": "International Journal of Information Management Data Insights",
+    "snippet": "How do text characteristics impact user engagement in social media posts: Modeling content readability, length, and hashtags number in Facebook.",
+    "con_resumen": false,
+    "score": 2.46
+   },
+   {
+    "doi": "https://doi.org/10.18580/setep.2022.47.3",
+    "title": "Audience and complexity aware live video encoders orchestration",
+    "year": 2022,
+    "cites": 0,
+    "tipo": "journal-article",
+    "venue": "SET EXPO PROCEEDINGS",
+    "snippet": "Audience and complexity aware live video encoders orchestration.",
+    "con_resumen": false,
+    "score": 2.0
+   },
+   {
+    "doi": "https://doi.org/10.2139/ssrn.7438616",
+    "title": "Calibrating Linguistic Surprise for Audience Engagement in Influencer Marketing",
+    "year": 2026,
+    "cites": 0,
+    "tipo": "posted-content",
+    "venue": "",
+    "snippet": "",
+    "con_resumen": true,
+    "score": 1.0
+   }
+  ]
+ },
+ "e_laugh_max": {
+  "grupo": "E Eventos de audio",
+  "n_coincidencias": 3,
+  "candidatos": [
+   {
+    "doi": "https://doi.org/10.1016/j.poetic.2024.101883",
+    "title": "Laughter and civil repair: A stage-audience encounter",
+    "year": 2024,
+    "cites": 9,
+    "tipo": "journal-article",
+    "venue": "Poetics",
+    "snippet": "Laughter and civil repair: A stage-audience encounter.",
+    "con_resumen": false,
+    "score": 2.04
+   },
+   {
+    "doi": "https://doi.org/10.1017/9781108694933.024",
+    "title": "Audience Laughter",
+    "year": 2022,
+    "cites": 0,
+    "tipo": "book-chapter",
+    "venue": "Molière in Context",
+    "snippet": "Audience Laughter.",
+    "con_resumen": false,
+    "score": 2.0
+   },
+   {
+    "doi": "https://doi.org/10.7591/cornell/9781501772252.003.0006",
+    "title": "Scripted Laughter",
+    "year": 2023,
+    "cites": 0,
+    "tipo": "book-chapter",
+    "venue": "Textual Cacophony",
+    "snippet": "",
+    "con_resumen": true,
+    "score": 1.0
+   }
+  ]
+ },
+ "e_laugh_mean": {
+  "grupo": "E Eventos de audio",
+  "n_coincidencias": 2,
+  "candidatos": [
+   {
+    "doi": "https://doi.org/10.1016/j.poetic.2024.101883",
+    "title": "Laughter and civil repair: A stage-audience encounter",
+    "year": 2024,
+    "cites": 9,
+    "tipo": "journal-article",
+    "venue": "Poetics",
+    "snippet": "Laughter and civil repair: A stage-audience encounter.",
+    "con_resumen": false,
+    "score": 2.04
+   },
+   {
+    "doi": "https://doi.org/10.1017/9781108694933.024",
+    "title": "Audience Laughter",
+    "year": 2022,
+    "cites": 0,
+    "tipo": "book-chapter",
+    "venue": "Molière in Context",
+    "snippet": "Audience Laughter.",
+    "con_resumen": false,
+    "score": 2.0
+   }
+  ]
+ },
+ "e_applause_max": {
+  "grupo": "E Eventos de audio",
+  "n_coincidencias": 0,
+  "candidatos": []
+ },
+ "e_applause_mean": {
+  "grupo": "E Eventos de audio",
+  "n_coincidencias": 0,
+  "candidatos": []
+ },
+ "e_cheering_max": {
+  "grupo": "E Eventos de audio",
+  "n_coincidencias": 8,
+  "candidatos": [
+   {
+    "doi": "https://doi.org/10.59720/20-127",
+    "title": "Machine learning on crowd-sourced data to highlight coral disease",
+    "year": 2021,
+    "cites": 2,
+    "tipo": "journal-article",
+    "venue": "Journal of Emerging Investigators",
+    "snippet": "Machine learning on crowd-sourced data to highlight coral disease.",
+    "con_resumen": true,
+    "score": 3.01
+   },
+   {
+    "doi": "https://doi.org/10.31234/osf.io/2tjsv",
+    "title": "“...and the crowd goes wild!” – The impact of crowds and simulated crowd noise on performance in professional darts players during the COVID-19 pandemic",
+    "year": 2023,
+    "cites": 0,
+    "tipo": "posted-content",
+    "venue": "",
+    "snippet": "The current investigation analyzes individual performances of professional dart players over 4 years in (a) the absence of spectators, (b) the presence of noisy, real crowds, and (c) artificial crowd noise (simulated crowds) substituting live spectators during the COVID-19 pandemic.Darts is a coordination-based accuracy task requiring full attention.",
+    "con_resumen": true,
+    "score": 3.0
+   },
+   {
+    "doi": "https://doi.org/10.48550/arXiv.2211.07634",
+    "title": "Follow the Wisdom of the Crowd: Effective Text Generation via Minimum Bayes Risk Decoding",
+    "year": 2022,
+    "cites": null,
+    "tipo": "preprint",
+    "venue": "arXiv",
+    "snippet": "Extensive experiments show that crowd sampling delivers improvements of 3-7 ROUGE and BLEU points across a wide range of tasks, including summarization, data-to-text, translation, and textual style transfer, while achieving new state-of-the-art results on WebNLG and WMT'16.",
+    "con_resumen": true,
+    "score": 3.0
+   },
+   {
+    "doi": "https://doi.org/10.1016/j.mlwa.2022.100338",
+    "title": "Autohighlight: Highlight detection in League of Legends esports broadcasts via crowd-sourced data",
+    "year": 2022,
+    "cites": 3,
+    "tipo": "journal-article",
+    "venue": "Machine Learning with Applications",
+    "snippet": "Autohighlight: Highlight detection in League of Legends esports broadcasts via crowd-sourced data.",
+    "con_resumen": false,
+    "score": 2.02
+   }
+  ]
+ },
+ "e_cheering_mean": {
+  "grupo": "E Eventos de audio",
+  "n_coincidencias": 7,
+  "candidatos": [
+   {
+    "doi": "https://doi.org/10.59720/20-127",
+    "title": "Machine learning on crowd-sourced data to highlight coral disease",
+    "year": 2021,
+    "cites": 2,
+    "tipo": "journal-article",
+    "venue": "Journal of Emerging Investigators",
+    "snippet": "Machine learning on crowd-sourced data to highlight coral disease.",
+    "con_resumen": true,
+    "score": 3.01
+   },
+   {
+    "doi": "https://doi.org/10.31234/osf.io/2tjsv",
+    "title": "“...and the crowd goes wild!” – The impact of crowds and simulated crowd noise on performance in professional darts players during the COVID-19 pandemic",
+    "year": 2023,
+    "cites": 0,
+    "tipo": "posted-content",
+    "venue": "",
+    "snippet": "The current investigation analyzes individual performances of professional dart players over 4 years in (a) the absence of spectators, (b) the presence of noisy, real crowds, and (c) artificial crowd noise (simulated crowds) substituting live spectators during the COVID-19 pandemic.Darts is a coordination-based accuracy task requiring full attention.",
+    "con_resumen": true,
+    "score": 3.0
+   },
+   {
+    "doi": "https://doi.org/10.48550/arXiv.2211.07634",
+    "title": "Follow the Wisdom of the Crowd: Effective Text Generation via Minimum Bayes Risk Decoding",
+    "year": 2022,
+    "cites": null,
+    "tipo": "preprint",
+    "venue": "arXiv",
+    "snippet": "Extensive experiments show that crowd sampling delivers improvements of 3-7 ROUGE and BLEU points across a wide range of tasks, including summarization, data-to-text, translation, and textual style transfer, while achieving new state-of-the-art results on WebNLG and WMT'16.",
+    "con_resumen": true,
+    "score": 3.0
+   },
+   {
+    "doi": "https://doi.org/10.1016/j.mlwa.2022.100338",
+    "title": "Autohighlight: Highlight detection in League of Legends esports broadcasts via crowd-sourced data",
+    "year": 2022,
+    "cites": 3,
+    "tipo": "journal-article",
+    "venue": "Machine Learning with Applications",
+    "snippet": "Autohighlight: Highlight detection in League of Legends esports broadcasts via crowd-sourced data.",
+    "con_resumen": false,
+    "score": 2.02
+   }
+  ]
+ },
+ "e_music_max": {
+  "grupo": "E Eventos de audio",
+  "n_coincidencias": 15,
+  "candidatos": [
+   {
+    "doi": "https://doi.org/10.1177/20592043241263461",
+    "title": "Audience Musical Absorption: Exploring Attention and Affect in the Live Concert Setting",
+    "year": 2024,
+    "cites": 21,
+    "tipo": "journal-article",
+    "venue": "Music &amp; Science",
+    "snippet": "Audience Musical Absorption: Exploring Attention and Affect in the Live Concert Setting.",
+    "con_resumen": true,
+    "score": 3.1
+   },
+   {
+    "doi": "https://doi.org/10.3389/fpsyg.2024.1267516",
+    "title": "Enhancing social media engagement using AI-modified background music: examining the roles of event relevance, lyric resonance, AI-singer origins, audience interpretation, emotional resonance, and social media engagement",
+    "year": 2024,
+    "cites": 17,
+    "tipo": "journal-article",
+    "venue": "Frontiers in Psychology",
+    "snippet": "Enhancing social media engagement using AI-modified background music: examining the roles of event relevance, lyric resonance, AI-singer origins, audience interpretation, emotional resonance, and social media engagement.",
+    "con_resumen": true,
+    "score": 3.08
+   },
+   {
+    "doi": "https://doi.org/10.3390/bs15040416",
+    "title": "The Impact of Background Music on Flow, Work Engagement and Task Performance: A Randomized Controlled Study",
+    "year": 2025,
+    "cites": 7,
+    "tipo": "journal-article",
+    "venue": "Behavioral Sciences",
+    "snippet": "The Impact of Background Music on Flow, Work Engagement and Task Performance: A Randomized Controlled Study.",
+    "con_resumen": true,
+    "score": 3.04
+   },
+   {
+    "doi": "https://doi.org/10.1155/2021/6696986",
+    "title": "Automatic Recommendation Algorithm for Video Background Music Based on Deep Learning",
+    "year": 2021,
+    "cites": 5,
+    "tipo": "journal-article",
+    "venue": "Complexity",
+    "snippet": "In terms of model design, this paper conducts auxiliary information mining based on the diversity and structural differences of auxiliary information, uses an improved stack autoencoder to learn user’s interests, and uses convolutional neural networks to mine hidden features of video background music.",
+    "con_resumen": true,
+    "score": 3.02
+   }
+  ]
+ },
+ "e_music_mean": {
+  "grupo": "E Eventos de audio",
+  "n_coincidencias": 13,
+  "candidatos": [
+   {
+    "doi": "https://doi.org/10.3390/app12105050",
+    "title": "Double Linear Transformer for Background Music Generation from Videos",
+    "year": 2022,
+    "cites": 7,
+    "tipo": "journal-article",
+    "venue": "Applied Sciences",
+    "snippet": "In particular, we pay attention to the connection and the independence of music features.",
+    "con_resumen": true,
+    "score": 3.04
+   },
+   {
+    "doi": "https://doi.org/10.17549/gbfr.2024.29.1.44",
+    "title": "Hitting the Right Notes: Exploring the Relationship between YouTube Music Videos and Digital User Engagement",
+    "year": 2024,
+    "cites": 6,
+    "tipo": "journal-article",
+    "venue": "GLOBAL BUSINESS FINANCE REVIEW",
+    "snippet": "Hitting the Right Notes: Exploring the Relationship between YouTube Music Videos and Digital User Engagement.",
+    "con_resumen": true,
+    "score": 3.03
+   },
+   {
+    "doi": "https://doi.org/10.1177/03057356261436409",
+    "title": "The impact of self-selected background music on sustained attention: Examining the roles of arousal and task engagement",
+    "year": 2026,
+    "cites": 0,
+    "tipo": "journal-article",
+    "venue": "Psychology of Music",
+    "snippet": "The impact of self-selected background music on sustained attention: Examining the roles of arousal and task engagement.",
+    "con_resumen": true,
+    "score": 3.0
+   },
+   {
+    "doi": "https://doi.org/10.31219/osf.io/e6v5k",
+    "title": "PRODUCTION DIVISION IN THE POPULARITY OF ELFATA MUSIC  ARTS SME",
+    "year": 2022,
+    "cites": 0,
+    "tipo": "posted-content",
+    "venue": "",
+    "snippet": "PRODUCTION DIVISION IN THE POPULARITY OF ELFATA MUSIC  ARTS SME.",
+    "con_resumen": true,
+    "score": 3.0
+   }
+  ]
+ },
+ "e_speech_max": {
+  "grupo": "E Eventos de audio",
+  "n_coincidencias": 5,
+  "candidatos": [
+   {
+    "doi": "https://doi.org/10.48550/arXiv.2507.00966",
+    "title": "MambAttention: Mamba with Multi-Head Attention for Generalizable Single-Channel Speech Enhancement",
+    "year": 2025,
+    "cites": null,
+    "tipo": "preprint",
+    "venue": "arXiv",
+    "snippet": "MambAttention: Mamba with Multi-Head Attention for Generalizable Single-Channel Speech Enhancement.",
+    "con_resumen": true,
+    "score": 3.0
+   },
+   {
+    "doi": "https://doi.org/10.48550/arXiv.2312.14378",
+    "title": "Multimodal Attention Merging for Improved Speech Recognition and Audio Event Classification",
+    "year": 2023,
+    "cites": null,
+    "tipo": "preprint",
+    "venue": "arXiv",
+    "snippet": "Multimodal Attention Merging for Improved Speech Recognition and Audio Event Classification.",
+    "con_resumen": true,
+    "score": 3.0
+   },
+   {
+    "doi": "https://doi.org/10.48550/arXiv.2307.02909",
+    "title": "Audio-visual End-to-end Multi-channel Speech Separation, Dereverberation and Recognition",
+    "year": 2023,
+    "cites": null,
+    "tipo": "preprint",
+    "venue": "arXiv",
+    "snippet": "Experiments were conducted on the mixture overlapped and reverberant speech data constructed using simulation or replay of the Oxford LRS2 dataset.",
+    "con_resumen": true,
+    "score": 3.0
+   },
+   {
+    "doi": "https://doi.org/10.1186/s13636-023-00292-9",
+    "title": "Dual-branch attention module-based network with parameter sharing for joint sound event detection and localization",
+    "year": 2023,
+    "cites": 8,
+    "tipo": "journal-article",
+    "venue": "EURASIP Journal on Audio, Speech, and Music Processing",
+    "snippet": "",
+    "con_resumen": true,
+    "score": 1.04
+   }
+  ]
+ },
+ "e_speech_mean": {
+  "grupo": "E Eventos de audio",
+  "n_coincidencias": 3,
+  "candidatos": [
+   {
+    "doi": "https://doi.org/10.48550/arXiv.2307.02909",
+    "title": "Audio-visual End-to-end Multi-channel Speech Separation, Dereverberation and Recognition",
+    "year": 2023,
+    "cites": null,
+    "tipo": "preprint",
+    "venue": "arXiv",
+    "snippet": "Experiments were conducted on the mixture overlapped and reverberant speech data constructed using simulation or replay of the Oxford LRS2 dataset.",
+    "con_resumen": true,
+    "score": 3.0
+   },
+   {
+    "doi": "https://doi.org/10.48550/arXiv.2507.00966",
+    "title": "MambAttention: Mamba with Multi-Head Attention for Generalizable Single-Channel Speech Enhancement",
+    "year": 2025,
+    "cites": null,
+    "tipo": "preprint",
+    "venue": "arXiv",
+    "snippet": "MambAttention: Mamba with Multi-Head Attention for Generalizable Single-Channel Speech Enhancement.",
+    "con_resumen": true,
+    "score": 3.0
+   },
+   {
+    "doi": "https://doi.org/10.48550/arXiv.2312.14378",
+    "title": "Multimodal Attention Merging for Improved Speech Recognition and Audio Event Classification",
+    "year": 2023,
+    "cites": null,
+    "tipo": "preprint",
+    "venue": "arXiv",
+    "snippet": "Multimodal Attention Merging for Improved Speech Recognition and Audio Event Classification.",
+    "con_resumen": true,
+    "score": 3.0
+   }
+  ]
+ },
+ "e_laugh_tail": {
+  "grupo": "E Eventos de audio",
+  "n_coincidencias": 6,
+  "candidatos": [
+   {
+    "doi": "https://doi.org/10.7591/cornell/9781501766688.003.0001",
+    "title": "Authoritarian Laughter",
+    "year": 2022,
+    "cites": 0,
+    "tipo": "book-chapter",
+    "venue": "Authoritarian Laughter",
+    "snippet": "It highlights laughter as transformative in the sense that it communicates dissensus and reconfigures authorized common sense, state ideology, and order.",
+    "con_resumen": true,
+    "score": 3.0
+   },
+   {
+    "doi": "https://doi.org/10.7591/cornell/9781501766688.003.0011",
+    "title": "Lost Laughter and Authoritarian Stigma",
+    "year": 2022,
+    "cites": 0,
+    "tipo": "book-chapter",
+    "venue": "Authoritarian Laughter",
+    "snippet": "Moreover, Broom 's political laughter was multidirectional even though editors engaged Communist Party ideology and slogans to speak about their work.",
+    "con_resumen": true,
+    "score": 3.0
+   },
+   {
+    "doi": "https://doi.org/10.48550/arXiv.2412.11906",
+    "title": "PunchBench: Benchmarking MLLMs in Multimodal Punchline Comprehension",
+    "year": 2024,
+    "cites": null,
+    "tipo": "preprint",
+    "venue": "arXiv",
+    "snippet": "PunchBench: Benchmarking MLLMs in Multimodal Punchline Comprehension.",
+    "con_resumen": true,
+    "score": 3.0
+   },
+   {
+    "doi": "https://doi.org/10.48550/arXiv.2211.01889",
+    "title": "When to Laugh and How Hard? A Multimodal Approach to Detecting Humor and its Intensity",
+    "year": 2022,
+    "cites": null,
+    "tipo": "preprint",
+    "venue": "arXiv",
+    "snippet": "Prerecorded laughter accompanying dialog in comedy TV shows encourages the audience to laugh by clearly marking humorous moments in the show.",
+    "con_resumen": true,
+    "score": 3.0
+   }
+  ]
+ },
+ "e_laugh_after": {
+  "grupo": "E Eventos de audio",
+  "n_coincidencias": 6,
+  "candidatos": [
+   {
+    "doi": "https://doi.org/10.48550/arXiv.2305.09485",
+    "title": "Executive Voiced Laughter and Social Approval: An Explorative Machine Learning Study",
+    "year": 2023,
+    "cites": null,
+    "tipo": "preprint",
+    "venue": "arXiv",
+    "snippet": "Integrating research on laughter, affect-as-information, and infomediaries' social evaluations of firms, we hypothesize that voiced laughter in executive communication positively affects social approval, defined as audience perceptions of affinity towards an organization.",
+    "con_resumen": true,
+    "score": 3.0
+   },
+   {
+    "doi": "https://doi.org/10.7591/cornell/9781501766688.003.0001",
+    "title": "Authoritarian Laughter",
+    "year": 2022,
+    "cites": 0,
+    "tipo": "book-chapter",
+    "venue": "Authoritarian Laughter",
+    "snippet": "It highlights laughter as transformative in the sense that it communicates dissensus and reconfigures authorized common sense, state ideology, and order.",
+    "con_resumen": true,
+    "score": 3.0
+   },
+   {
+    "doi": "https://doi.org/10.7591/cornell/9781501766688.003.0011",
+    "title": "Lost Laughter and Authoritarian Stigma",
+    "year": 2022,
+    "cites": 0,
+    "tipo": "book-chapter",
+    "venue": "Authoritarian Laughter",
+    "snippet": "Moreover, Broom 's political laughter was multidirectional even though editors engaged Communist Party ideology and slogans to speak about their work.",
+    "con_resumen": true,
+    "score": 3.0
+   },
+   {
+    "doi": "https://doi.org/10.1016/j.poetic.2024.101883",
+    "title": "Laughter and civil repair: A stage-audience encounter",
+    "year": 2024,
+    "cites": 9,
+    "tipo": "journal-article",
+    "venue": "Poetics",
+    "snippet": "Laughter and civil repair: A stage-audience encounter.",
+    "con_resumen": false,
+    "score": 2.04
+   }
+  ]
+ },
+ "e_applause_after": {
+  "grupo": "E Eventos de audio",
+  "n_coincidencias": 1,
+  "candidatos": [
+   {
+    "doi": "https://doi.org/10.48550/arXiv.2404.17355",
+    "title": "Archives of Photographic PLates for Astronomical USE (APPLAUSE) Digitisation of astronomical plates and their integration into the International Virtual Observatory",
+    "year": 2024,
+    "cites": null,
+    "tipo": "preprint",
+    "venue": "arXiv",
+    "snippet": "",
+    "con_resumen": true,
+    "score": 1.0
+   }
+  ]
+ },
+ "e_laugh_frac": {
+  "grupo": "E Eventos de audio",
+  "n_coincidencias": 1,
+  "candidatos": [
+   {
+    "doi": "https://doi.org/10.31234/osf.io/j4852",
+    "title": "Differences between Mimicking and Non-Mimicking laughter in Child-Caregiver Conversation: A Distributional and Acoustic Analysis",
+    "year": 2023,
+    "cites": 2,
+    "tipo": "posted-content",
+    "venue": "",
+    "snippet": "Moreover, we observe signifi- cant differences in laughter acoustics in parents depending on whether they interact with children or adults, which highlights a strong interlocutor effect on laughter mimicry.",
+    "con_resumen": true,
+    "score": 3.01
+   }
+  ]
+ }
+}

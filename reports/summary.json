@@ -1,0 +1,12 @@
+{
+ "n_videos": 121,
+ "n_candidates": 46728,
+ "n_channels": 101,
+ "langs": {
+  "es": 62,
+  "en": 59
+ },
+ "n_folds": 5,
+ "hours": 97.49383621527777,
+ "elapsed_s": 148.69431924819946
+}

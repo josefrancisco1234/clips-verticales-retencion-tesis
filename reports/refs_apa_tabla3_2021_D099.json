@@ -1,0 +1,68 @@
+{
+ "atad": {
+  "apa": "Atad, E., & Cohen, J. (2023). Look me in the eyes: How direct address affects viewers’ experience of parasocial interaction and credibility? Journalism, 25(4), 941-959. https://doi.org/10.1177/14648849231169886",
+  "autor": "Atad",
+  "anio": 2023,
+  "doi": "10.1177/14648849231169886"
+ },
+ "braun": {
+  "apa": "Braun, A., Elsässer, N., & Willems, L. (2023). Disfluencies Revisited—Are They Speaker-Specific? Languages, 8(3), 155. https://doi.org/10.3390/languages8030155",
+  "autor": "Braun",
+  "anio": 2023,
+  "doi": "10.3390/languages8030155"
+ },
+ "lequere": {
+  "apa": "Aubin Le Quéré, M., & Matias, J. N. (2025). When curiosity gaps backfire: effects of headline concreteness on information selection decisions. Scientific Reports, 15(1), 994. https://doi.org/10.1038/s41598-024-81575-9",
+  "autor": "Aubin Le Quéré",
+  "anio": 2025,
+  "doi": "10.1038/s41598-024-81575-9"
+ },
+ "gkikas": {
+  "apa": "Gkikas, D. C., Tzafilkou, K., Theodoridis, P. K., Garmpis, A., & Gkikas, M. C. (2022). How do text characteristics impact user engagement in social media posts: Modeling content readability, length, and hashtags number in Facebook. International Journal of Information Management Data Insights, 2(1), 100067. https://doi.org/10.1016/j.jjimei.2022.100067",
+  "autor": "Gkikas",
+  "anio": 2022,
+  "doi": "10.1016/j.jjimei.2022.100067"
+ },
+ "feng": {
+  "apa": "Feng, R., & Ivanov, A. (2022). Gender Differences in Emotional Valence and Social Media Content Engagement Behaviors in Pandemic Diaries: An Analysis Based on Microblog Texts. Behavioral Sciences, 13(1), 34. https://doi.org/10.3390/bs13010034",
+  "autor": "Feng",
+  "anio": 2022,
+  "doi": "10.3390/bs13010034"
+ },
+ "ringler": {
+  "apa": "Ringler, C., & Sirianni, N. J. (2025). Paralanguage and the charismatic spokesperson: The impact of vocal amplitude on charisma, auditory looming, and customer engagement. Journal of Business Research, 193, 115345. https://doi.org/10.1016/j.jbusres.2025.115345",
+  "autor": "Ringler",
+  "anio": 2025,
+  "doi": "10.1016/j.jbusres.2025.115345"
+ },
+ "wangg": {
+  "apa": "Wang, E. W., & Grigos, M. I. (2024). Effects of Speaking Rate Changes on Speech Motor Variability in Adults. Language and Speech, 68(1), 141-161. https://doi.org/10.1177/00238309241252983",
+  "autor": "Wang",
+  "anio": 2024,
+  "doi": "10.1177/00238309241252983"
+ },
+ "gu": {
+  "apa": "Gu, X. (2024). Enhancing social media engagement using AI-modified background music: examining the roles of event relevance, lyric resonance, AI-singer origins, audience interpretation, emotional resonance, and social media engagement. Frontiers in Psychology, 15, 1267516. https://doi.org/10.3389/fpsyg.2024.1267516",
+  "autor": "Gu",
+  "anio": 2024,
+  "doi": "10.3389/fpsyg.2024.1267516"
+ },
+ "solbiati": {
+  "apa": "Solbiati, A., Heffernan, K., Damaskinos, G., Poddar, S., Modi, S., & Cali, J. (2021). Unsupervised Topic Segmentation of Meetings with BERT Embeddings. arXiv. https://doi.org/10.48550/arXiv.2106.12978",
+  "autor": "Solbiati",
+  "anio": 2021,
+  "doi": "10.48550/arXiv.2106.12978"
+ },
+ "mueller": {
+  "apa": "Mueller, N., Klug, S., Koenig, A., Kathan, A., Christ, L., Schuller, B., & Amiriparian, S. (2023). Executive Voiced Laughter and Social Approval: An Explorative Machine Learning Study. arXiv. https://doi.org/10.48550/arXiv.2305.09485",
+  "autor": "Mueller",
+  "anio": 2023,
+  "doi": "10.48550/arXiv.2305.09485"
+ },
+ "glazkova": {
+  "apa": "Glazkova, A., & Morozov, D. (2022). Applying Transformer-based Text Summarization for Keyphrase Generation. arXiv. https://doi.org/10.48550/arXiv.2209.03791",
+  "autor": "Glazkova",
+  "anio": 2022,
+  "doi": "10.48550/arXiv.2209.03791"
+ }
+}

@@ -1,0 +1,31 @@
+{
+ "n_videos": 29,
+ "metricas": [
+  {
+   "modelo": "entrenado_con_humano",
+   "P@5": 0.34482758620689646,
+   "MRR": 0.48270513011892324,
+   "P@1": 0.3103448275862069,
+   "tF1": 0.11716904368151819
+  },
+  {
+   "modelo": "entrenado_con_mostreplayed",
+   "P@5": 0.3310344827586207,
+   "MRR": 0.43968202847072163,
+   "P@1": 0.27586206896551724,
+   "tF1": 0.12367761844590902
+  },
+  {
+   "modelo": "aleatorio",
+   "P@5": 0.34482758620689646,
+   "MRR": 0.5188834154351395,
+   "P@1": 0.27586206896551724,
+   "tF1": 0.13643443884841877
+  }
+ ],
+ "tests": {
+  "entrenado_con_humano_vs_aleatorio_tF1": 0.8247521843407635,
+  "entrenado_con_mostreplayed_vs_aleatorio_tF1": 0.6051417460130313,
+  "humano_vs_mostreplayed_tF1": 0.6076721976124401
+ }
+}

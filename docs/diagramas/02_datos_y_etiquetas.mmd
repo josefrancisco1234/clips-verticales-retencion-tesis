@@ -1,0 +1,50 @@
+%% Origen de los datos y de las etiquetas (entrenamiento)
+flowchart TB
+    subgraph FUENTES["Fuentes de video (sólo se versionan IDs)"]
+        Q["Búsqueda YouTube<br/>26 consultas ES · 24 EN<br/>géneros y países"]
+        RP["Repurpose-10K<br/>(Wu et al., AAAI 2025, MIT)<br/>~8.4k videos largos"]
+        RH["Rhapsody<br/>(Park et al., COLM 2025)<br/>13 364 podcasts · requiere login"]
+    end
+
+    subgraph INGESTA["Ingesta (yt-dlp, IP residencial)"]
+        META["Metadatos<br/>heatmap = 100 bins"]
+        AUD["Audio 48 kbps → wav 16 kHz"]
+    end
+
+    subgraph ETIQUETAS["Etiquetas"]
+        MR["Most Replayed<br/>bin 0 = bin 1 (corrección)<br/>(téc. 3 · P3 SPOT · P5)"]
+        GR["Relevancia graduada 0–4<br/>por quintiles dentro del video"]
+        HUM["Clips humanos<br/>editores de Opus Clip<br/>(sólo Repurpose)"]
+        LLMK["LLM top-K<br/>(P4) · pendiente de API key"]
+    end
+
+    subgraph PROC["Procesamiento (esta laptop)"]
+        WH["faster-whisper base<br/>RTF 0.076"]
+        FEA["Features K·S·A·H·F·E·L<br/>por candidato"]
+    end
+
+    subgraph MODELO["Modelo"]
+        LGB["LightGBM LambdaRank"]
+        MLP["MLP RankNet<br/>(baseline neuronal)"]
+        BASE["Líneas base:<br/>azar · posición · TF-IDF<br/>KeyBERT · RMS · heurística Opus"]
+    end
+
+    EVAL["Evaluación<br/>P@K · MRR · NDCG@10<br/>F1 temporal · protocolo Rhapsody<br/>acuerdo con clips humanos"]
+
+    Q --> META
+    RP --> META
+    RH -. "pendiente:<br/>hf auth login" .-> FEA
+    META --> MR --> GR
+    RP --> HUM
+    META --> AUD --> WH --> FEA
+    AUD --> FEA
+    GR --> LGB
+    GR --> MLP
+    FEA --> LGB
+    FEA --> MLP
+    FEA --> BASE
+    LGB --> EVAL
+    MLP --> EVAL
+    BASE --> EVAL
+    HUM -. "validación independiente" .-> EVAL
+    LLMK -. "etiqueta secundaria" .-> LGB

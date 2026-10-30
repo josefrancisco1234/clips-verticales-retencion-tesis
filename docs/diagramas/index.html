@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Diagramas del sistema</title>
+<style>
+  :root { --bg:#fbfbfd; --fg:#1b1b1f; --muted:#5c5f6b; --card:#fff; --line:#e3e3ea; --accent:#3b6ea5; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg:#15161a; --fg:#e9e9ee; --muted:#a2a5b2; --card:#1d1f25; --line:#2c2f38; --accent:#7fb2e5; } }
+  :root[data-theme="dark"] { --bg:#15161a; --fg:#e9e9ee; --muted:#a2a5b2; --card:#1d1f25; --line:#2c2f38; --accent:#7fb2e5; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--fg); font:16px/1.55 -apple-system,Segoe UI,Roboto,sans-serif; padding:24px 16px 64px; }
+  header { max-width:1100px; margin:0 auto 28px; }
+  h1 { font-size:1.5rem; margin:0 0 6px; }
+  p.sub { color:var(--muted); margin:0; }
+  section { max-width:1100px; margin:0 auto 28px; background:var(--card); border:1px solid var(--line); border-radius:14px; padding:18px; }
+  h2 { font-size:1.12rem; margin:0 0 4px; }
+  p.desc { color:var(--muted); margin:0 0 14px; font-size:.93rem; }
+  .bar { display:flex; gap:8px; margin-bottom:10px; flex-wrap:wrap; }
+  button { font:inherit; font-size:.86rem; padding:5px 11px; border-radius:8px; border:1px solid var(--line);
+            background:transparent; color:var(--accent); cursor:pointer; }
+  button:hover { background:var(--line); }
+  .box { overflow:auto; }
+  .mermaid { background:transparent; }
+  code { color:var(--muted); font-size:.8rem; }
+</style></head><body>
+<header><h1>Diagramas del sistema de generación de clips</h1>
+<p class="sub">Tesis · Universidad de Lima · generado por <code>scripts/render_diagramas.py</code> desde <code>docs/diagramas/*.mmd</code></p></header>
+<section>
+  <h2>1. Pipeline de inferencia</h2><p class="desc">De un video largo a clips 9:16 con score. Entre paréntesis, la técnica y el paper que sustenta cada bloque.</p>
+  <div class="bar"><button data-dl="01_pipeline_inferencia">Descargar SVG</button><code>docs/diagramas/01_pipeline_inferencia.mmd</code></div>
+  <div class="box" id="01_pipeline_inferencia"><pre class="mermaid">flowchart LR
+    V[/&quot;Video largo&lt;br/&gt;archivo o URL&lt;br/&gt;15 min – 3 h&quot;/]
+
+    subgraph ING[&quot;1 · ingest&quot;]
+        FF[&quot;ffmpeg&lt;br/&gt;audio 16 kHz mono&quot;]
+    end
+
+    subgraph TR[&quot;2 · transcribe&quot;]
+        W[&quot;faster-whisper small (int8)&lt;br/&gt;timestamps por palabra&lt;br/&gt;+ idioma&quot;]
+    end
+
+    subgraph SEG[&quot;3 · segment&quot;]
+        S1[&quot;Oraciones&lt;br/&gt;(P2 PodReels)&quot;]
+        S2[&quot;Candidatos 15–90 s&lt;br/&gt;3 duraciones objetivo&lt;br/&gt;(P8 SVHighlights)&quot;]
+        S3[&quot;Ventanas fijas 20 s&lt;br/&gt;línea base (P4)&quot;]
+    end
+
+    subgraph FEAT[&quot;4 · features por candidato&quot;]
+        K[&quot;K · keywords&lt;br/&gt;TF-IDF KVSUM + KeyBERT&lt;br/&gt;(téc. 5-6, P6)&quot;]
+        SS[&quot;S · sentimiento&lt;br/&gt;XLM-R multilingüe (téc. 7, P9)&quot;]
+        A[&quot;A · audio librosa&lt;br/&gt;RMS, pitch, pausas (téc. 8, P7)&quot;]
+        HF[&quot;H/F · hook y flow&lt;br/&gt;(Opus Clip, P2)&quot;]
+        E[&quot;E · eventos de audio&lt;br/&gt;PANNs: risa, aplausos&quot;]
+        L[&quot;L · lingüísticas&lt;br/&gt;entropía, pronombres&quot;]
+    end
+
+    subgraph RANK[&quot;5 · ranking&quot;]
+        LG[&quot;LightGBM LambdaRank&lt;br/&gt;grupo = video&quot;]
+        CAL[&quot;Calibración 0–99&lt;br/&gt;percentil vs top-10 de validación&quot;]
+        SHAP[&quot;Desglose SHAP&lt;br/&gt;Hook / Flow / Value&quot;]
+        NMS[&quot;NMS temporal&lt;br/&gt;solapamiento ≤ 30 %&quot;]
+    end
+
+    subgraph CTX[&quot;6 · context (solo top-15)&quot;]
+        LLM[&quot;LLM configurable&lt;br/&gt;o plantillas&lt;br/&gt;(P1 Lotus, P2)&quot;]
+        Q{&quot;¿Se entiende&lt;br/&gt;sin el resto?&quot;}
+    end
+
+    subgraph REN[&quot;7 · render&quot;]
+        SC[&quot;PySceneDetect&lt;br/&gt;ajuste a corte natural (téc. 9)&quot;]
+        RF[&quot;Reencuadre 9:16&lt;br/&gt;MediaPipe + hablante activo&lt;br/&gt;(téc. 10, P10)&quot;]
+        CAP[&quot;Subtítulos ASS&lt;br/&gt;keywords resaltadas&quot;]
+    end
+
+    OUT[/&quot;Clips MP4 1080×1920&lt;br/&gt;+ clips.json + report.md&quot;/]
+
+    V --&gt; FF --&gt; W --&gt; S1 --&gt; S2 --&gt; FEAT
+    S1 -.-&gt; S3 -.-&gt; FEAT
+    K &amp; SS &amp; A &amp; HF &amp; E &amp; L --&gt; LG --&gt; CAL --&gt; NMS --&gt; LLM --&gt; Q
+    LG --&gt; SHAP --&gt; CAL
+    Q -- &quot;sí&quot; --&gt; SC
+    Q -- &quot;no: −10 puntos&quot; --&gt; SC
+    SC --&gt; RF --&gt; CAP --&gt; OUT
+    W -. &quot;palabras con tiempo&quot; .-&gt; CAP
+    K -. &quot;términos de mayor peso&quot; .-&gt; CAP</pre></div>
+</section>
+<section>
+  <h2>2. Datos y etiquetas</h2><p class="desc">De dónde salen los videos y las dos etiquetas: la curva Most Replayed y los clips elegidos por humanos.</p>
+  <div class="bar"><button data-dl="02_datos_y_etiquetas">Descargar SVG</button><code>docs/diagramas/02_datos_y_etiquetas.mmd</code></div>
+  <div class="box" id="02_datos_y_etiquetas"><pre class="mermaid">flowchart TB
+    subgraph FUENTES[&quot;Fuentes de video (sólo se versionan IDs)&quot;]
+        Q[&quot;Búsqueda YouTube&lt;br/&gt;26 consultas ES · 24 EN&lt;br/&gt;géneros y países&quot;]
+        RP[&quot;Repurpose-10K&lt;br/&gt;(Wu et al., AAAI 2025, MIT)&lt;br/&gt;~8.4k videos largos&quot;]
+        RH[&quot;Rhapsody&lt;br/&gt;(Park et al., COLM 2025)&lt;br/&gt;13 364 podcasts · requiere login&quot;]
+    end
+
+    subgraph INGESTA[&quot;Ingesta (yt-dlp, IP residencial)&quot;]
+        META[&quot;Metadatos&lt;br/&gt;heatmap = 100 bins&quot;]
+        AUD[&quot;Audio 48 kbps → wav 16 kHz&quot;]
+    end
+
+    subgraph ETIQUETAS[&quot;Etiquetas&quot;]
+        MR[&quot;Most Replayed&lt;br/&gt;bin 0 = bin 1 (corrección)&lt;br/&gt;(téc. 3 · P3 SPOT · P5)&quot;]
+        GR[&quot;Relevancia graduada 0–4&lt;br/&gt;por quintiles dentro del video&quot;]
+        HUM[&quot;Clips humanos&lt;br/&gt;editores de Opus Clip&lt;br/&gt;(sólo Repurpose)&quot;]
+        LLMK[&quot;LLM top-K&lt;br/&gt;(P4) · pendiente de API key&quot;]
+    end
+
+    subgraph PROC[&quot;Procesamiento (esta laptop)&quot;]
+        WH[&quot;faster-whisper base&lt;br/&gt;RTF 0.076&quot;]
+        FEA[&quot;Features K·S·A·H·F·E·L&lt;br/&gt;por candidato&quot;]
+    end
+
+    subgraph MODELO[&quot;Modelo&quot;]
+        LGB[&quot;LightGBM LambdaRank&quot;]
+        MLP[&quot;MLP RankNet&lt;br/&gt;(baseline neuronal)&quot;]
+        BASE[&quot;Líneas base:&lt;br/&gt;azar · posición · TF-IDF&lt;br/&gt;KeyBERT · RMS · heurística Opus&quot;]
+    end
+
+    EVAL[&quot;Evaluación&lt;br/&gt;P@K · MRR · NDCG@10&lt;br/&gt;F1 temporal · protocolo Rhapsody&lt;br/&gt;acuerdo con clips humanos&quot;]
+
+    Q --&gt; META
+    RP --&gt; META
+    RH -. &quot;pendiente:&lt;br/&gt;hf auth login&quot; .-&gt; FEA
+    META --&gt; MR --&gt; GR
+    RP --&gt; HUM
+    META --&gt; AUD --&gt; WH --&gt; FEA
+    AUD --&gt; FEA
+    GR --&gt; LGB
+    GR --&gt; MLP
+    FEA --&gt; LGB
+    FEA --&gt; MLP
+    FEA --&gt; BASE
+    LGB --&gt; EVAL
+    MLP --&gt; EVAL
+    BASE --&gt; EVAL
+    HUM -. &quot;validación independiente&quot; .-&gt; EVAL
+    LLMK -. &quot;etiqueta secundaria&quot; .-&gt; LGB</pre></div>
+</section>
+<section>
+  <h2>3. Protocolo experimental</h2><p class="desc">Desarrollo en v1, hipótesis preregistrada y confirmación en videos nuevos.</p>
+  <div class="bar"><button data-dl="03_protocolo_experimental">Descargar SVG</button><code>docs/diagramas/03_protocolo_experimental.mmd</code></div>
+  <div class="box" id="03_protocolo_experimental"><pre class="mermaid">flowchart TB
+    subgraph V1[&quot;Desarrollo · v1 (62 videos, 50.6 h)&quot;]
+        CV[&quot;Validación cruzada&lt;br/&gt;GroupKFold k=5 POR CANAL&quot;]
+        VAR[&quot;Variantes probadas:&lt;br/&gt;features relativas (rk, cx)&lt;br/&gt;etiqueta pico · 10 grados&quot;]
+        WIL[&quot;Wilcoxon pareado&lt;br/&gt;por video&quot;]
+    end
+
+    PRE[&quot;Hipótesis PREREGISTRADA (D-022)&lt;br/&gt;rel_rk mejora NDCG@10&lt;br/&gt;α = 0.05 unilateral&quot;]
+
+    subgraph V2[&quot;Confirmación · v2 (videos nuevos)&quot;]
+        NEW[&quot;+58 ES por búsqueda&lt;br/&gt;+32 EN por búsqueda&lt;br/&gt;+80 EN de Repurpose&quot;]
+        TEST[&quot;Entrenar en v1 → evaluar en v2&lt;br/&gt;(nunca usados para decidir)&quot;]
+    end
+
+    subgraph RES[&quot;Resultados&quot;]
+        OK[&quot;Se confirma:&lt;br/&gt;se adopta y se reporta&quot;]
+        NO[&quot;No se confirma:&lt;br/&gt;se descarta y se reporta igual&quot;]
+    end
+
+    FIN[&quot;Modelo final&lt;br/&gt;models/ranker_lgbm.txt&lt;br/&gt;+ docs/02_auditoria_modelo.md&quot;]
+
+    CV --&gt; VAR --&gt; WIL --&gt; PRE
+    PRE --&gt; TEST
+    NEW --&gt; TEST
+    TEST --&gt; OK
+    TEST --&gt; NO
+    OK --&gt; FIN
+    NO --&gt; FIN
+
+    L1[&quot;Fuga detectada y corregida (D-018):&lt;br/&gt;novedad léxica global filtraba la posición&lt;br/&gt;P@1 0.173 → 0.049&quot;]:::warn
+    L1 -.-&gt; CV
+
+    classDef warn fill:#fff3cd,stroke:#d39e00,color:#5c4500;</pre></div>
+</section>
+<script type="module">
+  import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
+  const dark = matchMedia("(prefers-color-scheme: dark)").matches;
+  mermaid.initialize({ startOnLoad:true, theme: dark ? "dark" : "neutral", flowchart:{ curve:"basis", padding:12 } });
+  window.addEventListener("load", () => setTimeout(() => {
+    document.querySelectorAll("[data-dl]").forEach(b => b.onclick = () => {
+      const svg = document.getElementById(b.dataset.dl).querySelector("svg");
+      const blob = new Blob([svg.outerHTML], {type:"image/svg+xml"});
+      const a = document.createElement("a");
+      a.href = URL.createObjectURL(blob); a.download = b.dataset.dl + ".svg"; a.click();
+    });
+  }, 800));
+</script></body></html>

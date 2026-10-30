@@ -1,0 +1,8 @@
+// Syncthing: qué NO sincronizar del repositorio
+.venv
+__pycache__
+.pytest_cache
+*.pyc
+data/raw
+data/interim
+data/processed

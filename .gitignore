@@ -1,0 +1,14 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+.ipynb_checkpoints/
+# datos pesados viven en C:/tesis_data (fuera del repo y de OneDrive)
+data/raw/
+data/interim/
+data/processed/
+*.wav
+*.m4a
+*.mp4
+*.lock
+.env
