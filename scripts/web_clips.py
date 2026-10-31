@@ -334,6 +334,16 @@ class H(BaseHTTPRequestHandler):
             self.send_header("Content-Length", str(len(b)))
             self.end_headers()
             return self.wfile.write(b)
+        if u.path == "/static/flujo_scoring.png":
+            f = ROOT / "web_assets" / "flujo_scoring.png"
+            if not f.is_file():
+                return self.send_error(404)
+            b = f.read_bytes()
+            self.send_response(200)
+            self.send_header("Content-Type", "image/png")
+            self.send_header("Content-Length", str(len(b)))
+            self.end_headers()
+            return self.wfile.write(b)
         if u.path == "/api/glossary":
             return self.send_json({"order": GL.ORDER, "vars": {k: {"group": v[0], "formula": v[1], "info": v[2], "loc": GL.LOC.get(k)} for k, v in GL.G.items()},
                                    "formulas": [{"name": a, "formula": b, "info": c} for a, b, c in GL.FORMULAS]})
@@ -491,6 +501,9 @@ th,td{border-bottom:1px solid var(--line);padding:3px 4px;text-align:left}th{col
   <div class="feats"><div><b>1 · Detecta</b><span>Transcribe y puntúa cada pasaje con 71 variables de audio y texto.</span></div>
    <div><b>2 · Elige</b><span>Los 5 momentos con mayor puntaje; dos clips no comparten más de 30 % de su duración.</span></div>
    <div><b>3 · Explica</b><span>Cada clip trae su puntaje 0–99 y las variables que lo explican.</span></div></div>
+  <details class="card" style="margin-top:14px"><summary><b>Ver cómo un video recibe su puntaje (flujo completo, con un ejemplo real)</b></summary>
+   <img src="/static/flujo_scoring.png" alt="Flujo del puntaje" style="width:100%;margin-top:10px;border-radius:8px;background:#fff">
+   <div class="sub" style="margin-top:6px">Variables → percentil dentro del video → bandera 0/1 → suma de pesos × bandera (raw) → escala de 0 a 99 entre el mínimo y el máximo posibles → orden y selección de 5 clips.</div></details>
  </section>
  <div id="newrow" style="display:none"><button id="newbtn" class="ghost">← Nuevo video</button></div>
  <div id="tabs" class="ex"></div>
@@ -589,10 +602,11 @@ function render(R){
       const mx=Math.max(...ex.vars.map(r=>Math.abs(r.contrib)),1e-6);
       tb=`<details><summary><b>¿Por qué se eligió? Score global: 17 variables · puesto ${ex.rank} de ${ex.n_candidates} ventanas</b></summary>
       <div class="sub" style="margin-top:6px">${ex.binario?"raw = suma de (peso × bandera 0/1 de cada variable): cada variable vale 1 solo si está en el 25 % más alto de su video.":"raw = suma de (peso × puntaje/99 de cada variable)."} Verde suma al score, rojo resta.</div>
-      <div class="sub" style="margin-top:4px"><b>Banderas 0/1</b> (1 = la variable está en el 25 % más alto de este video): <b>${ex.vars.filter(r=>r.pct>=0.75).length} de ${ex.vars.length}</b> en 1 → ${ex.vars.filter(r=>r.pct>=0.75).map(r=>r.var).join(", ")||"ninguna"}. El puntaje usa el percentil completo; la bandera solo ayuda a leerlo.</div>
+      <div class="sub" style="margin-top:4px"><b>Banderas 0/1</b> (1 = la variable está en el 25 % más alto de este video): <b>${ex.vars.filter(r=>r.pct>=0.75).length} de ${ex.vars.length}</b> en 1 → ${ex.vars.filter(r=>r.pct>=0.75).map(r=>r.var).join(", ")||"ninguna"}. ${ex.binario?"El puntaje usa solo estas banderas (un empate se desempata con el percentil completo).":"El puntaje usa el percentil completo; la bandera solo ayuda a leerlo."}</div>
+      ${flujoRaw(ex)}
       <table><tr><th>variable (orden del código)</th><th>valor</th><th>puntaje 0–99</th><th title="1 = está en el 25 % más alto de su video">0/1</th><th>peso</th><th>aporte al score</th></tr>`+
-      byCode(ex.vars).map(r=>`<tr><td><b>${r.var}</b>${vinfo(r.var)}</td><td>${r.value==null?"—":(+r.value).toPrecision(3)}</td><td>${Math.round(r.pct*99)}</td><td><span class="flag ${r.pct>=0.75?"f1":"f0"}">${r.pct>=0.75?1:0}</span></td><td>${r.weight>0?"+":""}${r.weight.toFixed(2)}</td>
-      <td class="${r.contrib>=0?"pos":"neg"}">${r.contrib>=0?"+":""}${r.contrib.toFixed(3)}</td></tr>`).join("")+`</table></details>`;
+      byCode(ex.vars).map(r=>`<tr><td><b>${r.var}</b>${vinfo(r.var)}</td><td>${r.value==null?"—":(+r.value).toPrecision(3)}</td><td>${Math.round(r.pct*99)}</td><td><span class="flag ${r.pct>=0.75?"f1":"f0"}">${r.pct>=0.75?1:0}</span></td><td>${r.weight>0?"+":""}${r.weight.toFixed(4)}</td>
+      <td class="${r.contrib>=0?"pos":"neg"}">${r.contrib>=0?"+":""}${r.contrib.toFixed(4)}</td></tr>`).join("")+`</table></details>`;
     }
     let dv="";
     if(c.dim_vars){
@@ -622,6 +636,24 @@ function render(R){
     g.appendChild(e);});
   o.appendChild(g);
   glosario(o);
+}
+
+function flujoRaw(ex){
+  // del raw (suma de aportes) al puntaje 0-99: mínimo y máximo posibles salen de los pesos de la fórmula
+  const f=x=>(x>=0?"+":"")+x.toFixed(4);
+  const neg=ex.vars.filter(r=>r.weight<0),pos=ex.vars.filter(r=>r.weight>0);
+  const lo=neg.reduce((a,r)=>a+r.weight,0),hi=pos.reduce((a,r)=>a+r.weight,0);
+  const raw=ex.vars.reduce((a,r)=>a+r.contrib,0),rng=hi-lo,fr=Math.min(1,Math.max(0,(raw-lo)/rng)),sc=Math.round(fr*99);
+  const box=(t,b)=>`<div style="flex:1 1 150px;border:1px solid #d489a2;border-radius:8px;padding:6px 8px;background:rgba(212,137,162,.08)"><b style="color:#d489a2">${t}</b><div class="sub">${b}</div></div>`;
+  return `<div style="margin-top:8px"><b>Del raw al puntaje 0–99</b>
+  <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:6px">
+  ${box("1 · Entrada","raw = suma de aportes = <b>"+f(raw)+"</b>")}
+  ${box("2 · Mínimo posible","suma de los "+neg.length+" pesos negativos = <b>"+f(lo)+"</b> (peor clip: solo ellos en 1; vale 0)")}
+  ${box("3 · Máximo posible","suma de los "+pos.length+" pesos positivos = <b>"+f(hi)+"</b> (mejor clip: solo ellos en 1; vale 99)")}
+  ${box("4 · Posición","(raw − mín) / (máx − mín) = ("+raw.toFixed(4)+" + "+(-lo).toFixed(4)+") / "+rng.toFixed(4)+" = <b>"+fr.toFixed(4)+"</b>")}
+  ${box("5 · Puntaje","× 99 = "+(fr*99).toFixed(1)+" → <b>"+sc+"</b>")}</div>
+  <div style="position:relative;height:10px;border-radius:5px;background:#3a3f4d;margin-top:8px"><i style="position:absolute;left:0;top:0;height:10px;border-radius:5px;background:#d489a2;width:${(fr*100).toFixed(1)}%"></i></div>
+  <div class="sub" style="display:flex;justify-content:space-between"><span>mín = 0</span><span>máx = 99</span></div></div>`;
 }
 let GLO=null;
 const vinfo=k=>{const g=GLO&&GLO.vars[k];return g?`<div class="vi">${g.info}${g.loc?` · <code>${g.loc[0].split("/").pop()}:${g.loc[1]}</code>`:""}</div>`:""};
