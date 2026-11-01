@@ -35,7 +35,7 @@ for k in range(1, 6):
               "Si el video es suyo, usted autoriza su procesamiento automático para el estudio; el video original no se redistribuye."):
         d.add_paragraph(t, style="List Bullet")
     H("Contacto", 2)
-    d.add_paragraph("Ante cualquier duda puede escribir al investigador: 20220553@aloe.ulima.edu.pe.")
+    d.add_paragraph("Ante cualquier duda puede escribir al investigador: 20221730@aloe.ulima.edu.pe.")
     H("Declaración", 2)
     d.add_paragraph("He leído y entendido la información anterior, he podido hacer preguntas y acepto participar voluntariamente.")
     tb = d.add_table(rows=4, cols=2); borde(tb)

@@ -108,7 +108,7 @@ Videos de ejemplo: `l_-igAkbVII` (ES, 4/5), `UIC10AA34YU` (EN, 3/5), `3KfZ30O2fE
 
 - **Artículo (Word):** `Articulo_Investigacion_CIS2026_v9.docx` (versión ganadora). Llenado en la plantilla A.3 hasta **Experimentación** (incluye matriz de confusión y los dos diagramas).
   Faltan Resultados, Discusión, Conclusiones y Trabajos futuros (siguen con el texto guía de la plantilla).
-  **Por confirmar:** código de alumno (20221730 en los Word anteriores; 20220553 en el correo), apellido de la asesora (Maywa o Mayhua Quispe), correo de la asesora, y 4 referencias que agregué (Whisper, HuBERT, SHAP, McNemar).
+  **Por confirmar:** código de alumno (20221730 en los Word anteriores; 20221730 en el correo), apellido de la asesora (Maywa o Mayhua Quispe), correo de la asesora, y 4 referencias que agregué (Whisper, HuBERT, SHAP, McNemar).
 - **PPT de avance:** `Avance_Pipeline_y_Resultados.pptx` (17 diapositivas, base: `Exposicion_Seminario_I_Oficial_V2.pptx`).
 - **Demo:** web local y Artifact con 3 videos; interfaz de escritorio `scripts\interfaz_clips.bat`.
 
