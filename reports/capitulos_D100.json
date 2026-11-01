@@ -1,0 +1,15 @@
+{
+ "videos": 411,
+ "caps": 5909,
+ "cubiertos_top5": 1518,
+ "clips_cap": 5080,
+ "toca_cap": 874,
+ "toca_azar": 688,
+ "hit_top5": 261,
+ "hit_union": 349,
+ "pct_capitulos_cubiertos_top5": 25.7,
+ "pct_mejor_por_capitulo_toca_pico": 17.2,
+ "pct_azar_en_capitulo_toca_pico": 13.5,
+ "pct_videos_top5_toca_pico": 63.5,
+ "pct_videos_union_toca_pico": 84.9
+}

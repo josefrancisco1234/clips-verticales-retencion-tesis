@@ -1,0 +1,22 @@
+{
+ "n_videos": 352,
+ "metodo": "predicciones fuera de pliegue, 10 pliegues agrupados por canal",
+ "R0": {
+  "acierto5_pct": 60.2,
+  "videos_con_acierto": 212.0,
+  "F1_temporal": 0.136,
+  "calor_vs_video": 1.51
+ },
+ "V0_por_tramo": {
+  "acierto5_pct": 56.2,
+  "videos_con_acierto": 198.0,
+  "F1_temporal": 0.126,
+  "calor_vs_video": 1.41
+ },
+ "azar": {
+  "acierto5_pct": 32.7,
+  "videos_con_acierto": 115.2,
+  "F1_temporal": 0.055,
+  "calor_vs_video": 1.0
+ }
+}

@@ -221,15 +221,41 @@ bullets(tb, ["557 videos, V1, solo contenido: 468 aciertos, 2 317 falsas elegida
              "Techo con solo contenido: 50 a 69 %; con la curva real: 85–95 %.",
              "Redes de secuencia, texto, imagen y ensamble no superaron a la fórmula de forma confirmada."], 11)
 notas(r2, "La exactitud global no basta porque 92 % de las ventanas no son calientes; por eso se reportan también precisión y cobertura. El techo con la curva real solo sirve para calificar, no existe en un video aún no publicado.")
-demo = nuevo_texto("Demostración de la página web (video de hasta 60 s)", [
-    "Insertar aquí el video de la web: subir un video o link, ver los cinco clips 9:16 con subtítulos, el puntaje 0–99 y el desglose por variable.",
-    "Código: github.com/josefrancisco1234/clips-verticales-retencion-tesis",
-], "Pendiente: grabar el video de máximo 60 segundos con la web en funcionamiento (Clips_Web.exe) e insertarlo en esta diapositiva.", 14)
+
+m5 = nueva_imagen("Metodología completa del sistema (todo es backend)", REP / "workflow_horizontal_D099.png",
+                  "Vista completa: A construir los datos, B modelar y evaluar, C usar el sistema con un video nuevo y validar con creadores, D mejorar solo. Todo es backend: la página web solo hace llamadas al servidor y este ejecuta el proceso.", 9.4, 3.95, 1.2)
+m6 = nueva_imagen("Qué sale del audio y qué de la transcripción", REP / "audio_vs_transcripcion_D099.png",
+                  "De las 17 variables de la fórmula, 8 salen solo del audio (44 % del peso), 4 de los tiempos de las palabras (34 %) y 5 del contenido del texto (22 %): 78 % del peso no lee lo que se dice.", 9.3, 3.6)
+m7 = nuevo_texto("Capítulos, umbral y cortes del clip", [
+    "Capítulos: el video se divide por los capítulos que YouTube muestra sobre la barra; cada capítulo recibe su mejor clip y el top 5 general se elige sobre todo el video (sin capítulos, bloques de 10 minutos).",
+    "Umbral: para cada segmento se escanean entre 17 y 23 variables y solo cuentan las que superan el umbral (el 25 % más alto de su video), para evitar ruido; en los clips elegidos, 7.6 de las 17 de la fórmula lo superan en promedio.",
+    "Cortes: cada clip empieza y termina en límites de oración con un margen de 0.15 s antes y hasta 0.35 s después que nunca invade la palabra vecina; así no se corta al hablante.",
+], "Detalle en las secciones 4.6 y 4.7 del artículo. El mejor clip por capítulo es descriptivo: toca un pico real en 17.2 % de los casos frente a 13.5 % de una ventana al azar del capítulo.", 12)
+m8 = nuevo_texto("Cómo se calcula cada métrica", [
+    "Acierto@5: por video vale 1 si al menos uno de los 5 clips tiene 50 % o más de su duración en tramos calientes (valor mayor a 0.5, máximo 20 por video); la cifra es la suma entre el número de videos. Ej.: V1 acertó en 51 de 93 videos = 54.8 %.",
+    "F1 temporal: precisión = tiempo de clips en zona caliente ÷ tiempo de clips; cobertura = tiempo caliente cubierto ÷ tiempo caliente total; F1 = 2·P·R / (P + R).",
+    "Calor del clip: promedio de la curva en el clip ÷ calor medio del video (1.43x = 43 % más).",
+    "Puntaje 0–99 = (raw − mín) / (máx − mín) × 99, con mín = −0.4851 y máx = +1.2400. Ej.: (1.0118 + 0.4851) / 1.7251 × 99 = 86.",
+], "Todas las cifras de los conteos salen de los archivos por video; el azar se sortea 100 veces por video. Pruebas: Wilcoxon unilateral, McNemar y Bonferroni.", 11)
+r3 = nuevo_texto("Resultados: R0 en confirmación y exploración automática", [
+    "R0 (LightGBM LambdaRank) en los 352 videos de confirmación, con predicciones fuera de pliegue: 60.2 % de acierto@5 (212 de 352), F1 0.136; V0 56.2 % y azar 32.7 % sobre los mismos tramos.",
+    "Mejora progresiva: azar → V0 → V1 → R0, confirmada paso a paso. Después se estancó: 73 rondas del agente con LightGBM y más de 12 000 del agente neuronal (EQL), 25 pruebas cada uno, 0 promociones (p mínimo 0.068).",
+    "Fórmulas sin literatura: 26 de las 71 variables son fórmulas propias; el sistema crea y prueba fórmulas derivadas (productos, razones, suavizados) con el mismo protocolo.",
+], "La base creció durante el trabajo: 526 videos de desarrollo, 557 de evaluación y unos 770 con curva; siempre más de 500 analizados.", 12)
+r4 = nuevo_texto("Resultados: validación con 5 creadores de podcast", [
+    "Utilidad percibida (6 afirmaciones, 1 a 5): mediana 4 (4–4) en todas, incluida la calificación de los clips. Cumple el criterio (mediana mayor o igual a 4).",
+    "SUS (usabilidad): 75 (75–75) con 4 en las afirmaciones positivas y 2 en las negativas. Cumple la meta (mayor a 70; Bangor, 2008).",
+    "Comentario común: los clips son muy buenos; el único problema es el seguimiento de la cámara al hablante, que falla con cabezas giradas o lejanas.",
+], "Tabla 13 y 14 del artículo. Consentimientos firmados por los cinco participantes.", 13)
+lim = nuevo_texto("Limitaciones y trabajos futuros", [
+    "Limitaciones: solo YouTube y dos idiomas; los grupos de videos nuevos son pequeños (93, 63 y 83 videos); la señal visual se probó de forma gruesa; el reencuadre falla con cabezas giradas.",
+    "Futuro: reencuadre con YOLO (personas y pose) y seguimiento entre cuadros; ampliar la base de videos (cada duplicación suma cerca de 1 punto de acierto@5); repetir la validación con más creadores.",
+], "El YOLO no se incluyó por limitaciones de GPU y tiempo.", 14)
 concl = nuevo_texto("Conclusiones", [
     "Con solo audio y texto, la fórmula de 17 variables más que duplica el acierto del azar (47.3 % frente a 26.9 %).",
     "Limitar los clips a 45 s sube el acierto a 54.8 %, a costa de cubrir menos tiempo caliente.",
     "El ranking aprendido (R0) llega a 62.4 % en el grupo de videos nuevos 1, pero rinde menos en el grupo de videos nuevos 2 y no se explica por variable.",
-    "Se adoptó V1 en banderas 0/1 por su explicabilidad. Pendiente: validación con cinco creadores y ampliar el conjunto.",
+    "Se adoptó V1 en banderas 0/1 por su explicabilidad. La validación con cinco creadores cumplió utilidad (mediana 4) y SUS (75).",
 ], "Cierre de la exposición. Resultado negativo documentado: modelos más complejos no mejoraron de forma confirmada a la fórmula sencilla.", 13)
 # referencias desde el artículo
 d = docx.Document(ART)
@@ -245,7 +271,7 @@ for k in claves:
 ref = nuevo_texto("Referencias", sel, "Lista completa en el artículo (sección Referencias, APA 7).", 8)
 
 # ---- orden final y limpieza de las diapositivas de ejemplo de la plantilla
-usar = [slides[0], slides[1], s_prob, s_obj, tl, s_brecha, mt, m1, m2, m3, m4, e1, r1, r2, demo, concl, ref]
+usar = [slides[0], slides[1], s_prob, s_obj, tl, s_brecha, mt, m1, m5, m2, m6, m7, m3, m8, m4, e1, r1, r2, r3, r4, lim, concl, ref]
 ids = prs.slides._sldIdLst
 por_slide = {}
 for sid in list(ids):

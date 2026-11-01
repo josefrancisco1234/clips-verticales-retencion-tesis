@@ -97,6 +97,8 @@ cx = lambda i: XS[i] + ANCHO / 2
 codo(cx(6), yA, cx(0), yB + H, yA - GAP / 2, "#6b7280", "la base alimenta el modelado y la evaluación", cx(0) + 0.015, ":")
 codo(cx(6), yB, cx(3), yC + H, yB - GAP / 2, "#6b7280", "el modelo elegido puntúa los videos nuevos", cx(3) + 0.015, ":")
 codo(cx(5), yD + H, cx(3), yC, yC - GAP / 2, "#7c3aed", "si se confirma, el nuevo campeón reemplaza al puntaje", cx(3) + 0.015)
+ax.text(0.5, 0.10, "BACKEND: la página web solo hace llamadas (peticiones) al servidor; todo lo que muestran los carriles A a D (descarga, transcripción, variables, puntaje, selección, clips y mejora) se ejecuta en el servidor.",
+        ha="center", va="center", fontsize=4.2, fontweight="bold", color="#14213d")
 ax.text(0.5, 0.06, "La curva Most Replayed solo califica (acierto@5, F1 temporal, NDCG@10); nunca entra como variable del sistema, y el reservado y los grupos de videos nuevos no se mezclan con el entrenamiento.",
         ha="center", va="center", fontsize=3.8, style="italic", color="#555555")
 fig.savefig(ROOT / "reports" / "workflow_horizontal_D099.png", facecolor="white", bbox_inches="tight", pad_inches=0.04)
