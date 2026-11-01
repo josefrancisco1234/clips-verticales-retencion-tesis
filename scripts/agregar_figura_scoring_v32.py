@@ -26,7 +26,8 @@ def clone(tpl, text, after):
 def renum(old):
     for p in d.paragraphs:
         for r in p.runs:
-            r.text = re.sub(rf"Figura {old}\b", f"Figura {old + 1}", r.text)
+            if re.search(rf"Figura {old}\b", r.text):   # asignar r.text a un run con imagen la borra
+                r.text = re.sub(rf"Figura {old}\b", f"Figura {old + 1}", r.text)
 
 
 for old in range(10, 4, -1):

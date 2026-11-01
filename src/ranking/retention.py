@@ -105,6 +105,7 @@ def apply(df: pd.DataFrame, cfg, src: str, method: str, model_name: str,
             ok = ((df["end"] - df["start"]).to_numpy() <= float(max_clip_s))
             label = f"formula de contenido + clips <= {max_clip_s:g} s (V1, D-049)" + (", variables 0/1 (D-098)" if binario else "")
     df["raw"] = np.where(ok, base, float(base.min()) - 10.0)   # los no autocontenidos quedan al final
+    df["ok_clip"] = ok   # D-100: ventanas elegibles (para elegir el mejor clip de cada capítulo)
     df["score"] = score
     for d in ("hook", "flow", "value"):
         if f"score_{d}" not in df:

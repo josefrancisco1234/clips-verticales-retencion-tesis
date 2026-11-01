@@ -100,19 +100,27 @@ def build_result(d: Path) -> dict:
         res["peak"] = {"a": float(st[int(vals.argmax())]), "b": float(en[int(vals.argmax())]), "v": float(vals.max())}
         res["mean_heat"] = float(vals.mean())
     hits = 0
-    for c in j["clips"]:
+
+    def mk_item(c):
         f = d / Path(c.get("render", {}).get("path", "")).name if c.get("render") else None
-        item = {"rank": c["rank"], "start": c["start"], "end": c["end"], "score": c["score_final"],
+        item = {"rank": c.get("rank"), "start": c["start"], "end": c["end"], "score": c["score_final"],
                 "hook": c["score_breakdown"]["hook"], "flow": c["score_breakdown"]["flow"], "value": c["score_breakdown"]["value"],
                 "title": c["context"]["title"], "hookText": c["context"].get("hook"), "text": c["text"],
                 "terms": c.get("highlighted_terms", [])[:8], "keywords": [k["term"] for k in c.get("keywords", [])][:6],
-                "file": f.name if f and f.exists() else None, "explain": c.get("explain"), "dim_vars": c.get("dim_vars"), "touch": None, "heat": None}
+                "file": f.name if f and f.exists() else None, "explain": c.get("explain"), "dim_vars": c.get("dim_vars"), "touch": None, "heat": None,
+                "chapter": (c.get("chapter") or {}).get("title")}
         if vals is not None:
             msk = (en > c["start"]) & (st < c["end"])
             item["heat"] = float(vals[msk].mean()) if msk.any() else None
             item["touch"] = any(min(c["end"], b) - max(c["start"], a) > 0 for a, b in hot)
-            hits += int(item["touch"])
+        return item
+
+    for c in j["clips"]:
+        item = mk_item(c)
+        hits += int(bool(item["touch"]))
         res["clips"].append(item)
+    res["chapters"] = [{"index": ch["index"], "title": ch["title"], "start": ch["start"], "end": ch["end"], "auto": ch.get("auto", False),
+                        "clips": [mk_item(c) for c in ch.get("clips", [])]} for ch in j.get("chapters", [])]
     if vals is not None:
         res["hits"] = hits
     return res
@@ -573,6 +581,8 @@ function chart(R){
       x.lineTo(px(R.heat[R.heat.length-1].t),py(0));x.lineTo(px(R.heat[0].t),py(0));x.closePath();x.fillStyle="rgba(180,185,196,.33)";x.fill();
       x.beginPath();R.heat.forEach((p,i)=>i?x.lineTo(px(p.t),py(p.v)):x.moveTo(px(p.t),py(p.v)));x.strokeStyle="#9aa1ae";x.lineWidth=1.3;x.stroke();
     }
+    (R.chapters||[]).forEach(ch=>{x.strokeStyle="rgba(255,255,255,.35)";x.setLineDash([3,3]);x.beginPath();x.moveTo(px(ch.start),6);x.lineTo(px(ch.start),H-24);x.stroke();x.setLineDash([]);
+      x.fillStyle="rgba(255,255,255,.75)";x.font="10px Segoe UI";x.fillText(ch.title.length>16?ch.title.slice(0,15)+"…":ch.title,px(ch.start)+3,H-28)});
     R.clips.forEach(c=>{x.fillStyle=c.touch===false?"rgba(124,92,255,.55)":"rgba(34,197,94,.55)";
       const w=Math.max(px(c.end)-px(c.start),4);x.fillRect(px(c.start),8,w,H-34);
       x.fillStyle="#fff";x.font="bold 11px Segoe UI";x.fillText("#"+c.rank,px(c.start)+2,20)});
@@ -594,7 +604,7 @@ function render(R){
     d.innerHTML=`<b>Validación:</b> el sistema eligió los clips <i>sin ver</i> esta curva, solo con audio y texto. Después se compara: <b>${R.hits} de ${R.clips.length}</b> caen sobre un pico real (el azar acierta ~1.5 de 5). El pico más alto está en <b>${fmt(R.peak.a)}–${fmt(R.peak.b)}</b>.`;p.appendChild(d);}
   o.appendChild(p);
   const g=document.createElement("div");g.className="grid";
-  R.clips.forEach(c=>{
+  const mkCard=(c)=>{
     const e=document.createElement("div");e.className="clip";
     const ex=c.explain;
     let tb="";
@@ -624,7 +634,7 @@ function render(R){
       <b>Ojo:</b> estas tres dimensiones explican el clip; la selección y el score global salen de la fórmula de 17 variables (tabla de abajo).</div>${sg}</details>`;
     }
     e.innerHTML=(c.file?`<video src="/media?d=${encodeURIComponent(R.dir)}&f=${encodeURIComponent(c.file)}" controls preload="metadata"></video>`:`<div class="pad mut">sin mp4</div>`)+
-    `<div class="pad"><div class="top"><div><div class="sub">Clip #${c.rank} · ${fmt(c.start)}–${fmt(c.end)} · ${Math.round(c.end-c.start)} s</div>
+    `<div class="pad"><div class="top"><div><div class="sub">${c.rank?`Clip #${c.rank}`:"Clip del capítulo"} · ${fmt(c.start)}–${fmt(c.end)} · ${Math.round(c.end-c.start)} s${c.chapter?` · <b style="color:#b6a8ff">capítulo: ${c.chapter}</b>`:""}</div>
     <b>${c.title||""}</b></div><div class="score" style="color:${col(c.score)};border-color:${col(c.score)}">${c.score}</div></div>
     ${c.touch===null?"":`<span class="chip ${c.touch?"y":"n"}">${c.touch?"✓ cae en un pico de YouTube":"fuera del pico"} · calor ${c.heat==null?"—":c.heat.toFixed(2)}</span>`}
     <div class="t">“${(c.hookText||c.text).slice(0,200)}”</div>
@@ -633,8 +643,20 @@ function render(R){
     <div class="mini">Value<div><i style="width:${c.value}%"></i></div>${c.value}</div>
     ${tb}${dv}<details><summary>Texto completo y palabras clave</summary><div class="t" style="max-height:none">${c.text}</div>
     <div class="sub">Palabras clave: ${c.keywords.join(", ")}</div></details></div>`;
-    g.appendChild(e);});
+    return e;};
+  R.clips.forEach(c=>g.appendChild(mkCard(c)));
   o.appendChild(g);
+  if(R.chapters&&R.chapters.length){
+    const pc=document.createElement("div");pc.className="panel";
+    pc.innerHTML=`<b>Mejor clip de cada capítulo</b><div class="sub">${R.chapters.some(x=>!x.auto)?"El video se divide en los capítulos que YouTube muestra sobre la barra de reproducción; en cada uno se elige el clip con mayor puntaje.":"Este video no trae capítulos: se divide en bloques de duración fija y en cada bloque se elige el clip con mayor puntaje."} El top 5 general de arriba se elige sobre todo el video.</div>`;
+    o.appendChild(pc);
+    R.chapters.forEach(ch=>{
+      const h=document.createElement("div");h.className="sub";h.style.margin="14px 4px 6px";
+      h.innerHTML=`<b>${ch.title}${ch.auto?" (bloque automático)":""}</b> · ${fmt(ch.start)}–${fmt(ch.end)}`+(ch.clips.length?"":" · sin clip elegible");
+      o.appendChild(h);
+      if(ch.clips.length){const gc=document.createElement("div");gc.className="grid";ch.clips.forEach(c=>gc.appendChild(mkCard(c)));o.appendChild(gc);}
+    });
+  }
   glosario(o);
 }
 

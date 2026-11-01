@@ -37,13 +37,15 @@ def clone(tpl, text, after):
 for old in range(9, 3, -1):
     for p in d.paragraphs:
         for r in p.runs:
-            r.text = re.sub(rf"Figura {old}\b", f"Figura {old + 1}", r.text)
+            if re.search(rf"Figura {old}\b", r.text):   # asignar r.text a un run con imagen la borra
+                r.text = re.sub(rf"Figura {old}\b", f"Figura {old + 1}", r.text)
     for t in d.tables:
         for row in t.rows:
             for c in row.cells:
                 for p in c.paragraphs:
                     for r in p.runs:
-                        r.text = re.sub(rf"Figura {old}\b", f"Figura {old + 1}", r.text)
+                        if re.search(rf"Figura {old}\b", r.text):   # asignar r.text a un run con imagen la borra
+                            r.text = re.sub(rf"Figura {old}\b", f"Figura {old + 1}", r.text)
 
 cap3 = P("Figura 3. ")
 BODY = P("Los candidatos se ordenan por puntaje")

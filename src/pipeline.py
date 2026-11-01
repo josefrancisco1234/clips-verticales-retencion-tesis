@@ -65,6 +65,17 @@ def snap_to_cuts(start: float, end: float, cuts: list[float], word_gaps: list[tu
     return (s, e) if e - s >= 10 else (start, end)
 
 
+def breathing_margin(start: float, end: float, words, duration: float, pre: float = 0.15, post: float = 0.35,
+                     guard: float = 0.03) -> tuple[float, float]:
+    """Margen de respiración (D-101): el clip empieza un poco antes de su primera palabra y termina un poco después de la última,
+    pero nunca invade la palabra vecina; así nadie queda cortado a media palabra ni a media frase."""
+    prev_end = max((w.end for w in words if w.end <= start + 0.02), default=0.0)
+    next_start = min((w.start for w in words if w.start >= end - 0.02), default=duration)
+    s = max(prev_end + guard, start - pre) if prev_end + guard < start else start
+    e = min(next_start - guard, end + post) if next_start - guard > end else end
+    return max(0.0, min(s, start)), min(duration, max(e, end))
+
+
 def rank_concepts(ctx, s0: int, s1: int, k: int = 8) -> list[str]:
     """Conceptos tipo Lotus: frases nominales del clip ordenadas por el peso KVSUM de sus términos."""
     from src.keywords.text import content_token
@@ -167,13 +178,25 @@ def run(src: str, cfg: Config, top_k: int | None = None, render: bool = True) ->
     except Exception as exc:  # noqa: BLE001
         log.warning("sin formula para explicar: %s", exc)
 
-    # 6. NMS + contexto (LLM sólo sobre top-N)
+    # 6. NMS + contexto (LLM sólo sobre top-N). D-100: además del top 5 general, el mejor clip de cada capítulo
     wins = [Window(r.start, r.end, int(r.s0), int(r.s1)) for r in df.itertuples()]
     keep = nms(wins, df["raw"].to_numpy(), cfg.ranking["output_overlap"], cfg.ranking["top_n_llm"], mode="iomin")
+    ch_cfg = cfg.ranking.get("chapters") or {}
+    chapters, chap_pick = [], {}
+    if ch_cfg.get("enabled", False):
+        from src.segment.chapters import chapter_of, get_chapters, pick_per_chapter
+
+        chapters = get_chapters(src, tr.duration, cfg)
+        if chapters:
+            ok = df["ok_clip"].to_numpy() if "ok_clip" in df else np.ones(len(df), bool)
+            chap_pick = pick_per_chapter(wins, df["raw"].to_numpy(), ok, chapters, int(ch_cfg.get("per_chapter_k", 1)),
+                                         cfg.ranking["output_overlap"], float(ch_cfg.get("min_chapter_s", 0)))
+    sel = list(dict.fromkeys(list(keep) + [i for v in chap_pick.values() for i in v]))
     clips = []
-    for i in keep:
+    for i in sel:
         r = df.iloc[i]
         w = wins[i]
+        cap = chapters[chapter_of(w.start, w.end, chapters)] if chapters else None
         clips.append({
             "start": float(w.start), "end": float(w.end), "s0": w.s0, "s1": w.s1,
             "text": " ".join(s.text for s in sents[w.s0:w.s1]),
@@ -184,6 +207,8 @@ def run(src: str, cfg: Config, top_k: int | None = None, render: bool = True) ->
                          if isinstance(k, str) and k[:2] in ("h_", "f_", "s_", "k_", "a_")},
             "explain": (explain(df, i, explain_w, bool(cfg.ranking.get("binary_variables", False))) if explain_w else None),
             "dim_vars": _dim_vars(df, shap_df, i),
+            "chapter": ({"index": cap.index, "title": cap.title, "auto": cap.auto} if cap else None),
+            "_top": i in keep, "_cap": any(i in v for v in chap_pick.values()),
         })
     llm = LLMClient.from_config(cfg)
     clips = refine(clips, llm, tr.language)
@@ -196,39 +221,54 @@ def run(src: str, cfg: Config, top_k: int | None = None, render: bool = True) ->
             c["start"] = sents[c["s0"]].start
             c["text"] = " ".join(s.text for s in sents[c["s0"]:c["s1"]])
         c["score_final"] = max(0, c["score"] - (penalty if cx.get("self_contained") is False else 0))
-    clips.sort(key=lambda c: -c["score_final"])
-    clips = clips[: top_k or cfg.ranking["top_k_output"]]
+    top = sorted([c for c in clips if c["_top"]], key=lambda c: -c["score_final"])[: top_k or cfg.ranking["top_k_output"]]
+    cap_clips = [c for c in clips if c["_cap"]]
+    ids_top = {id(c) for c in top}
+    for c in clips:
+        c["rank"] = None
+    todos = top + [c for c in cap_clips if id(c) not in ids_top]
 
     # 7. cortes naturales + render
     rc = dict(cfg.render)
     detector = None
     gaps = [(a.end, b.start) for a, b in zip(tr.words, tr.words[1:]) if b.start - a.end > 0.12]
-    for n, c in enumerate(clips, 1):
+    for n, c in enumerate(todos, 1):
+        es_top = id(c) in ids_top
+        if es_top:
+            c["rank"] = top.index(c) + 1
         if info["has_video"]:
             tol = rc["scene_snap_s"]
             cuts = detect_cuts(video, c["start"] - tol, c["end"] + tol)
             c["start"], c["end"] = snap_to_cuts(c["start"], c["end"], cuts, gaps, tol)
         # margen de respiración: 0.15 s antes/después, sin invadir otra palabra
-        c["start"], c["end"] = max(0.0, c["start"] - 0.15), min(tr.duration, c["end"] + 0.25)
+        c["start"], c["end"] = breathing_margin(c["start"], c["end"], tr.words, tr.duration)
         c["duration"] = round(c["end"] - c["start"], 2)
-        c["rank"] = n
-        if render and info["has_video"]:
+        if (es_top or ch_cfg.get("render", True)) and render and info["has_video"]:
             from src.render.export import export_clip
             from src.render.reframe import FaceDetector
 
             detector = detector or FaceDetector(rc["face_detector"], cfg.path("models_ext"))
             hl = highlight_terms(ctx.kw, tr, c["start"], c["end"], rc["captions"]["max_highlight_ratio"])
             c["highlighted_terms"] = sorted(hl)
-            c["render"] = export_clip(video, c["start"], c["end"], tr.words, hl, tr.language,
-                                      out_dir / f"clip_{n:02d}_score{c['score_final']}.mp4", rc, detector,
+            nombre = (f"clip_{c['rank']:02d}_score{c['score_final']}.mp4" if es_top
+                      else f"cap{c['chapter']['index'] + 1:02d}_score{c['score_final']}.mp4")
+            c["render"] = export_clip(video, c["start"], c["end"], tr.words, hl, tr.language, out_dir / nombre, rc, detector,
                                       c["context"].get("hook"))
         c.pop("features", None)
+    clips = top   # el top 5 general conserva su formato; los de capítulo van aparte
+    por_capitulo = []
+    for ch in chapters:
+        mine = sorted([c for c in cap_clips if c["chapter"] and c["chapter"]["index"] == ch.index], key=lambda c: -c["score_final"])
+        por_capitulo.append({**ch.as_dict(), "clips": mine})
+    for c in clips + cap_clips:
+        for k in ("_top", "_cap"):
+            c.pop(k, None)
 
     result = {"input": str(video), "duration_s": tr.duration, "language": tr.language, "model": model_name,
               "llm": f"{llm.provider}:{llm.model}" if llm.enabled else "none (plantillas)",
               "video_keywords": [{"term": t, "weight": round(ctx.kw.term_weight[t], 3)} for t in ctx.kw.top_terms[:15]],
               "video_keyphrases": [p for p, _ in ctx.kw.keyphrases[:10]],
-              "n_candidates": len(cands), "clips": clips, "elapsed_s": round(time.time() - t0, 1)}
+              "n_candidates": len(cands), "clips": clips, "chapters": por_capitulo, "elapsed_s": round(time.time() - t0, 1)}
     write_json(out_dir / "clips.json", result)
     (out_dir / "report.md").write_text(_report(result), encoding="utf-8")
     log.info("listo: %d clips en %s (%.0fs)", len(clips), out_dir, time.time() - t0)
@@ -264,13 +304,24 @@ def _report(res: dict) -> str:
              f"- Duración: {res['duration_s'] / 60:.1f} min · idioma: {res['language']} · modelo: {res['model']} · LLM: {res['llm']}",
              f"- Keywords del video (KVSUM): {', '.join(k['term'] for k in res['video_keywords'])}",
              f"- Keyphrases (KeyBERT): {', '.join(res['video_keyphrases'])}", "",
-             "| # | Score | Hook | Flow | Value | Inicio | Fin | Título | Palabras de mayor peso |",
-             "|---|---|---|---|---|---|---|---|---|"]
+             "| # | Score | Capítulo | Hook | Flow | Value | Inicio | Fin | Título | Palabras de mayor peso |",
+             "|---|---|---|---|---|---|---|---|---|---|"]
     for c in res["clips"]:
         b = c["score_breakdown"]
-        lines.append(f"| {c['rank']} | **{c['score_final']}** | {b['hook']} | {b['flow']} | {b['value']} | {_fmt(c['start'])} | "
+        cap = (c.get("chapter") or {}).get("title", "—")
+        lines.append(f"| {c['rank']} | **{c['score_final']}** | {cap} | {b['hook']} | {b['flow']} | {b['value']} | {_fmt(c['start'])} | "
                      f"{_fmt(c['end'])} | {c['context']['title']} | {', '.join(k['term'] for k in c['keywords'][:4])} |")
     lines.append("")
+    if res.get("chapters"):
+        lines += ["## Mejor clip de cada capítulo", "", "| Capítulo | Tramo | Score | Inicio | Fin | Título |", "|---|---|---|---|---|---|"]
+        for ch in res["chapters"]:
+            auto = " (bloque automático)" if ch["auto"] else ""
+            if ch["clips"]:
+                for c in ch["clips"]:
+                    lines.append(f"| {ch['title']}{auto} | {_fmt(ch['start'])}–{_fmt(ch['end'])} | **{c['score_final']}** | {_fmt(c['start'])} | {_fmt(c['end'])} | {c['context']['title']} |")
+            else:
+                lines.append(f"| {ch['title']}{auto} | {_fmt(ch['start'])}–{_fmt(ch['end'])} | — | — | — | sin clip elegible |")
+        lines.append("")
     for c in res["clips"]:
         lines += [f"## {c['rank']}. {c['context']['title']} (score {c['score_final']})", "",
                   f"*Hook:* {c['context']['hook']}  ", f"*Estilo:* {c['context']['style']} · *Autocontenido:* {c['context']['self_contained']}  ",

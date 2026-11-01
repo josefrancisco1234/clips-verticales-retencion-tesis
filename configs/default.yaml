@@ -70,6 +70,12 @@ labels:
   relevant_overlap: 0.5         # un clip es "relevante" si ≥50 % de su duración cae en bins highlight
 
 ranking:
+  chapters:                 # D-100: mejor clip de cada capitulo de YouTube (ademas del top 5 general)
+    enabled: true
+    per_chapter_k: 1
+    fallback_block_s: 600   # sin capitulos: bloques de 10 min (marcados como automaticos); 0 = no usar bloques
+    min_chapter_s: 60       # capitulos mas cortos no reciben clip
+    render: true            # exportar tambien el mp4 de los clips por capitulo
   binary_variables: true   # D-098: cada variable de la formula vale 0/1 (25 % mas alto de su video); false = percentiles continuos
   split: {train: 0.7, val: 0.15, test: 0.15, group_by: "channel_id"}
   lgbm:

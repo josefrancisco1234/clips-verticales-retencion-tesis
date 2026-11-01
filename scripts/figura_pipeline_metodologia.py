@@ -58,7 +58,7 @@ for (y, h), body in ((TOP, "A y E: pausas,|volumen, tono,|ritmo, risa,|música")
 panel(0.355, 0.07, 0.105, 0.85, "#fbf0c8", "#d6b84e", "Percentil y|división de datos", "", ty=0.88)
 ax.text(0.4075, 0.755, T("71 variables por|candidato, cada una|como percentil dentro|de su propio video"), ha="center", va="top", fontsize=4.7, color="#374151", linespacing=1.3)
 ax.text(0.4075, 0.455, T("Conjuntos agrupados|por canal:"), ha="center", va="top", fontsize=4.7, color="#374151", linespacing=1.3)
-for i, lab in enumerate(("Desarrollo", "Confirmación", "Cohortes frescas")):
+for i, lab in enumerate(("Desarrollo", "Confirmación", "Videos nuevos")):
     ax.add_patch(FancyBboxPatch((0.367, 0.32 - i * 0.075), 0.081, 0.055, boxstyle="round,pad=0,rounding_size=0.006", fc="#fff8e1", ec="#d6b84e", lw=0.5))
     ax.text(0.4075, 0.3475 - i * 0.075, lab, ha="center", va="center", fontsize=4.5, color="#374151")
 for y, h in (TOP, BOT):

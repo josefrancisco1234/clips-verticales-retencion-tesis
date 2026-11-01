@@ -33,7 +33,7 @@ def flecha(a, b, color=GRIS, rad=0.0, estilo="-|>", ls="-"):
 
 # fila 1: datos y ranking
 ax.text(1, 49.2, "DATOS Y RANKING", fontsize=9.5, fontweight="bold", color=GRIS)
-caja(1, 33.5, 29, 13.5, AZUL, "1", "Videos de YouTube", ["50+ consultas ES/EN, curva de retención", "ETL: yt-dlp → audio + curva", "cohortes frescas congeladas antes de mirar"])
+caja(1, 33.5, 29, 13.5, AZUL, "1", "Videos de YouTube", ["50+ consultas ES/EN, curva de retención", "ETL: yt-dlp → audio + curva", "videos nuevos congelados antes de mirar"])
 caja(35.5, 33.5, 29, 13.5, AZUL, "2", "Base de datos (BD_TESIS)", ["Whisper: transcripción por palabra", "audio (librosa), eventos (PANNs), HuBERT", "71 variables por tramo y ventana"])
 caja(70, 33.5, 29, 13.5, NARANJA, "3", "Ranking de clips", ["fórmula de 17 pesos (V0/V1)", "LightGBM LambdaRank (R0, campeón)", "5 clips con puntaje 0–99 y explicación"])
 flecha((30.6, 40.2), (35.0, 40.2))
@@ -44,7 +44,7 @@ ax.text(1, 30.0, "EXPLORACIÓN AUTOMÁTICA", fontsize=9.5, fontweight="bold", co
 caja(1, 12.5, 23, 15.5, MORADO, "4", "Minero de papers", ["OpenAlex: 1 339 trabajos 2020+", "señales medibles que mencionan", "las compara con las 71 variables", "→ variables candidatas nuevas"])
 caja(27, 12.5, 23, 15.5, MORADO, "5", "Explorador de fórmulas", ["red de ecuaciones (EQL) con L1", "12 configuraciones por ronda", "validación interna por canal", "→ fórmulas legibles nuevas"])
 caja(53, 12.5, 23, 15.5, VERDE, "6", "Campeón / retador", ["retador vs campeón en holdout", "Wilcoxon unilateral p < 0.05", "corrección por rondas múltiples", "→ ¿se promueve?"])
-caja(79, 12.5, 20, 15.5, VERDE, "7", "Confirmación", ["una sola vez, cohorte fresca", "hipótesis escrita antes", "se reportan los negativos", "→ nuevo campeón o descarte"])
+caja(79, 12.5, 20, 15.5, VERDE, "7", "Confirmación", ["una sola vez, videos nuevos", "hipótesis escrita antes", "se reportan los negativos", "→ nuevo campeón o descarte"])
 flecha((24.6, 20.2), (26.4, 20.2))
 flecha((50.6, 20.2), (52.4, 20.2))
 flecha((76.6, 20.2), (78.4, 20.2))
