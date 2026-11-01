@@ -67,7 +67,7 @@ for n, (a, b, c) in enumerate(((0.012, 0.050, "#7aa0cf"), (0.022, 0.062, "#9bb8d
     ax.add_patch(plt.Rectangle((a, 0.46 - n * 0.05), b - a, 0.032, fc=c, ec="none"))
 txt(0.0425, 0.26, f"{n_corto} de {len(df)} duran|45 s o menos;|se mide el mejor", 4.0, "#6b7280")
 # 2 variables
-panel(0.10, 0.08, "#dbe7f5", "#7aa0cf", "17|variables")
+panel(0.10, 0.08, "#dbe7f5", "#7aa0cf", "17 a 23|variables")
 txt(0.14, 0.74, "pausas y|silencios|volumen|y tono|música|y habla|palabras|clave|preguntas|nº de|oraciones", 4.0)
 arr((0.082, 0.5), (0.098, 0.5))
 # 3 percentil y bandera
@@ -78,7 +78,7 @@ for n, (k, pct, flag, w) in enumerate(rows):
 ax.plot([0.205, 0.345], [base + hmax * 0.75] * 2, ls="--", lw=0.6, color="#e8710a")
 ax.text(0.345, base + hmax * 0.75 + 0.012, "0.75", fontsize=3.9, color="#e8710a", ha="right", va="bottom")
 txt(0.275, 0.76, "cada variable se ordena|dentro de este video|(0 a 1)", 4.0)
-txt(0.275, 0.17, f"bandera 1 en {len(act)} de 17|si percentil ≥ 0.75", 4.0)
+txt(0.275, 0.17, f"bandera 1 en {len(act)} de 17|si percentil ≥ 0.75|(se escanean 17 a 23|por segmento)", 4.0)
 arr((0.182, 0.5), (0.198, 0.5))
 # 4 peso x bandera, con el flujo por variable
 X4, W4 = 0.37, 0.245

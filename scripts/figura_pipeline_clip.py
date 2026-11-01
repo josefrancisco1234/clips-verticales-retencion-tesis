@@ -80,7 +80,7 @@ txt(0.4825, 0.25, "bandera 1 si está en|el 25 % superior", 4.2)
 arr((0.412, 0.5), (0.433, 0.5))
 # 5) ordenamiento
 panel(0.555, Y0, 0.205, H, "#f8dfe6", "#d489a2", "Ordenamiento del clip")
-box(0.565, 0.57, 0.185, 0.2, "white", "#d489a2", "Modelo final: fórmula de 17|banderas 0/1 con pesos|puntaje = suma de pesos x bandera", 4.3)
+box(0.565, 0.57, 0.185, 0.2, "white", "#d489a2", "Modelo final: fórmula de 17|banderas 0/1 con pesos|puntaje = suma de pesos x bandera|(17 a 23 variables por segmento)", 4.3)
 box(0.565, 0.18, 0.185, 0.35, "white", "#d489a2", "", 4.3)
 ax.text(0.6575, 0.515, "Referencia: LightGBM LambdaRank", ha="center", va="top", fontsize=4.5, fontweight="bold", color="#9d2b57")
 txt(0.6575, 0.475, "grupo = un video|etiqueta 0 a 4 según Most Replayed|(solo para entrenar)|arboles que corrigen el orden|de los pares mal clasificados|salida: puntaje por candidato", 4.0, va="top")

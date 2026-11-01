@@ -35,7 +35,7 @@ def flecha(a, b, color=GRIS, rad=0.0, estilo="-|>", ls="-"):
 ax.text(1, 49.2, "DATOS Y RANKING", fontsize=9.5, fontweight="bold", color=GRIS)
 caja(1, 33.5, 29, 13.5, AZUL, "1", "Videos de YouTube", ["50+ consultas ES/EN, curva de retención", "ETL: yt-dlp → audio + curva", "videos nuevos congelados antes de mirar"])
 caja(35.5, 33.5, 29, 13.5, AZUL, "2", "Base de datos (BD_TESIS)", ["Whisper: transcripción por palabra", "audio (librosa), eventos (PANNs), HuBERT", "71 variables por tramo y ventana"])
-caja(70, 33.5, 29, 13.5, NARANJA, "3", "Ranking de clips", ["fórmula de 17 pesos (V0/V1)", "LightGBM LambdaRank (R0, campeón)", "5 clips con puntaje 0–99 y explicación"])
+caja(70, 33.5, 29, 13.5, NARANJA, "3", "Ranking de clips", ["fórmula 17 pesos; 17-23 por segmento", "LightGBM LambdaRank (R0, campeón)", "5 clips con puntaje 0–99 y explicación"])
 flecha((30.6, 40.2), (35.0, 40.2))
 flecha((65.1, 40.2), (69.4, 40.2))
 

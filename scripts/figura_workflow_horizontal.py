@@ -60,7 +60,7 @@ carril(yA, "A · CONSTRUIR LOS DATOS (ETL → base de datos)", [
 ])
 carril(yB, "B · MODELAR Y EVALUAR", [
     (BL, "1 · Datos", "percentiles dentro del|video; desarrollo 444,|confirmación 352; dos|grupos nuevos: 93 y 63", ""),
-    (RO, "2 · Base", "azar; fórmula V0 de 17|variables (pesos de la|correlación parcial); V1|con clips de hasta 45 s", ""),
+    (RO, "2 · Base", "azar; fórmula V0 de 17|variables (17 a 23 por|segmento); V1 con clips|de hasta 45 s", ""),
     (RO, "3 · Aprendizaje", "R0: LightGBM LambdaRank|(un video = un grupo)|con validación cruzada|por canal", ""),
     (RO, "4 · Redes", "BiGRU, TCN, Transformer|y red de ecuaciones|(EQL) frente a la|fórmula", ""),
     (NA, "5 · Métricas", "acierto@5, F1 temporal|y NDCG@10; matriz de|confusión por ventana", ""),
@@ -71,7 +71,7 @@ carril(yC, "C · USAR EL SISTEMA (video nuevo → clips) Y VALIDAR CON CREADORES
     (BL, "1 · Video largo", "archivo o URL; no|necesita la curva|de YouTube", ""),
     (AZ, "2 · Audio y|transcripción", "mismo ETL: Whisper y|eventos de sonido", ""),
     (VE, "3 · Candidatos|y variables", "ventanas de 15 a 90 s|por oración; 71|variables en percentil", ""),
-    (RO, "4 · Puntaje", "campeón vigente:|fórmula V1 con 17|banderas 0/1;|escala de 0 a 99", ""),
+    (RO, "4 · Puntaje", "campeón vigente: fórmula|V1 con 17 banderas 0/1|(17 a 23 variables por|segmento); escala 0 a 99", ""),
     (NA, "5 · Selección", "top 5; dos clips no|comparten más de 30 %;|corte de escena", ""),
     (MO, "6 · Clips 9:16", "seguimiento del hablante,|subtítulos, puntaje y|aporte por variable|(Hook, Flow, Value)", ""),
     (BL, "7 · Validación", "página web con 5|creadores de podcast:|utilidad y SUS|(meta > 70)", ""),

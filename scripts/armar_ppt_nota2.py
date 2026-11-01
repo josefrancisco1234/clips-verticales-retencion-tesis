@@ -209,7 +209,7 @@ tb = r1.shapes.add_textbox(Inches(6.0), Inches(1.7), Inches(3.6), Inches(3.4))
 bullets(tb, ["Azar → V0: +20.4 puntos sin entrenar nada.",
              "V1 (clips ≤ 45 s): 54.8 %; en confirmación (352 videos) 53.4 % frente a 29.1 % del azar.",
              "R0: 62.4 %, pero con azar propio de 31.9 %; en el grupo de videos nuevos 2, 49.2 % frente a 30.0 %.",
-             "Modelo final: V1 en banderas 0/1, por explicabilidad."], 11)
+             "Modelo final: V1 en banderas 0/1 (17 a 23 variables escaneadas por segmento), por explicabilidad."], 11)
 notas(r1, "Grupo de videos nuevos 1: azar 26.9, V0 47.3, V1 54.8 y R0 62.4 de acierto@5. F1 temporal: 0.072, 0.149, 0.141 y 0.142. El F1 no mejora de V0 a V1 porque los clips cortos tocan más picos pero cubren menos tiempo. R0 puntúa ventanas por tramo con azar más alto (31.9 %): frente a su propio azar acierta 1.96 veces y V1 2.04 veces.")
 r2 = prs.slides.add_slide(L["CUSTOM_8"])
 _t = r2.shapes.title; _t.left, _t.top, _t.width, _t.height = Inches(0.33), Inches(0.5), Inches(9.34), Inches(0.6)
@@ -252,7 +252,7 @@ lim = nuevo_texto("Limitaciones y trabajos futuros", [
     "Futuro: reencuadre con YOLO (personas y pose) y seguimiento entre cuadros; ampliar la base de videos (cada duplicación suma cerca de 1 punto de acierto@5); repetir la validación con más creadores.",
 ], "El YOLO no se incluyó por limitaciones de GPU y tiempo.", 14)
 concl = nuevo_texto("Conclusiones", [
-    "Con solo audio y texto, la fórmula de 17 variables más que duplica el acierto del azar (47.3 % frente a 26.9 %).",
+    "Con solo audio y texto, la fórmula de 17 variables (17 a 23 escaneadas por segmento) más que duplica el acierto del azar (47.3 % frente a 26.9 %).",
     "Limitar los clips a 45 s sube el acierto a 54.8 %, a costa de cubrir menos tiempo caliente.",
     "El ranking aprendido (R0) llega a 62.4 % en el grupo de videos nuevos 1, pero rinde menos en el grupo de videos nuevos 2 y no se explica por variable.",
     "Se adoptó V1 en banderas 0/1 por su explicabilidad. La validación con cinco creadores cumplió utilidad (mediana 4) y SUS (75).",

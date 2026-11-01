@@ -72,7 +72,7 @@ for i, v in enumerate(vals):
     on = v >= 0.75
     ax.add_patch(plt.Rectangle((0.505 + i * 0.0265, TOP[0] + 0.07), 0.018, 0.17 * v, fc="#2e7d32" if on else "#cbd5e1", ec="none"))
 ax.plot([0.5, 0.69], [TOP[0] + 0.07 + 0.17 * 0.75] * 2, ls="--", lw=0.6, color="#e8710a")
-ax.text(0.5925, TOP[0] + 0.035, T("suma de pesos x bandera, escala 0 a 99"), ha="center", fontsize=4.4, color="#374151")
+ax.text(0.5925, TOP[0] + 0.035, T("suma de pesos x bandera, escala 0 a 99|(17 a 23 variables escaneadas por segmento)"), ha="center", fontsize=4.4, color="#374151")
 panel(0.485, BOT[0], 0.215, BOT[1], "#f8dfe6", "#d489a2", "Modelos de comparación", "", ty=BOT[0] + BOT[1] - 0.04)
 for i, lab in enumerate(("Azar", "Ranker LightGBM LambdaRank", "BiGRU · TCN · Transformer", "Red de ecuaciones (EQL)")):
     ax.add_patch(FancyBboxPatch((0.5, BOT[0] + 0.23 - i * 0.065), 0.185, 0.048, boxstyle="round,pad=0,rounding_size=0.006", fc="white", ec="#d489a2", lw=0.5))

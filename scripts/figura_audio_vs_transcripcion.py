@@ -58,7 +58,7 @@ for (tit, sub, med, grupo, resumen), y, sh in zip(filas, ys, share):
     flecha((0.207, y + H / 2), (0.233, y + H / 2))
     flecha((0.492, y + H / 2), (0.518, y + H / 2))
     flecha((0.722, y + H / 2), (0.75, 0.5))
-panel(0.75, 0.08, 0.245, 0.815, AMAR, "Puntaje de|17 variables", "")
+panel(0.75, 0.08, 0.245, 0.815, AMAR, "Puntaje de 17 variables|(17 a 23 escaneadas|por segmento)", "")
 ax.text(0.8725, 0.72, T("cada variable pasa a|percentil dentro del video|y a bandera 0/1;|se suma peso x bandera|y se lleva a la escala 0 a 99"), ha="center", va="top", fontsize=4.4, color="#374151", linespacing=1.3)
 ax.text(0.8725, 0.40, T("Con solo la transcripción|se arman además los|candidatos alineados a|oración, los subtítulos|y las palabras clave|de cada clip"), ha="center", va="top", fontsize=4.2, color="#6b7280", linespacing=1.3)
 fig.savefig(ROOT / "reports" / "audio_vs_transcripcion_D099.png", facecolor="white")
