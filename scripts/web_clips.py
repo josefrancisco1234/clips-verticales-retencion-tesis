@@ -506,6 +506,10 @@ th,td{border-bottom:1px solid var(--line);padding:3px 4px;text-align:left}th{col
    <div class="sub" style="text-align:center;margin-top:10px">Si el link de YouTube falla (a veces YouTube bloquea la descarga), sube el archivo del video.</div>
    <div class="bar" id="upbar" style="display:none"><i></i></div><div id="upmsg" class="sub" style="margin-top:8px;text-align:center"></div>
   </div>
+  <div class="card" style="margin-top:14px;text-align:center"><b>Ejemplos para la demostración</b>
+   <div class="sub" style="margin:6px 0 10px">Resultados ya generados con el sistema completo (transcripción, 71 variables, puntaje, capítulos y clips 9:16). Se abren al instante.</div>
+   <button class="cta" id="ex_fabi" style="margin:4px">▶ Ejemplo: podcast Fabiana</button>
+   <button class="cta" id="ex_mauri" style="margin:4px">▶ Ejemplo: podcast Mauricio</button></div>
   <div class="feats"><div><b>1 · Detecta</b><span>Transcribe y puntúa cada pasaje con 71 variables de audio y texto.</span></div>
    <div><b>2 · Elige</b><span>Los 5 momentos con mayor puntaje; dos clips no comparten más de 30 % de su duración.</span></div>
    <div><b>3 · Explica</b><span>Cada clip trae su puntaje 0–99 y las variables que lo explican.</span></div></div>
@@ -715,6 +719,8 @@ $("go").onclick=()=>{
   if($("url").value.trim())return start();
   $("upmsg").textContent="Sube un video o pega un link de YouTube.";
 };
+$("ex_fabi").onclick=()=>{$("hero").style.display="none";$("newrow").style.display="block";show({dir:"EJEMPLO_Fabiana"})};
+$("ex_mauri").onclick=()=>{$("hero").style.display="none";$("newrow").style.display="block";show({dir:"EJEMPLO_Mauricio"})};
 $("newbtn").onclick=()=>{$("hero").style.display="";$("newrow").style.display="none";$("out").innerHTML="";$("prog").style.display="none";$("tabs").innerHTML="";setFile(null);$("fup").value="";$("url").value="";$("upmsg").textContent="";window.scrollTo(0,0)};
 $("url").addEventListener("keydown",e=>{if(e.key==="Enter"&&!FILE)start()});
 const ITEMS=["Los cinco clips elegidos me parecen momentos interesantes del episodio.", "Publicaría estos clips en mis redes con poca o ninguna edición.", "La explicación del puntaje (banderas 0/1 por variable) es fácil de entender.", "El puntaje de 0 a 99 me ayuda a decidir qué clip publicar primero.", "La página web es fácil de usar.", "Este sistema me ahorraría tiempo frente a elegir los clips manualmente."];

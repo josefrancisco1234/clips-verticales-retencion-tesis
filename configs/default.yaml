@@ -104,7 +104,7 @@ ranking:
   top_k_output: 8
 
 context:
-  provider: "anthropic"         # anthropic | openai | ollama | none (si falta la API key se usa none)
+  provider: "none"              # anthropic | openai | ollama | none. D-103: sin LLM externo; titulo y hook salen de plantillas deterministas (solo audio y texto, sin API)
   model:
     anthropic: "claude-haiku-4-5-20251001"
     openai: "gpt-4o-mini"
