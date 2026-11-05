@@ -176,7 +176,7 @@ def cmd_variable(nombre: str) -> None:
 
 
 # ==============================================================================================================
-# 3. PUNTAJE DE UN CLIP   (python main.py puntaje)   <- diapositivas 16 y 18
+# 3. PUNTAJE DE UN CLIP   (python main.py puntaje)   <- diapositivas 15 y 17
 #    percentil dentro del video -> bandera 0/1 -> suma ponderada -> escala 0 a 99
 # ==============================================================================================================
 def percentil_en_video(valores: pd.Series) -> pd.Series:
