@@ -1,6 +1,18 @@
 """TODO LO QUE DIGO EN EL PPT, EN CÓDIGO Y CON CADA LÍNEA EXPLICADA (para leerlo mientras expongo).
 
-Va en el mismo orden que las diapositivas. Es AUTÓNOMO: corre sin datos, sin GPU y sin internet, con un video de
+ÍNDICE POR DIAPOSITIVA (el código corre en el orden en que cada paso necesita al anterior):
+    Diap. 11 y 13  ETL y candidatos de 15 a 90 s ...... sección 1
+    Diap. 12       variables ......................... sección 2
+    Diap. 13       margen de respiración ............. sección 5
+    Diap. 14       V1 (<= 45 s), NMS, top 5, capítulos  sección 4
+    Diap. 15 y 17  percentil, bandera, suma, 0-99 .... sección 3
+    Diap. 16       LightGBM / árbol (R0) ............. sección 8
+    Diap. 18       campeón / retador ................. sección 9
+    Diap. 19       métricas (acierto@5, F1, matriz) .. sección 6
+    Diap. 21-22    azar, V0, V1, R0 .................. sección 7
+    Diap. 23       redes neuronales vs R0 ............ sección 10
+
+Es AUTÓNOMO: corre sin datos, sin GPU y sin internet, con un video de
 ejemplo inventado, usando solo numpy y pandas (LightGBM es opcional). Los pesos de la fórmula SÍ son los reales.
 El código de producción que hace lo mismo con videos de verdad está en PIPELINE_COMPLETO.py y main.py.
 
@@ -22,9 +34,9 @@ def titulo(txt):                                              # imprime un encab
 
 
 # =====================================================================================================
-# DIAPOSITIVAS 10-12 · FLUJO Y ETL: del video largo a una lista de candidatos
+# DIAPOSITIVAS 11 y 13 · ETL Y CANDIDATOS: del video largo a una lista de candidatos
 # =====================================================================================================
-titulo("DIAP. 10-14 · El video entra, se transcribe y se cortan candidatos de 15 a 90 s")
+titulo("DIAP. 11 y 13 · El video entra, se transcribe y se cortan candidatos de 15 a 90 s")
 DURACION = 1800.0                                             # el video de ejemplo dura 30 minutos (1800 s)
 # En el sistema real: yt-dlp baja el audio, ffmpeg lo pasa a WAV de 16 kHz y Whisper entrega cada palabra con su tiempo.
 # Aquí inventamos directamente las ORACIONES (inicio, fin) porque el candidato siempre empieza y termina en una oración.
@@ -38,16 +50,16 @@ filas = []                                                    # aquí guardamos 
 for i in range(len(ini_oracion)):                             # para cada oración posible como INICIO del clip...
     for j in range(i, min(i + 20, len(fin_oracion))):         # ...probamos terminarlo en esa u hasta 19 oraciones más tarde
         dur = fin_oracion[j] - ini_oracion[i]                 # duración del candidato = fin de la última - inicio de la primera
-        if 15.0 <= dur <= 90.0:                               # REGLA DE LA DIAP. 14: solo ventanas de 15 a 90 segundos
+        if 15.0 <= dur <= 90.0:                               # REGLA DE LA DIAP. 13: solo ventanas de 15 a 90 segundos
             filas.append((ini_oracion[i], fin_oracion[j], j - i + 1))   # guardamos inicio, fin y cuántas oraciones tiene
 cand = pd.DataFrame(filas, columns=["start", "end", "f_n_sentences"])   # tabla de candidatos (f_n_sentences es una variable real)
 cand["dur"] = cand.end - cand.start                           # duración de cada candidato en segundos
 print(f"candidatos 15-90 s: {len(cand)} (en el sistema real son ~400 por video)")   # tamaño del universo del ejemplo
 
 # =====================================================================================================
-# DIAPOSITIVA 15 · LAS 71 VARIABLES (aquí inventamos los valores; en el sistema real salen del audio y del texto)
+# DIAPOSITIVA 12 · LAS 71 VARIABLES (aquí inventamos los valores; en el sistema real salen del audio y del texto)
 # =====================================================================================================
-titulo("DIAP. 15 · Variables por ventana (audio, eventos de sonido, texto, gancho, fluidez)")
+titulo("DIAP. 12 · Variables por ventana (audio, eventos de sonido, texto, gancho, fluidez)")
 RUTA_PESOS = Path(__file__).parent / "models" / "formula_calor_D045.json"   # archivo con los 17 pesos congelados (V0)
 if RUTA_PESOS.exists():                                       # si estamos dentro del repo...
     PESOS = json.load(open(RUTA_PESOS, encoding="utf-8"))["weights"]   # ...leemos los pesos REALES
@@ -67,9 +79,9 @@ print("ejemplo de 3 candidatos y 4 variables:")              # mostramos un peda
 print(cand[["start", "end", "a_pause_ratio", "a_rms_std", "s_questions_pm"]].head(3).round(2).to_string(index=False))
 
 # =====================================================================================================
-# DIAPOSITIVA 18 · PERCENTIL → BANDERA → SUMA PONDERADA → PUNTAJE 0-99
+# DIAPOSITIVAS 15 y 17 · PERCENTIL → BANDERA → SUMA PONDERADA → PUNTAJE 0-99
 # =====================================================================================================
-titulo("DIAP. 16 y 18 · Percentil dentro del video, bandera 0/1, suma ponderada y escala 0-99")
+titulo("DIAP. 15 y 17 · Percentil dentro del video, bandera 0/1, suma ponderada y escala 0-99")
 BANDERA_P = 0.75                                              # umbral: la bandera vale 1 si el percentil es 0.75 o más
 ESCALA = 99                                                   # el puntaje final va de 0 a 99
 
@@ -96,9 +108,9 @@ cand["score"] = np.clip(np.round((raw - lo) / (hi - lo) * ESCALA), 0, ESCALA).as
 print(f"mínimo posible {lo:+.4f} | máximo posible {hi:+.4f} | puntaje del mejor candidato: {cand.score.max()}")
 
 # =====================================================================================================
-# DIAPOSITIVA 15/22 · V1 = V0 + CLIPS DE HASTA 45 s  →  NMS  →  TOP 5  →  MEJOR POR CAPÍTULO
+# DIAPOSITIVA 14 (y 21-22) · V1 = V0 + CLIPS DE HASTA 45 s  →  NMS  →  TOP 5  →  MEJOR POR CAPÍTULO
 # =====================================================================================================
-titulo("DIAP. 15 y 22 · V1: clips <= 45 s, orden por puntaje, NMS sin traslape y top 5")
+titulo("DIAP. 14 (y 21-22) · V1: clips <= 45 s, orden por puntaje, NMS sin traslape y top 5")
 MAX_CLIP_S = 45.0                                             # V1: los clips largos pierden contra los cortos, así que se excluyen
 SOLAPE_MAX = 0.30                                             # dos clips elegidos no pueden compartir más del 30 % del más corto
 TOP_K = 5                                                     # entregamos 5 clips
@@ -139,18 +151,18 @@ for b, g in cand[cand.dur <= MAX_CLIP_S].groupby(bloques):    # para cada bloque
 print(f"clips extra por capítulo: {len(extra)} (se suman al top 5)")
 
 # =====================================================================================================
-# DIAPOSITIVA 14 · MARGEN DE RESPIRACIÓN (corte natural, no a media palabra)
+# DIAPOSITIVA 13 · MARGEN DE RESPIRACIÓN (corte natural, no a media palabra)
 # =====================================================================================================
-titulo("DIAP. 14 · Margen de respiración del corte")
+titulo("DIAP. 13 · Margen de respiración del corte")
 PRE_S, POST_S = 0.15, 0.35                                    # medio segundo en total: 0.15 s antes y 0.35 s después
 ini, fin = cand.loc[top_v1[0], ["start", "end"]]              # tomamos el mejor clip como ejemplo
 print(f"corte crudo: {ini:.2f}-{fin:.2f} s  ->  con margen: {ini - PRE_S:.2f}-{fin + POST_S:.2f} s "
       "(en real se recorta si invadiría la palabra vecina)")   # el margen evita que el clip arranque o termine seco
 
 # =====================================================================================================
-# DIAPOSITIVA 20 · MÉTRICAS: ACIERTO@5, F1 TEMPORAL Y MATRIZ
+# DIAPOSITIVA 19 · MÉTRICAS (y resultados 25-26): ACIERTO@5, F1 TEMPORAL Y MATRIZ
 # =====================================================================================================
-titulo("DIAP. 20, 26 y 27 · Cómo se califica: acierto@5, F1 temporal y matriz de confusión")
+titulo("DIAP. 19 (y 25-26) · Cómo se califica: acierto@5, F1 temporal y matriz de confusión")
 # La curva "Most Replayed" de YouTube es solo la REGLA DE CALIFICACIÓN: nunca entra al sistema.
 calor = np.zeros(int(DURACION // 35) + 1)                     # la curva se parte en tramos de ~35 s (un valor por tramo)
 calor[:] = rng.uniform(0.0, 0.5, size=len(calor))             # tramos "fríos": calor bajo
@@ -197,9 +209,9 @@ TN = int((~tramo_en_clip & ~real).sum())                      # tramo frío que 
 print(f"matriz: TP={TP} FP={FP} FN={FN} TN={TN} -> casi todos son TN porque 'lo caliente' es raro (~1-2 % del video)")
 
 # =====================================================================================================
-# DIAPOSITIVAS 22-23 · LAS CUATRO FORMAS DE PUNTUAR: AZAR, V0, V1, R0
+# DIAPOSITIVAS 21-22 · LAS CUATRO FORMAS DE PUNTUAR: AZAR, V0, V1, R0
 # =====================================================================================================
-titulo("DIAP. 22-23 · Azar vs V0 vs V1 (y R0 como referencia)")
+titulo("DIAP. 21-22 · Azar vs V0 vs V1 (y R0 como referencia)")
 cortos = cand[cand.dur <= MAX_CLIP_S].index.to_numpy()        # candidatos de 45 s o menos
 res = {"Azar": [], "V0": [], "V1": []}                        # aciertos por método
 for _ in range(200):                                          # repetimos el experimento con 200 calendarios de zonas calientes distintos
@@ -215,9 +227,9 @@ print("Mecánica ejecutada (Azar, V0 y V1 calificados con acierto@5 sobre curvas
 print("Resultados REALES (93 videos nuevos): Azar 26.9 % | V0 47.3 % | V1 54.8 % | R0 62.4 %  (ver main.py resultados)")
 
 # =====================================================================================================
-# DIAPOSITIVA 17 · ÁRBOL DE DECISIÓN Y LIGHTGBM (LambdaRank) = R0
+# DIAPOSITIVA 16 · ÁRBOL DE DECISIÓN Y LIGHTGBM (LambdaRank) = R0
 # =====================================================================================================
-titulo("DIAP. 17 · R0: LightGBM con LambdaRank (un árbol que aprende a ORDENAR, no a clasificar)")
+titulo("DIAP. 16 · R0: LightGBM con LambdaRank (un árbol que aprende a ORDENAR, no a clasificar)")
 # Idea: en la fórmula yo elijo los pesos; en R0 el modelo aprende solo qué variables y combinaciones importan.
 # Un árbol hace preguntas "si variable X >= umbral -> izquierda, si no -> derecha" hasta llegar a una HOJA con un número.
 # LightGBM suma cientos de árboles chicos; cada uno corrige el error del anterior. LambdaRank lo entrena para que el
@@ -235,9 +247,9 @@ except ImportError:                                               # si no hay Li
 print("Resultado real de R0: 62.4 % de acierto en 93 videos nuevos, pero medido en tramos de ~35 s; no es lo mismo que en ventanas de producto.")
 
 # =====================================================================================================
-# DIAPOSITIVA 17/19 · CAMPEÓN / RETADOR (agente automático de mejora continua)
+# DIAPOSITIVAS 16 y 18 · CAMPEÓN / RETADOR (agente automático de mejora continua)
 # =====================================================================================================
-titulo("DIAP. 17 y 19 · Campeón y retador: una variante nueva solo reemplaza al campeón si lo supera")
+titulo("DIAP. 16 y 18 · Campeón y retador: una variante nueva solo reemplaza al campeón si lo supera")
 campeon = 0.588                                               # puntaje del campeón actual (LightGBM, NDCG/acierto en validación cruzada)
 for ronda in range(1, 6):                                     # el agente probó 73 rondas; aquí simulamos 5
     retador = campeon + rng.normal(0, 0.01)                   # el retador es una variante con otro conjunto de variables o parámetros
@@ -249,9 +261,9 @@ for ronda in range(1, 6):                                     # el agente probó
 print("Real: el agente corrió 73 rondas y más de 12 000 evaluaciones; la promoción se decide con datos de validación, y lo promovido se confirma luego en videos nuevos.")
 
 # =====================================================================================================
-# DIAPOSITIVA 24 · REDES NEURONALES VS R0 (todas entrenadas DESDE CERO, no pre-entrenadas)
+# DIAPOSITIVA 23 · REDES NEURONALES VS R0 (todas entrenadas DESDE CERO, no pre-entrenadas)
 # =====================================================================================================
-titulo("DIAP. 24 · Redes neuronales vs árbol (validación cruzada, 444 videos, acierto@5)")
+titulo("DIAP. 23 · Redes neuronales vs árbol (validación cruzada, 444 videos, acierto@5)")
 tabla = pd.DataFrame({                                        # resultados reales del experimento inicial
     "modelo": ["Azar", "V0 (17 variables)", "LightGBM (R0)", "BiGRU 128", "BiGRU 64 + contraste", "TCN", "Transformer"],
     "acierto@5": ["32.8 %", "53.4 %", "58.8 %", "54.7 %", "55.2 %", "53-55 %", "53-55 %"],   # lo que sale en la diapositiva
