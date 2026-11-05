@@ -431,7 +431,7 @@ Corrida unica sobre 352 videos / 290 canales (`reports/confirmacion_D048/`).
 - **Presupuesto de la bateria (fijado antes de correr):** 9 modelos (M1 LightGBM lambdarank, M2 regresion, M3 binario, M4 ridge, M5 logistica, M6 lambdarank con contexto local +-90 s, M7 ensamble formula+M1, M8 ensamble formula+M3, M9 binario con contexto), cada uno con 3 selecciones (todos, <= 45 s, <= 45 s + calidad). Hiperparametros fijos a priori (300 rondas, 15 hojas, min 200). Bonferroni sobre los 9 modelos (0.05/9). Validacion GroupKFold(10) por canal.
 - **Criterio de ganador (para pasar a confirmacion):** supera a V1 en hit@5 (McNemar bilateral, p < 0.0056) **y** no pierde mas de 0.01 de F1 frente a V0 (Wilcoxon), o supera a V0 en F1 con p < 0.0056 sin perder hit@5. Si ninguno califica, la formula de contenido V0/V1 queda como la mejor conocida.
 - **Confirmacion:** un solo pase del/los ganadores en la cohorte fresca, con pesos y modelos congelados antes de calcular features de esos videos.
-- **Estado:** preregistrado (pendiente de resultado).
+- **Estado:** corrida única hecha (ver resultado abajo).
 
 ### D-051 · 2026-10-12 · Resultado de la bateria D-050: ningun modelo supera a la formula simple; el techo de contenido esta en ~50-55 % de acierto
 Corrida unica sobre 473 videos / ~400 canales (121 desarrollo + 352 de D-046), GroupKFold(10) por canal, `reports/bateria_D050/`. Referencias: V0 (formula congelada, todos los candidatos): hit@5 47.7 %, F1 0.129; V1 (V0 con clips <= 45 s): hit@5 52.7 %, F1 0.115; azar 28.8 % / 0.070.
@@ -465,7 +465,7 @@ Corrida unica sobre 473 videos / ~400 canales (121 desarrollo + 352 de D-046), G
 - **Datos:** los 121 videos de desarrollo D-038 (el resto de la exploracion ya esta agotada). Ninguna decision con la cohorte fresca.
 - **Presupuesto:** 3 modelos — (a) formula visual sola (pesos por rho parcial controlando posicion, dejando afuera el canal), (b) V0 + visual (lineal), (c) LightGBM lambdarank (M1) con y sin visual. GroupKFold por canal. Bonferroni 0.05/3.
 - **Criterio para pasar a confirmacion fresca:** (b) supera a V0 o (c) supera a M1 en hit@5 (McNemar) o en F1 (Wilcoxon) con p < 0.0167. Si no, la senal visual gruesa se reporta como negativa.
-- **Estado:** preregistrado (pendiente de resultado).
+- **Estado:** corrida única hecha (ver resultado abajo).
 
 
 ### D-054 Â· 2026-10-12 Â· Preregistro: modelo profundo de SECUENCIA temporal (video -> curva de calor) y fusion "modelo propone, curva valida"
@@ -477,7 +477,7 @@ Corrida unica sobre 473 videos / ~400 canales (121 desarrollo + 352 de D-046), G
 - **Linea base en los mismos bins y folds:** azar, formula V0 congelada, LightGBM lambdarank por bin, calor directo (techo).
 - **Ganador (para confirmar en la cohorte fresca):** la configuracion de mayor F1 temporal@5 medio; se reentrena con todo el desarrollo ampliado y se evalua una sola vez en la cohorte fresca (Wilcoxon vs V0 y vs LightGBM por bin).
 - **Fusion (exploratoria, mismos oof):** (A) calor, (B) modelo, (C) solo bins con calor en el 20 % superior, ordenados por modelo, (D) z(calor) + 0.5 z(modelo). Se reporta hit@5, F1 y acuerdo con los clips humanos (30 videos).
-- **Estado:** preregistrado (pendiente de resultado).
+- **Estado:** corrida única hecha (ver resultado abajo).
 
 
 
@@ -508,7 +508,7 @@ Corrida unica (`scripts/dl_secuencia_D054.py`), 444 videos del manifest previo a
 - **Datos:** los mismos 444 videos y los mismos 10 folds por canal de D-054 (comparacion pareada con sus oof). Cohorte fresca y replica humana intactas.
 - **Brazos (presupuesto 4 contrastes, Bonferroni 0.0125):** base (68 features) frente a base + texto (PCA 32 ajustado SOLO con el entrenamiento de cada fold), base + HuBERT (u_*, ya en las tablas; PCA con la fuga no supervisada de D-038), base + texto + HuBERT. Modelos: LightGBM lambdarank por bin y BiGRU 128 (MSE, dropout 0.3, recortes de 40 bins).
 - **Criterio:** un brazo "gana" si supera al base del mismo modelo en F1 temporal@5 (Wilcoxon pareado, p < 0.0125) sin perder acierto; en ese caso se confirma una vez en la cohorte fresca. Si no, la senal semantica se reporta como negativa.
-- **Estado:** preregistrado (pendiente de resultado).
+- **Estado:** corrida única hecha (ver resultado abajo).
 
 
 
@@ -553,7 +553,7 @@ Corrida unica sobre 120 videos de desarrollo con storyboard `sb1` (frames de 160
 - **Pregunta:** el modelo base predice el grado 0-4 por cuantiles del calor. Los "aciertos" son picos estrechos; quiza otra definicion de la etiqueta afine el orden en la cima.
 - **Variantes (LightGBM por bin, 68 features, mismos 10 folds, 300 rondas, hiperparametros fijos; presupuesto 5 contrastes, Bonferroni 0.01):** (T1) binario sobre `y_relevant`; (T2) regresion sobre el calor z-escalado por video; (T3) regresion sobre la prominencia (calor menos mediana movil de +-5 bins) z-escalada; (T4) lambdarank con 10 grados por rango; (T5) regresion sobre log(calor). Referencia: lambdarank 5 grados (oof de D-054).
 - **Criterio:** una variante supera a la referencia si mejora F1 temporal@5 con p < 0.01 sin perder acierto; en tal caso se confirma una vez en la cohorte fresca. Si no, el techo de contenido se mantiene.
-- **Estado:** preregistrado (pendiente de resultado).
+- **Estado:** corrida única hecha (ver resultado abajo).
 
 
 
@@ -563,7 +563,7 @@ Corrida unica sobre 120 videos de desarrollo con storyboard `sb1` (frames de 160
 - **Brazos (LightGBM lambdarank por bin, 5 grados, mismos 444 videos y 10 folds por canal de D-054, 300 rondas, hiperparametros fijos; presupuesto 4 contrastes, Bonferroni 0.0125):** (R1) rango + valor absoluto; (R2) rango + media y desviacion por video de cada feature (contexto global, 136 columnas constantes por video); (R3) rango + rango de los bins vecinos (+-1 y +-2); (R4) todo lo anterior.
 - **Control de posicion (D-018):** ninguna columna codifica la posicion (los vecinos se rellenan replicando el borde; las agregaciones por video no dependen del orden). Se verifica `p_rel_pos` fuera.
 - **Criterio:** un brazo supera a la referencia (oof LightGBM base de D-054) si mejora F1 temporal@5 con p < 0.0125 sin perder acierto; en ese caso se confirma una vez en la cohorte fresca.
-- **Estado:** preregistrado (pendiente de resultado).
+- **Estado:** corrida única hecha (ver resultado abajo).
 
 
 
@@ -603,7 +603,7 @@ Corrida unica, LightGBM por bin, 444 videos, 10 folds por canal, `reports/etique
 - **A. Ajuste fino sobre R4 (LightGBM por bin, mismos folds, presupuesto de 10 contrastes, Bonferroni 0.005 frente a R0):** (H1) 7 hojas, 400 rondas; (H2) 31 hojas; (H3) min_data_in_leaf 150; (H4) feature_fraction 0.3; (H5) feature_fraction 0.5, 500 rondas; (H6) lr 0.03, 600 rondas; (H7) lambda_l2 50, 400 rondas; (H8) extra_trees; (S5) promedio de 5 semillas de R4 con la configuracion original; (U) R4 + HuBERT (u_*).
 - **B. Confirmacion fresca (una sola vez, pesos congelados, entrenado con el desarrollo ampliado; la configuracion de R4 original):** H-R4: R4 supera a R0 en F1 temporal@5 en la cohorte fresca (Wilcoxon pareado, unilateral, alfa = 0.05). Secundarias: acierto; BiGRU de D-054; HuBERT. Si la configuracion de A cumple el criterio de A, se anade como brazo secundario, no sustituye a H-R4.
 - **Regla:** ninguna configuracion se adopta en el pipeline sin pasar B. No se reajusta tras ver la cohorte fresca.
-- **Estado:** preregistrado (pendiente de resultado).
+- **Estado:** corrida única hecha (ver resultado abajo).
 
 
 
@@ -745,7 +745,7 @@ Una sola corrida de cada prueba, modelos y pesos congelados, entrenados con el d
 **Preregistro (antes de entrenar):** Â¿un lexico aprendido SOLO con el entrenamiento de cada fold mejora a LightGBM por bin?
 - **Construccion por fold:** palabras (>= 3 letras) con >= 15 apariciones en bins de pico (top-3 de calor por video) del entrenamiento y |z| > 2.0 frente al resto, por idioma; pesos = log-odds; tres features por bin: media de pesos de las palabras presentes, suma de pesos positivos, suma de pesos negativos.
 - **Contraste unico:** R0 + lexico frente a R0 (oof de D-054, mismos folds), F1 temporal@5, Wilcoxon bilateral, alfa = 0.05. Exploratorio; si p < 0.05 pasa como brazo secundario a la cohorte 2 (D-065).
-- **Estado:** preregistrado (pendiente de resultado).
+- **Estado:** corrida única hecha (ver resultado abajo).
 
 
 
@@ -813,7 +813,7 @@ Corrida unica lanzada a las 10:50 (HuBERT con PCA congelado sha256[:16] = 87a80b
 - **Contrastes (presupuesto 2, Bonferroni 0.025):** (1) R0 + b_* vs R0 en F1 temporal@5 (Wilcoxon pareado, bilateral); (2) V0 con las 17 variables + b_* como submodelo M17+B vs M17 de D-073. Ambos reentrenados con la misma configuración (LightGBM lambdarank, 300 rondas, 1 semilla).
 - **Descriptivo:** rho parcial de cada b_* con el calor controlando posición (no decide nada).
 - **Criterio:** una familia pasa a confirmación en datos nuevos solo si p < 0.025 en (1) o (2) sin perder acierto. Si no, se reporta negativa. Prohibido ajustar umbrales tras ver el resultado.
-- **Estado:** preregistrado (pendiente de resultado).
+- **Estado:** corrida única hecha (ver resultado abajo).
 
 ### D-077 · 2026-10-19 · Resultado de D-076: las variables de frontera NO mejoran el modelo (NEGATIVO)
 Corrida única (`scripts/frontera_D076.py`), 444 videos, mismos 10 folds por canal, LightGBM lambdarank 300 rondas, 1 semilla; `reports/frontera_D076/`.
@@ -866,7 +866,7 @@ Corrida única (`scripts/frontera_D076.py`), 444 videos, mismos 10 folds por can
 - **A. Curva de aprendizaje:** LightGBM R0 entrenado con n = 50, 100, 200, 300 y todo el entrenamiento (5 submuestras aleatorias por n, semilla fija) y evaluado siempre en el holdout congelado por canal de D-080. Se ajusta hit@5 ~ a + b·log(n) y se extrapola a 2 000 y 10 000 videos. Objetivo: saber si más datos podrían acercar el acierto al 80 % o si el techo es estructural. La extrapolación es orientativa, no una prueba.
 - **B. Selección de los 5 clips (presupuesto 2 variantes, sobre las predicciones fuera de fold de D-054):** S0 = NMS actual; S1 = top-5 voraz exigiendo separación mínima de 10 % de la duración entre centros (descorrelaciona los 5 intentos). Se compara hit@5 y F1 pareados (Wilcoxon bilateral, Bonferroni 0.025).
 - **Regla:** cualquier ganancia en B debe confirmarse en una cohorte fresca antes de adoptarse. Si el 80 % no aparece en la extrapolación de A, se le reporta al autor que el techo del contenido está por debajo y por qué.
-- **Estado:** preregistrado (pendiente de resultado).
+- **Estado:** corrida única hecha (ver resultado abajo).
 
 ### D-082 · 2026-10-19 · Resultado de D-081: más datos NO llevan el acierto al 80 %; separar los 5 intentos tampoco ayuda
 `scripts/explorar_D081.py`, `reports/explorar_D081/`. Exploratorio; no adopta nada.
@@ -882,7 +882,7 @@ Corrida única (`scripts/frontera_D076.py`), 444 videos, mismos 10 folds por can
 - **Datos:** los videos de desarrollo con variables (hasta 526; sin cohortes frescas, Repurpose ni reservados), mismos 10 folds por canal (GroupKFold), LightGBM lambdarank 300 rondas, 1 semilla. Las cohortes 1 y 2 se extraen pero NO se evalúan hasta confirmar.
 - **Contrastes (presupuesto 3, Bonferroni 0.0167):** R0 + V1, R0 + V2 y R0 + V3 frente a R0 reentrenado igual; F1 temporal@5, Wilcoxon pareado bilateral; se reporta también hit@5.
 - **Criterio:** una variante pasa a confirmación única en las cohortes 1 y 2 (conjuntas) si mejora F1 con p < 0.0167 sin perder acierto. Si no, se reporta como negativa. Sin ajustar textos ni umbrales tras ver resultados.
-- **Estado:** preregistrado (pendiente de resultado).
+- **Estado:** corrida única hecha (ver resultado abajo).
 
 ### D-083 (cancelada) · 2026-10-19 · La señal visual CLIP se descarta por alcance, sin evaluarla
 El autor delimita la tesis, por ahora, a **podcast**: en un podcast la imagen es casi la misma todo el tiempo (cabezas hablando, plano fijo), así que una señal visual semántica aporta poco por construcción. Se detiene la extracción antes de usarla en ningún análisis; **no se calculó ninguna métrica con ella**. Los scripts quedan en `scripts/` por si se amplía el alcance a otros géneros. No es un resultado negativo medido, es una decisión de alcance.
@@ -892,7 +892,7 @@ El autor delimita la tesis, por ahora, a **podcast**: en un podcast la imagen es
 - **Regla (solo metadatos, fijada ahora):** un video es **podcast** si el texto de su consulta del manifest (`query`) o su título contiene, sin distinguir mayúsculas, alguna de: `podcast`, `pódcast`, `entrevista`, `interview`, `conversaci`, `episod`, `episode`. El resto es **no-podcast**. No se ajusta después de ver resultados.
 - **Medición (descriptiva, sin decisión de modelo):** hit@5, F1 y exceso sobre el azar de R0 (predicciones fuera de fold de D-054, 444 videos) por subconjunto, con IC95 bootstrap por canal y la diferencia podcast − no-podcast.
 - **Uso:** solo para fijar el alcance de la tesis y planear datos (Rhapsody es 100 % podcast). Si el desempeño en podcast es peor o igual, se reporta tal cual.
-- **Estado:** preregistrado (pendiente de resultado).
+- **Estado:** corrida única hecha (ver resultado abajo).
 
 ### D-085 · 2026-10-19 · Resultado de D-084: el desempeño en podcast es igual al del resto; delimitar a podcast no sube el acierto
 `scripts/alcance_podcast_D084.py`, 444 videos (R0 fuera de fold), IC95 bootstrap por canal.
@@ -912,7 +912,7 @@ El autor delimita la tesis, por ahora, a **podcast**: en un podcast la imagen es
 - **Exploración automática (presupuesto fijado):** por ronda, 12 configuraciones aleatorias (semilla fija) de ancho, mezcla de unidades, profundidad (1 o 2), λ de L1 y tasa de aprendizaje. La **selección se hace SOLO con validación cruzada interna por canal (3 folds) sobre el entrenamiento** (criterio: F1 temporal@5). El holdout congelado de D-080 (md5(canal) % 5 == 0) se toca una sola vez por ronda.
 - **Contraste (una sola primaria por ronda):** la mejor configuración frente al campeón vigente (LightGBM R0 de D-080) en F1 temporal@5 sobre el holdout, Wilcoxon pareado unilateral, alfa = 0.05. Referencias descriptivas: fórmula V0 de 17 pesos y azar. Promoción solo si p < 0.05; cada ronda se registra en `reports/explorador_ecuaciones/rondas.jsonl` y la ecuación aprendida se guarda como texto.
 - **Regla:** si el retador no supera al campeón, se reporta como negativo y la ecuación queda como hallazgo descriptivo. Sin ajustar nada tras ver el holdout. Cualquier mejora debe confirmarse en videos nuevos (cohorte fresca) antes de adoptarse.
-- **Estado:** preregistrado (pendiente de resultado).
+- **Estado:** corrida única hecha (ver resultado abajo).
 
 ### D-087 · 2026-10-21 · Resultado de D-086, ronda 1: la red de ecuaciones empata con LightGBM usando solo 17 variables y una ecuación legible; no se promueve
 `scripts/explorador_ecuaciones.py`, `reports/explorador_ecuaciones/`. 12 configuraciones explorando, selección por validación cruzada interna (3 folds por canal) en 419 videos de entrenamiento; holdout congelado de 107 videos (una sola evaluación).
@@ -936,7 +936,7 @@ El autor delimita la tesis, por ahora, a **podcast**: en un podcast la imagen es
 - **Procedimiento:** mismos 419 videos de entrenamiento y holdout congelado por canal (md5(canal) % 5 == 0, 107 videos) de D-080; LightGBM R0 sobre las 68 variables; la selección usa solo validación cruzada interna de 3 particiones por canal en el entrenamiento; el holdout se evalúa una vez.
 - **Contraste (una sola primaria):** configuración elegida frente a la fija V1 (≤ 45 s, 30 %) en exceso de acierto@5 por video sobre el holdout (Wilcoxon bilateral, alfa = 0.05). Si la elegida coincide con V1, se reporta que la búsqueda automática confirma la regla fijada.
 - **Alcance honesto:** es búsqueda automática de parámetros, no un modelo de aprendizaje profundo de límites; la decisión de segmentar por oraciones (Whisper) se mantiene.
-- **Estado:** preregistrado (pendiente de resultado).
+- **Estado:** corrida única hecha (ver resultado abajo).
 
 ### D-089 · 2026-10-21 · Resultado de D-088: la búsqueda automática de parámetros de candidatos cae en la misma meseta que la regla fijada
 `scripts/candidatos_auto_D088.py`, `reports/candidatos_auto_D088/`. 526 videos (419 entrenamiento, 107 holdout congelado), exceso de acierto@5 sobre el azar restringido a las mismas ventanas.
@@ -967,7 +967,7 @@ El autor delimita la tesis, por ahora, a **podcast**: en un podcast la imagen es
 - **Procedimiento y datos:** idénticos a D-086 (419 entrenamiento, holdout congelado por canal de 107 videos, 12 configuraciones por ronda elegidas con validación cruzada interna de 3 particiones por canal, una evaluación por ronda).
 - **Contraste (una sola primaria, 1 ronda):** EQL de 68 variables vs el campeón LightGBM R0 en F1 temporal@5, Wilcoxon pareado unilateral, alfa = 0.05. Secundaria descriptiva: EQL de 68 vs EQL de 17 variables (¿descubrir variables ayuda?) y lista de variables que entran a la ecuación.
 - **Regla:** si no supera al campeón (p < 0.05) se reporta como negativo y no se adopta. Ninguna ecuación se adopta sin confirmación en la cohorte fresca 3 (D-091).
-- **Estado:** preregistrado (pendiente de resultado).
+- **Estado:** corrida única hecha (ver resultado abajo).
 
 ### D-093 · 2026-10-22 · Minero de papers y preregistro de variables nuevas propuestas por la literatura
 **Parte 1: minero de papers (`scripts/minero_papers.py`, `reports/minero_papers/`).** Busca en OpenAlex (API abierta) 15 consultas sobre detección de momentos, retención, engagement y habla (2020 en adelante), reúne **1 339 trabajos con resumen** y cuenta qué señales medibles mencionan. Es minería por patrones sobre título y resumen, no lectura semántica; propone candidatos, que se prueban con el mismo protocolo. Señales más mencionadas que el sistema **no** tiene: cambio de hablante y turnos de palabra (112 trabajos), muletillas, disfluencias y repetición (84), rol del hablante anfitrión/invitado (41) y entidades nombradas (5). Las demás (emoción, tema, velocidad, pausas, tono, volumen, preguntas, música) ya están cubiertas por alguna de las 71 variables.
@@ -979,7 +979,7 @@ El autor delimita la tesis, por ahora, a **podcast**: en un podcast la imagen es
 - **Datos:** videos de desarrollo con variables (sin cohortes frescas 1 y 2, Repurpose ni los reservados D-078/D-071 hasta confirmar), 10 folds por canal (GroupKFold), LightGBM lambdarank 300 rondas, 1 semilla.
 - **Contrastes (presupuesto 2, Bonferroni 0.025):** (1) R0 + m_* vs R0 y (2) submodelo M17 + m_* vs M17, F1 temporal@5, Wilcoxon bilateral. Descriptivo: rho mediano de cada m_* con el calor.
 - **Criterio:** pasa a confirmación en la cohorte fresca 3 (D-091) solo si p < 0.025 sin perder acierto. Si no, se reporta negativa. Sin ajustar el léxico ni los umbrales tras ver el resultado.
-- **Estado:** preregistrado (pendiente de resultado).
+- **Estado:** corrida única hecha (ver resultado abajo).
 
 ### D-094 · 2026-10-22 · Resultados de D-092 (explorador con 68 variables) y D-093 (variables minadas de la literatura): ambos NEGATIVOS
 **D-092** (`reports/explorador_ecuaciones_68/`, mismo holdout de 107 videos): la red de ecuaciones con las 68 variables obtuvo F1 0.1124 y acierto 51.4 %, frente a 0.1335 y 52.3 % del campeón LightGBM R0 (dif -0.0211, Wilcoxon unilateral p = 0.90). Peor que la EQL de 17 variables (0.1337). **Descubrir variables entre las 68 empeora el resultado**: con ~420 videos de entrenamiento, más entradas aumentan el ruido (coherente con la regla ya vista de que más variables empeoran, y con la selección de grupos de D-051). La ecuación aprendida mezcla sentimiento, palabras clave y preguntas con pesos pequeños y no supera al campeón.
@@ -1040,3 +1040,26 @@ Adenda D-099 (2026-10-29): fuente en papers de las 71 variables (`scripts/fuente
 **Decisión.** El proveedor de LLM queda en `none` (`configs/default.yaml`): título y gancho de cada clip salen de plantillas deterministas y no se usa ninguna API externa, de modo que el sistema usa solo audio y texto, como describe el artículo. La llamada al modelo fallaba de todos modos (la librería ya no acepta el parámetro `temperature`) y el sistema volvía a las plantillas.
 **Web.** La portada trae dos ejemplos ya generados con el pipeline completo (podcast Fabiana, 10.6 min, y podcast Mauricio, 11.0 min; 5 clips 9:16 con puntaje cada uno y un bloque automático de 10 minutos) para la demostración en vivo; se abren al instante desde `outputs/EJEMPLO_Fabiana` y `outputs/EJEMPLO_Mauricio`.
 **Tiempos medidos.** Fabiana 25.4 min (con el agente de mejora automática compartiendo la GPU y recortes en modo cuadro completo); Mauricio 9.2 min.
+
+### D-104 · 2026-11-05 · Preregistro: R0 entrenado sobre ventanas de oraciones (la unidad que entrega el producto)
+**Motivo.** El R0 evaluado hasta ahora (D-054/D-063: 62.4 % y F1 0.142 en el grupo nuevo 1) puntúa tramos fijos de unos 35 s; el único LightGBM guardado (`models/ranker_lgbm.txt`, 24-sep) se entrenó con 80 videos. Ninguno de los dos es el modelo que usaría el producto, que entrega clips armados con oraciones. Antes de declarar a R0 como modelo del producto hay que medirlo sobre esas ventanas.
+**Modelo (sin ajuste de hiperparámetros, los de D-063).** LightGBM LambdaRank, objetivo `lambdarank`, etiqueta `y_grade` (0-4), un video = un grupo, 300 rondas, `num_leaves` 15, `min_data_in_leaf` 50, `feature_fraction` 0.7, `lambda_l2` 10, semilla 42. Entrada: las 68 variables de D-054 en percentil dentro de su video. Entrenamiento: los 444 videos de desarrollo ampliado (tablas de oraciones, hasta 400 candidatos por video).
+**Evaluación (una sola corrida, sin reajuste).** Grupo nuevo 1 (D-050) y grupo nuevo 2 (D-065), con los mismos filtros de `confirm_V1_D048.py` (curva disponible, variables completas, al menos 5 ventanas de 45 s o menos). Comparación pareada contra V0, V1 y el azar, con top 5 por NMS y las mismas métricas (acierto@5, F1 temporal, calor del clip / calor del video).
+**Variantes declaradas ahora.** R0-O (todas las ventanas de 15 a 90 s) y R0-O45 (solo ventanas de 45 s o menos, como V1).
+**Hipótesis (una primaria).** H-R0O: R0-O45 supera a V1 en acierto@5 en el grupo nuevo 1 (McNemar unilateral, alfa = 0.05). Secundarias marcadas, sin corrección: F1 temporal (Wilcoxon bilateral) y lo mismo en el grupo nuevo 2.
+**Regla.** Si H-R0O se cumple, R0-O45 pasa a ser el modelo del producto y las cifras que se reportan son las de esta corrida (no las de tramos). Si no se cumple, el producto sigue con V1 y R0 por tramos se reporta como referencia de aprendizaje. Se reporta lo que salga.
+- **Estado:** corrida única hecha (ver resultado abajo).
+**Resultado (corrida única, `scripts/r0_oraciones_D104.py`, modelo en `models/r0_oraciones_D104.txt`, 444 videos, 171 923 ventanas).**
+
+| Método | Grupo nuevo 1 (93) acierto@5 / F1 | Grupo nuevo 2 (84) acierto@5 / F1 |
+|---|---|---|
+| azar | 26.9 % / 0.072 | 26.8 % / 0.069 |
+| V0 | 47.3 % / 0.149 | 40.5 % / 0.122 |
+| V1 | 54.8 % / 0.141 | 44.0 % / 0.103 |
+| R0-O (ventanas 15-90 s) | 54.8 % / 0.167 | 31.0 % / 0.096 |
+| R0-O45 (ventanas ≤ 45 s) | 53.8 % / 0.145 | 36.9 % / 0.097 |
+
+- **H-R0O NO se cumple:** R0-O45 frente a V1 en acierto@5 del grupo 1, 9 videos solo R0-O45 contra 10 solo V1, McNemar unilateral p = 0.68; en el grupo 2, 7 contra 13 (p = 0.94). F1 sin diferencia (p = 0.48 y 0.24).
+- **Lectura.** El 62.4 % de R0 era sobre tramos fijos de 35 s (con azar propio de 31.9 %). Sobre las ventanas de oraciones que entrega el producto, R0 no supera a la fórmula V1 y en el grupo 2 queda por debajo de V0 y V1.
+- **Decisión por la regla de D-104:** el producto sigue con V1 (banderas 0/1); R0 por tramos queda como referencia de aprendizaje. El grupo nuevo 2 tiene 84 videos usables (el artículo y el PPT dicen 63; hay que armonizar).
+- **Estado:** vigente.

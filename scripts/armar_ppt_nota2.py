@@ -594,14 +594,14 @@ notas(rs2, "Acierto@5: al menos uno de los 5 clips toca un pico real. Grupo de v
 
 # 3) tabla de resultados por propuesta + confirmación
 rs3 = lamina("Resultados en Videos Nuevos y en Confirmación")
-tabla_estilo(rs3, ["Métrica (grupo nuevo 1, 93 videos)", "Azar", "V0", "V1 (final)", "R0"], [
+tabla_estilo(rs3, ["Métrica (grupo nuevo 1, 93 videos)", "Azar", "V0", "V1 (elegido)", "R0"], [
     ("Acierto@5 (%)", "26.9", "47.3", "54.8", "62.4"),
     ("F1 temporal", "0.072", "0.149", "0.141", "0.142"),
     ("Veces sobre su propio azar", "1.00", "1.76", "2.04", "1.96"),
     ("Explicable por variable", "—", "Sí", "Sí", "No"),
 ], 0.4, 1.1, 9.2, (3.4, 1.3, 1.3, 1.6, 1.6), 0.5, resaltar_col=3, size=11.5)
-tarjeta(rs3, 0.4, 3.9, 4.5, 1.5, "Confirmación (352 videos)", "V1 acierta 53.4 % frente a 29.1 % del azar. R0, con predicciones fuera de pliegue: 60.2 % (212 de 352), F1 0.136; V0 56.2 % y azar 32.7 % en esos tramos.", 11)
-tarjeta(rs3, 5.1, 3.9, 4.5, 1.5, "Grupo nuevo 2 (63 videos)", "R0 acierta 49.2 % frente a 30.0 % del azar: la ventaja se mantiene, pero es menor que en el grupo 1. Por eso se adopta V1, que se explica variable por variable.", 11)
+tarjeta(rs3, 0.4, 3.9, 4.5, 1.5, "R0 acierta más, pero no es el elegido", "R0 llega a 62.4 %, el valor más alto, pero su azar propio es mayor (31.9 %): sobre su azar acierta 1.96 veces y V1, 2.04. El F1 empata y en el grupo nuevo 2 baja a 49.2 % frente a 30.0 %.", 10.5)
+tarjeta(rs3, 5.1, 3.9, 4.5, 1.5, "Por qué se adopta V1", "V1 se explica variable por variable (banderas 0/1) y R0 no. Confirmación (352 videos): V1 53.4 % frente a 29.1 % del azar; R0 60.2 % frente a 32.7 %.", 10.5)
 notas(rs3, "R0 puntúa por tramos con azar propio más alto (31.9 %): frente a su azar acierta 1.96 veces y V1 2.04 veces. El F1 no mejora de V0 a V1 porque los clips cortos tocan más picos pero cubren menos tiempo.")
 
 # 4) matriz de confusión
@@ -634,6 +634,23 @@ tabla_estilo(rs6, ["Instrumento", "Resultado", "Criterio", "¿Cumple?"], [
 tarjeta(rs6, 0.4, 4.35, 9.2, 0.95, "Comentario común", "Los clips son muy buenos; el único problema es el seguimiento de la cámara al hablante, que falla con cabezas giradas o lejanas (trabajo futuro: YOLO).", 11)
 notas(rs6, "Tablas 13 y 14 del artículo. SUS = ((impares − 1) + (5 − pares)) × 2.5.")
 
+
+# 7) detalle del puntaje: percentil, bandera y suma ponderada (ejemplo real de la Figura 7)
+ms = lamina("4.7: percentil, bandera y suma ponderada")
+tarjeta(ms, 0.4, 0.95, 2.95, 1.75, "1. Percentil (dentro del video)", "Posición del clip entre los candidatos de SU video, de 0 a 1: posición ÷ n. 0.835 = supera al 83.5 % de los candidatos. Se calcula por variable, con la medición cruda.", 9.5)
+tarjeta(ms, 3.52, 0.95, 2.95, 1.75, "2. Bandera 0/1", "bandera = 1 si percentil ≥ 0.75 (25 % más alto del video); si no, 0. Solo cuentan las variables que destacan; el ruido de las demás no suma.", 9.5)
+tarjeta(ms, 6.64, 0.95, 2.95, 1.75, "3. Suma ponderada (no promedio)", "raw = Σ peso × bandera. Cada variable aporta su peso si su bandera es 1; no se divide entre nada y un peso negativo resta.", 9.5)
+tabla_estilo(ms, ["Variable (ejemplo real)", "Percentil", "Bandera", "Peso", "Aporte = peso × bandera"], [
+    ("a_pause_ratio (pausas)", "0.8350", "1", "+0.1797", "+0.1797"),
+    ("l_silence (silencio)", "0.8150", "1", "+0.1634", "+0.1634"),
+    ("a_rms_std (variación del volumen)", "0.9625", "1", "+0.1218", "+0.1218"),
+    ("s_questions_pm (preguntas por minuto)", "0.7600", "1", "+0.0582", "+0.0582"),
+    ("Otras 5 con bandera 1", "≥ 0.75", "1", "—", "+0.4887"),
+    ("Otras 8 variables", "< 0.75", "0", "—", "0"),
+], 0.4, 2.8, 9.2, (3.3, 1.2, 1.1, 1.3, 2.3), 0.27, resaltar_col=None, size=9)
+tarjeta(ms, 0.4, 4.85, 9.2, 0.7, "Resultado: raw = +1.0118  →  puntaje 86", "(raw − mín) / (máx − mín) × 99 = (1.0118 + 0.4851) / (1.2400 + 0.4851) × 99 = 0.8677 × 99 = 85.9 ≈ 86. Mín = suma de pesos negativos; máx = suma de pesos positivos.", 9.5)
+notas(ms, "Suma ponderada no es promedio: se multiplica cada variable por su peso y se suma, sin dividir. El percentil se calcula por variable con su medición cruda, antes de cualquier puntaje. Los pesos salen una sola vez de la correlación parcial con el calor real en 121 videos y quedaron congelados; la curva no entra al puntaje de un video nuevo.")
+
 concl = nuevo_texto("Conclusiones", [
     "Con solo audio y texto, la fórmula de 17 variables (17 a 23 escaneadas por segmento) más que duplica el acierto del azar (47.3 % frente a 26.9 %).",
     "Limitar los clips a 45 s sube el acierto a 54.8 %, a costa de cubrir menos tiempo caliente.",
@@ -654,7 +671,7 @@ for k in claves:
 ref = nuevo_texto("Referencias", sel, "Lista completa en el artículo (sección Referencias, APA 7).", 8)
 
 # ---- orden final y limpieza de las diapositivas de ejemplo de la plantilla
-usar = [slides[0], slides[1], s_prob2, bo, tr_lit, tl, mt3, met_fases, m5, m1, m_etl, m6, m2, m7, m3, m4, m8, e1, rs1, rs2, rs3, tabla_f1_sl, rs4, rs5, rs6, lim, concl, ref]
+usar = [slides[0], slides[1], s_prob2, bo, tr_lit, tl, mt3, met_fases, m5, m1, m_etl, m6, m2, m7, m3, ms, m4, m8, e1, rs1, rs2, rs3, tabla_f1_sl, rs4, rs5, rs6, lim, concl, ref]
 ids = prs.slides._sldIdLst
 por_slide = {}
 for sid in list(ids):
