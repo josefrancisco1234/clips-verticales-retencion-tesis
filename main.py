@@ -4,7 +4,7 @@ Cómo usarlo (desde la carpeta tesis/desarrollo, con el entorno de la tesis):
     python main.py mapa                     qué diapositiva del PPT corresponde a qué parte del código
     python main.py variables                las 73 variables (71 del modelo + 2 de posición) con su fórmula y su peso
     python main.py variable a_pause_ratio   fórmula de UNA variable, su peso, su referencia y la línea de código donde se calcula
-    python main.py puntaje                  el ejemplo de la diapositiva 18 paso a paso: percentil -> bandera -> suma ponderada -> 0-99
+    python main.py puntaje                  el ejemplo de la diapositiva 17 paso a paso: percentil -> bandera -> suma ponderada -> 0-99
     python main.py metricas                 acierto@5, precisión, cobertura y F1 temporal con un ejemplo pequeño
     python main.py resultados               de dónde sale cada cifra del PPT (script y archivo de resultados)
     python main.py verificar                comprueba que las cifras del PPT coinciden con los archivos del proyecto
@@ -214,7 +214,7 @@ def puntaje_clip(percentiles: dict[str, float], pesos: dict[str, float]) -> tupl
 
 
 def cmd_puntaje() -> None:
-    """Reproduce el ejemplo real de la diapositiva 18 y comprueba que da raw = +1.0118 y puntaje 86."""
+    """Reproduce el ejemplo real de la diapositiva 17 y comprueba que da raw = +1.0118 y puntaje 86."""
     pesos = cargar_pesos()
     perc = {v: 0.50 for v in pesos}                   # <- las 8 variables que no destacan quedan en el medio (bandera 0)
     perc.update({"a_pause_ratio": 0.8350, "l_silence": 0.8150, "a_long_pauses_pm": 0.9675, "a_rms_std": 0.9625, "k_keybert_sim": 0.7825,
@@ -232,7 +232,7 @@ def cmd_puntaje() -> None:
 
 
 # ==============================================================================================================
-# 4. MÉTRICAS   (python main.py metricas)   <- diapositiva 20
+# 4. MÉTRICAS   (python main.py metricas)   <- diapositiva 19
 # ==============================================================================================================
 def solape(a: tuple[float, float], b: tuple[float, float]) -> float:
     return max(0.0, min(a[1], b[1]) - max(a[0], b[0]))     # <- segundos que comparten dos intervalos
@@ -320,10 +320,10 @@ def cmd_verificar() -> None:
         chk("R0 F1 grupo nuevo 1", m["R0"]["F1"], 0.142, 1e-3)
     try:
         cmd_puntaje_silencioso()
-        print("OK        ejemplo de la diapositiva 18: raw +1.0118 y puntaje 86")
+        print("OK        ejemplo de la diapositiva 17: raw +1.0118 y puntaje 86")
     except AssertionError as e:
         ok = False
-        print("DIFERENTE ejemplo de la diapositiva 18:", e)
+        print("DIFERENTE ejemplo de la diapositiva 17:", e)
     print("\nTODO COINCIDE" if ok else "\nHAY DIFERENCIAS: revisar las líneas marcadas")
 
 
